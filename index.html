@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Keep It Stylish – Live Preview</title>
+<title>Keep It Stylish | U.S. Store</title>
+<meta name="description" content="Shop Keep It Stylish in U.S. dollars. Discover the Emerald Ruffle Tier Midi Dress for $54.99 and curated fashion."/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%232C2420'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='21' font-weight='400' fill='%23F8F5F0' letter-spacing='2'>KIS</text></svg>"/>
 <style>
@@ -22,7 +23,7 @@ body{background:var(--warm);color:var(--charcoal);font-family:'Jost',sans-serif;
 
 /* ── NAVBAR ── */
 nav{position:sticky;top:0;z-index:100;background:rgba(253,250,246,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--sand);height:72px;display:flex;align-items:center;padding:0 40px}
-.nav-left{display:flex;gap:32px}
+.nav-left{display:flex;gap:18px}
 .nav-logo{position:absolute;left:50%;transform:translateX(-50%);text-align:center;cursor:pointer;text-decoration:none}
 .nav-logo-main{font-family:'Cormorant Garamond',serif;font-size:32px;letter-spacing:.1em;color:var(--charcoal);line-height:1}
 .nav-logo-sub{font-size:9px;letter-spacing:.3em;color:var(--stone);text-transform:uppercase;margin-top:4px;font-family:'Jost',sans-serif}
@@ -458,16 +459,16 @@ tr:nth-child(even) td{background:var(--ivory)}
   nav{height:56px}
   .footer-grid{gap:28px}
 }
+
+.gallery-main img{object-fit:contain}.gallery-thumbs{flex-wrap:wrap}button:disabled{opacity:.6;cursor:not-allowed}
+
+@media(min-width:769px) and (max-width:1200px){.nav-left{gap:10px}.nav-link{font-size:9px;letter-spacing:.1em}.nav-logo-main{font-size:26px}}
 </style>
 </head>
 <body>
 
 <!-- ANNOUNCEMENT BAR -->
-<div style="background:#1a1a2e;color:#aaa;text-align:center;padding:7px;font-size:11px;letter-spacing:.1em;font-family:'Jost',sans-serif">
-  Preview Mode &nbsp;·&nbsp;
-  <button onclick="showPage('logo-picker')" style="background:none;border:none;color:#C9A96E;cursor:pointer;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.1em;text-decoration:underline">View Logo Options ↗</button>
-</div>
-<div class="announce">Free shipping across India on orders above ₹2,000</div>
+<div class="announce">United States · Prices in USD</div>
 
 <!-- NAVBAR -->
 <nav>
@@ -568,7 +569,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   </div>
 
   <div class="marquee-bar">
-    <div class="marquee-inner">✦ Indo-Western &nbsp; ✦ Indian Ethnic &nbsp; ✦ New Arrivals &nbsp; ✦ Free Shipping in India &nbsp; ✦ Artisan Crafted &nbsp; ✦ Indo-Western &nbsp; ✦ Indian Ethnic &nbsp; ✦ New Arrivals &nbsp; ✦ Free Shipping in India &nbsp; ✦ Artisan Crafted &nbsp;</div>
+    <div class="marquee-inner">✦ Indo-Western &nbsp; ✦ Indian Ethnic &nbsp; ✦ New Arrivals &nbsp; ✦ U.S. Store · USD &nbsp; ✦ Artisan Crafted &nbsp; ✦ Indo-Western &nbsp; ✦ Indian Ethnic &nbsp; ✦ New Arrivals &nbsp; ✦ U.S. Store · USD &nbsp; ✦ Artisan Crafted &nbsp;</div>
   </div>
 
   <div class="section" style="margin-top:90px;margin-bottom:90px">
@@ -581,9 +582,9 @@ tr:nth-child(even) td{background:var(--ivory)}
 
   <div class="promise-strip">
     <div class="promise-grid">
-      <div><div class="promise-icon">✦</div><p class="promise-title">Curated Selection</p><p class="promise-text">Handpicked styles for the modern Indian woman</p></div>
+      <div><div class="promise-icon">✦</div><p class="promise-title">Curated Selection</p><p class="promise-text">Handpicked styles for the modern woman</p></div>
       <div><div class="promise-icon">◈</div><p class="promise-title">Artisan Crafted</p><p class="promise-text">Celebrating India's rich weaving traditions</p></div>
-      <div><div class="promise-icon">◇</div><p class="promise-title">Free Shipping</p><p class="promise-text">On all orders above ₹2,000 across India</p></div>
+      <div><div class="promise-icon">◇</div><p class="promise-title">U.S. Store</p><p class="promise-text">Shop in U.S. dollars</p></div>
       <div><div class="promise-icon">↩</div><p class="promise-title">Easy Returns</p><p class="promise-text">Hassle-free 14-day return policy</p></div>
     </div>
   </div>
@@ -594,7 +595,7 @@ tr:nth-child(even) td{background:var(--ivory)}
       <p class="section-label">Our Philosophy</p>
       <h2 class="editorial-title">Where Tradition<br><em>Meets Modernity</em></h2>
       <p class="editorial-text">Keep It Stylish was born from a love of India's extraordinary textile heritage. We believe that Indian fashion is not just clothing — it's a story, a craft, a celebration.</p>
-      <p class="editorial-text">Every piece in our collection is carefully curated to honor tradition while embracing the needs of the contemporary Indian woman.</p>
+      <p class="editorial-text">Every piece in our collection is carefully curated to honor tradition while embracing the needs of the contemporary woman.</p>
       <br/>
       <button class="btn btn-light" onclick="showPage('collections')">Explore the Collection</button>
     </div>
@@ -638,7 +639,7 @@ tr:nth-child(even) td{background:var(--ivory)}
     </div>
     <div class="footer-bottom">
       <span>© 2025 Keep It Stylish. All rights reserved.</span>
-      <span>Made with love in India 🇮🇳</span>
+      <span>United States · USD $</span>
     </div>
   </footer>
 </div>
@@ -652,7 +653,8 @@ tr:nth-child(even) td{background:var(--ivory)}
     </div>
     <div class="cat-tabs">
       <button class="cat-tab" id="tab-all" onclick="filterProducts('all',this)">All</button>
-      <button class="cat-tab" id="tab-indo" onclick="filterProducts('indo-western',this)">Indo-Western</button>
+      <button class="cat-tab" id="tab-dresses" onclick="filterProducts('dresses',this)">Dresses</button>
+<button class="cat-tab" id="tab-indo" onclick="filterProducts('indo-western',this)">Indo-Western</button>
       <button class="cat-tab" id="tab-indian" onclick="filterProducts('indian',this)">Indian</button>
     </div>
     <div class="controls-row">
@@ -676,7 +678,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   <div class="product-detail-grid">
     <div>
       <div class="gallery-main"><img id="main-img" src="" alt="Product"/></div>
-      <div class="gallery-thumbs" id="thumbs"></div>
+      <div class="gallery-thumbs" id="thumbs"></div><p id="image-note" style="font-size:12px;color:var(--stone);line-height:1.6;margin-top:14px"></p>
     </div>
     <div>
       <p class="product-cat" id="detail-cat"></p>
@@ -696,14 +698,14 @@ tr:nth-child(even) td{background:var(--ivory)}
           <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);font-family:'Jost',sans-serif">Size</p>
           <button style="font-size:11px;color:var(--stone);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:'Jost',sans-serif" onclick="showPage('size-guide')">Size Guide</button>
         </div>
-        <div class="size-grid" id="size-grid"></div>
+        <div class="size-grid" id="size-grid"></div><p id="size-availability" style="font-size:12px;color:var(--stone);margin-top:12px"></p>
       </div>
       <p style="font-size:12px;color:var(--rose);margin-bottom:8px;font-family:'Jost',sans-serif;display:none" id="size-error">Please select a size before adding to bag</p>
       <button class="add-to-cart-btn" id="atc-btn" onclick="addToCart()">🛍 Add to Bag</button>
       <p style="font-size:14px;line-height:1.8;color:var(--stone);font-family:'Jost',sans-serif" id="detail-desc"></p>
       <div class="shipping-note">
-        ✦ Free shipping across India on orders above ₹2,000<br/>
-        ✦ Expected delivery in 5–7 business days<br/>
+        ✦ United States · Prices in USD<br/>
+        ✦ Delivery timing confirmed before payment<br/>
         ✦ Easy 14-day returns
       </div>
     </div>
@@ -726,20 +728,20 @@ tr:nth-child(even) td{background:var(--ivory)}
       <div>
         <div style="display:grid;grid-template-columns:1fr auto;padding-bottom:14px;border-bottom:1px solid var(--sand);margin-bottom:0">
           <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);font-family:'Jost',sans-serif">Product</span>
-          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);font-family:'Jost',sans-serif">Total</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);font-family:'Jost',sans-serif">Estimated Total</span>
         </div>
         <div id="cart-items"></div>
       </div>
       <div class="order-summary-box">
         <p style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--charcoal);margin-bottom:28px">Order Summary</p>
-        <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Subtotal</span><span style="font-size:13px;color:var(--charcoal);font-family:'Jost',sans-serif" id="cart-subtotal">₹0</span></div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Shipping</span><span style="font-size:13px;font-family:'Jost',sans-serif" id="cart-shipping">₹149</span></div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Subtotal</span><span style="font-size:13px;color:var(--charcoal);font-family:'Jost',sans-serif" id="cart-subtotal">$0.00</span></div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Shipping</span><span style="font-size:13px;font-family:'Jost',sans-serif" id="cart-shipping">To be confirmed</span></div>
         <div id="cart-discount-row" style="display:flex;justify-content:space-between;margin-bottom:14px;display:none"><span style="font-size:13px;color:green;font-family:'Jost',sans-serif" id="cart-discount-label">Discount</span><span style="font-size:13px;color:green;font-family:'Jost',sans-serif" id="cart-discount-val"></span></div>
         <p id="free-ship-msg" style="font-size:12px;color:var(--rose);margin-bottom:12px;font-family:'Jost',sans-serif"></p>
         <div class="divider"></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:28px">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)">Total</span>
-          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)" id="cart-total">₹0</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)">Estimated Total</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)" id="cart-total">$0.00</span>
         </div>
         <!-- Coupon -->
         <div id="coupon-section">
@@ -753,11 +755,11 @@ tr:nth-child(even) td{background:var(--ivory)}
               <button class="coupon-apply" onclick="applyCoupon()">Apply</button>
             </div>
             <p id="coupon-error" style="font-size:11px;color:var(--rose);margin-bottom:8px;font-family:'Jost',sans-serif;display:none"></p>
-            <p style="font-size:11px;color:var(--stone);font-family:'Jost',sans-serif;margin-bottom:16px">Try: WELCOME10 · FLAT200 · FESTIVE15</p>
+            <p style="font-size:11px;color:var(--stone);font-family:'Jost',sans-serif;margin-bottom:16px">Try: WELCOME10 · SAVE2 · FESTIVE15</p>
           </div>
         </div>
         <button class="btn btn-dark btn-full" onclick="showPage('checkout')">Proceed to Checkout →</button>
-        <p style="font-size:11px;color:var(--stone);text-align:center;margin-top:14px;font-family:'Jost',sans-serif">Secure payments via Razorpay</p>
+        <p style="font-size:11px;color:var(--stone);text-align:center;margin-top:14px;font-family:'Jost',sans-serif">All prices in USD · Shipping and tax confirmed before payment</p>
       </div>
     </div>
   </div>
@@ -785,12 +787,12 @@ tr:nth-child(even) td{background:var(--ivory)}
         <div class="form-grid-2">
           <div>
             <label class="field-label">First Name *</label>
-            <input class="field-input" id="f-firstName" placeholder="Priya" oninput="liveValidate('firstName')" onblur="touchField('firstName')"/>
+            <input class="field-input" id="f-firstName" placeholder="Jane" oninput="liveValidate('firstName')" onblur="touchField('firstName')"/>
             <p class="field-error-msg" id="e-firstName"></p>
           </div>
           <div>
             <label class="field-label">Last Name *</label>
-            <input class="field-input" id="f-lastName" placeholder="Sharma" oninput="liveValidate('lastName')" onblur="touchField('lastName')"/>
+            <input class="field-input" id="f-lastName" placeholder="Smith" oninput="liveValidate('lastName')" onblur="touchField('lastName')"/>
             <p class="field-error-msg" id="e-lastName"></p>
           </div>
         </div>
@@ -802,41 +804,30 @@ tr:nth-child(even) td{background:var(--ivory)}
           </div>
           <div>
             <label class="field-label">Phone Number *</label>
-            <input class="field-input" id="f-phone" type="tel" placeholder="10-digit mobile number" maxlength="10" oninput="liveValidate('phone')" onblur="touchField('phone')"/>
+            <input class="field-input" id="f-phone" type="tel" placeholder="U.S. phone number" maxlength="20" oninput="liveValidate('phone')" onblur="touchField('phone')"/>
             <p class="field-error-msg" id="e-phone"></p>
           </div>
         </div>
-        <div class="form-single">
+        <div class="form-single"><label class="field-label" for="f-country">Country</label><input class="field-input" id="f-country" value="United States" autocomplete="country-name" readonly/></div>
+<div class="form-single">
           <label class="field-label">Street Address *</label>
-          <input class="field-input" id="f-address" placeholder="House/flat no., street name, area" oninput="liveValidate('address')" onblur="touchField('address')"/>
+          <input class="field-input" id="f-address" placeholder="Street address, apartment or suite" oninput="liveValidate('address')" onblur="touchField('address')"/>
           <p class="field-error-msg" id="e-address"></p>
         </div>
         <div class="form-grid-3" style="margin-bottom:40px">
           <div>
             <label class="field-label">City *</label>
-            <input class="field-input" id="f-city" placeholder="Mumbai" oninput="liveValidate('city')" onblur="touchField('city')"/>
+            <input class="field-input" id="f-city" placeholder="New York" oninput="liveValidate('city')" onblur="touchField('city')"/>
             <p class="field-error-msg" id="e-city"></p>
           </div>
           <div>
             <label class="field-label">State *</label>
-            <select class="field-select" id="f-state" onchange="liveValidate('state')" onblur="touchField('state')">
-              <option value="">Select state</option>
-              <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Bihar</option>
-              <option>Chhattisgarh</option><option>Goa</option><option>Gujarat</option><option>Haryana</option>
-              <option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option>
-              <option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option>
-              <option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Punjab</option>
-              <option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option>
-              <option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
-              <option>Delhi</option><option>Chandigarh</option><option>Jammu and Kashmir</option><option>Ladakh</option>
-              <option>Puducherry</option><option>Andaman and Nicobar Islands</option><option>Lakshadweep</option>
-              <option>Dadra and Nagar Haveli and Daman and Diu</option>
-            </select>
+            <select class="field-select" id="f-state" onchange="liveValidate('state')" onblur="touchField('state')"><option value="">Select state</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select>
             <p class="field-error-msg" id="e-state"></p>
           </div>
           <div>
-            <label class="field-label">PIN Code *</label>
-            <input class="field-input" id="f-pin" placeholder="6-digit PIN" maxlength="6" oninput="liveValidate('pin')" onblur="touchField('pin')"/>
+            <label class="field-label">ZIP Code *</label>
+            <input class="field-input" id="f-pin" placeholder="5-digit ZIP or ZIP+4" maxlength="10" oninput="liveValidate('pin')" onblur="touchField('pin')"/>
             <p class="field-error-msg" id="e-pin"></p>
           </div>
         </div>
@@ -858,30 +849,25 @@ tr:nth-child(even) td{background:var(--ivory)}
         <div style="background:var(--ivory);border:1px solid var(--sand);padding:22px;margin-bottom:36px;display:flex;align-items:flex-start;gap:14px">
           <span style="font-size:20px;flex-shrink:0">🔒</span>
           <div>
-            <p style="font-size:12px;font-weight:500;color:var(--charcoal);margin-bottom:4px;font-family:'Jost',sans-serif">Secured by Razorpay</p>
-            <p style="font-size:12px;color:var(--stone);font-family:'Jost',sans-serif">Pay securely with Credit/Debit Card, UPI, Google Pay, or Net Banking. Your payment details are encrypted and never stored.</p>
+            <p style="font-size:12px;font-weight:500;color:var(--charcoal);margin-bottom:4px;font-family:'Jost',sans-serif">Online payments coming soon</p>
+            <p style="font-size:12px;color:var(--stone);font-family:'Jost',sans-serif">Online checkout is not yet accepting payments. Contact us for ordering help.</p>
           </div>
         </div>
-        <div class="payment-methods" id="pay-methods">
-          <div class="pay-method" onclick="selectPayMethod(this)"><div class="pay-icon">💳</div><p class="pay-label">Card</p></div>
-          <div class="pay-method" onclick="selectPayMethod(this)"><div class="pay-icon">📱</div><p class="pay-label">UPI / GPay</p></div>
-          <div class="pay-method" onclick="selectPayMethod(this)"><div class="pay-icon">🏦</div><p class="pay-label">Net Banking</p></div>
-        </div>
-        <p style="font-size:12px;color:var(--stone);margin-bottom:28px;font-family:'Jost',sans-serif">Clicking "Place Order" will redirect you to Razorpay's secure payment gateway.</p>
-        <button class="btn btn-dark btn-full" id="place-order-btn" onclick="placeOrder()">Place Order</button>
+        <p style="font-size:12px;color:var(--stone);margin-bottom:28px;font-family:'Jost',sans-serif">Online payments will be available once checkout is connected.</p>
+        <button class="btn btn-dark btn-full" id="place-order-btn" disabled onclick="placeOrder()">Place Order</button>
         <button onclick="backToInfo()" style="background:none;border:none;cursor:pointer;font-size:12px;color:var(--stone);margin-top:16px;display:block;text-decoration:underline;font-family:'Jost',sans-serif">← Back to shipping</button>
       </div>
 
       <!-- Order sidebar -->
       <div class="order-summary-box">
         <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--charcoal);margin-bottom:24px">Your Order</p>
-        <div id="checkout-items"></div>
+        <div id="checkout-items"></div><div style="display:flex;justify-content:space-between;margin:12px 0;font-size:13px"><span>Discount</span><span id="co-discount"></span></div><p style="font-size:12px;color:var(--stone);margin-bottom:12px">Shipping and applicable sales tax are confirmed before payment.</p>
         <div class="divider"></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Subtotal</span><span style="font-size:13px;color:var(--charcoal);font-family:'Jost',sans-serif" id="co-sub"></span></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Shipping</span><span style="font-size:13px;font-family:'Jost',sans-serif" id="co-ship"></span></div>
         <div class="divider"></div>
         <div style="display:flex;justify-content:space-between">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)">Total</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)">Estimated Total</span>
           <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)" id="co-total"></span>
         </div>
       </div>
@@ -910,9 +896,9 @@ tr:nth-child(even) td{background:var(--ivory)}
     <div class="contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px">
       <div>
         <div style="margin-bottom:28px"><p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;font-family:'Jost',sans-serif">Email</p><p>hello@keepitstylish.in</p></div>
-        <div style="margin-bottom:28px"><p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;font-family:'Jost',sans-serif">Phone</p><p>+91 98765 43210</p></div>
-        <div style="margin-bottom:28px"><p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;font-family:'Jost',sans-serif">Hours</p><p>Mon–Sat, 10am–6pm IST</p></div>
-        <div><p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;font-family:'Jost',sans-serif">Address</p><p>Mumbai, Maharashtra, India</p></div>
+
+
+        <div><p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;font-family:'Jost',sans-serif">Storefront</p><p>United States storefront · USD</p></div>
       </div>
       <div id="contact-form-wrap">
         <div class="form-single">
@@ -950,11 +936,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   <div class="content-page">
     <p class="section-label">Delivery</p>
     <h1>Shipping Information</h1>
-    <h2>Domestic Shipping (India)</h2>
-    <ul><li>Free shipping on all orders above ₹2,000.</li><li>A flat shipping fee of ₹149 applies to orders below ₹2,000.</li><li>Orders are dispatched within 1–2 business days.</li><li>Expected delivery: 5–7 business days across India.</li><li>Express delivery (2–3 business days) available at checkout for ₹299.</li></ul>
-    <h2>International Shipping</h2>
-    <ul><li>We currently ship to UAE, UK, USA, Canada, and Australia.</li><li>International shipping charges are calculated at checkout based on destination and weight.</li><li>Expected delivery: 10–15 business days.</li><li>Customs duties and import taxes are the responsibility of the recipient.</li></ul>
-    <h2>Order Tracking</h2>
+    <h2>United States Shipping</h2><p>U.S. shipping rates, available services, and delivery estimates will be confirmed before payment. Please contact us with your ZIP code for delivery information.</p><h2>International Shipping</h2><p>This storefront serves U.S. customers. For other destinations, contact us before ordering.</p><h2>Order Tracking</h2>
     <ul><li>You will receive a shipping confirmation email with a tracking link once your order is dispatched.</li><li>You can also track your order via the <button onclick="showPage('track-order')" style="background:none;border:none;cursor:pointer;color:var(--charcoal);text-decoration:underline;font-family:'Jost',sans-serif;font-size:14px">Track Order</button> page.</li></ul>
   </div>
 </div>
@@ -967,7 +949,7 @@ tr:nth-child(even) td{background:var(--ivory)}
     <h2>Return Policy</h2>
     <ul><li>We accept returns within 14 days of delivery.</li><li>Items must be unworn, unwashed, and in original condition with all tags attached.</li><li>Sale items, custom orders, and intimates are not eligible for return.</li><li>To initiate a return, email returns@keepitstylish.in with your order number.</li></ul>
     <h2>Exchange Policy</h2>
-    <ul><li>Exchanges for a different size or colour are accepted within 14 days of delivery.</li><li>Subject to availability. If out of stock, a store credit will be issued.</li><li>Only one exchange is permitted per order.</li></ul>
+    <ul><li>Exchanges for a different size or color are accepted within 14 days of delivery.</li><li>Subject to availability. If out of stock, a store credit will be issued.</li><li>Only one exchange is permitted per order.</li></ul>
     <h2>Refund Process</h2>
     <ul><li>Once your return is received and inspected, we will notify you by email.</li><li>Approved refunds are processed within 5–7 business days to the original payment method.</li><li>Shipping charges are non-refundable unless the item was defective or incorrectly sent.</li></ul>
     <h2>Damaged or Wrong Items</h2>
@@ -1043,7 +1025,7 @@ tr:nth-child(even) td{background:var(--ivory)}
     <h2>Data Sharing</h2>
     <p>We do not sell, trade, or rent your personal information to third parties. We share information only with trusted service providers (payment gateways, courier partners) under strict confidentiality agreements.</p>
     <h2>Payment Security</h2>
-    <p>All payment transactions are processed through Razorpay, a PCI DSS-compliant payment gateway. We do not store your credit/debit card details on our servers.</p>
+    <p>This storefront does not currently collect or process payment card details.</p>
     <h2>Your Rights</h2>
     <p>You have the right to access, correct, or delete your personal data. To make a request, email privacy@keepitstylish.in.</p>
   </div>
@@ -1058,15 +1040,14 @@ tr:nth-child(even) td{background:var(--ivory)}
     <h2 style="margin-top:0">Acceptance of Terms</h2>
     <p>By accessing and using keepitstylish.in, you agree to be bound by these Terms & Conditions.</p>
     <h2>Products & Pricing</h2>
-    <p>Prices are listed in Indian Rupees (₹) and are inclusive of GST. We reserve the right to modify prices at any time without notice.</p>
+    <p>Prices are listed in U.S. dollars (USD). Shipping and applicable sales tax are confirmed before payment. We reserve the right to modify prices at any time without notice.</p>
     <h2>Orders & Payment</h2>
-    <p>All orders are subject to availability and confirmation. We accept payment via Credit/Debit Card, UPI, Net Banking, and Wallets through Razorpay.</p>
+    <p>All orders are subject to availability and confirmation. Online payments are not yet available. Please contact us for ordering help.</p>
     <h2>Cancellation Policy</h2>
     <p>Orders can be cancelled within 2 hours of placement by contacting hello@keepitstylish.in. Once dispatched, orders cannot be cancelled.</p>
     <h2>Intellectual Property</h2>
     <p>All content on this website is the property of Keep It Stylish and may not be reproduced without prior written permission.</p>
-    <h2>Governing Law</h2>
-    <p>These terms are governed by the laws of India. Disputes shall be subject to the courts in Mumbai, Maharashtra.</p>
+
   </div>
 </div>
 
@@ -1102,7 +1083,7 @@ tr:nth-child(even) td{background:var(--ivory)}
           </div>
           <div class="form-grid-2">
             <div><label class="field-label">Email</label><input class="field-input" value="priya@example.com"/></div>
-            <div><label class="field-label">Phone</label><input class="field-input" value="+91 98765 43210"/></div>
+            <div><label class="field-label">Phone</label><input class="field-input" placeholder="+1 (212) 555-0123"/></div>
           </div>
           <button class="btn btn-dark" style="margin-top:16px" onclick="showToast('✓ Profile saved')">Save Changes</button>
         </div>
@@ -1114,7 +1095,7 @@ tr:nth-child(even) td{background:var(--ivory)}
               <span class="order-status-badge status-delivered">Delivered</span>
             </div>
             <p style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--charcoal);margin-bottom:6px">Anaya Kurta Set</p>
-            <p style="font-size:14px;color:var(--charcoal);font-family:'Jost',sans-serif">₹3,499 · Size M · Ivory</p>
+            <p style="font-size:14px;color:var(--charcoal);font-family:'Jost',sans-serif">$36.31 · Size M · Ivory</p>
           </div>
           <div class="order-card">
             <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
@@ -1122,7 +1103,7 @@ tr:nth-child(even) td{background:var(--ivory)}
               <span class="order-status-badge status-shipped">Shipped</span>
             </div>
             <p style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--charcoal);margin-bottom:6px">Meera Lehenga Choli</p>
-            <p style="font-size:14px;color:var(--charcoal);font-family:'Jost',sans-serif">₹7,999 · Size S · Royal Blue</p>
+            <p style="font-size:14px;color:var(--charcoal);font-family:'Jost',sans-serif">$83.01 · Size S · Royal Blue</p>
           </div>
         </div>
       </div>
@@ -1146,7 +1127,7 @@ tr:nth-child(even) td{background:var(--ivory)}
       <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#C9A96E;margin-bottom:10px">The Beginning</p>
       <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--charcoal);margin-bottom:20px">A Childhood Painted in Thread</h2>
       <p style="font-family:'Jost',sans-serif;font-size:15px;color:var(--stone);line-height:1.9;margin-bottom:16px">Long before Keep It Stylish existed, there was a young girl in a small Indian city who spent her afternoons doing something quietly extraordinary. While others played, Manju painted — not on paper, but on fabric. Needle in hand, thread after thread, she created intricate pictures that her family still remembers vividly.</p>
-      <p style="font-family:'Jost',sans-serif;font-size:15px;color:var(--stone);line-height:1.9">She was entirely self-taught. No art school, no mentor, no formal training. Just an instinctive eye for colour, a steady hand, and an obsession with texture that would later become the soul of her brand.</p>
+      <p style="font-family:'Jost',sans-serif;font-size:15px;color:var(--stone);line-height:1.9">She was entirely self-taught. No art school, no mentor, no formal training. Just an instinctive eye for color, a steady hand, and an obsession with texture that would later become the soul of her brand.</p>
     </div>
     <div style="margin-bottom:64px">
       <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#C9A96E;margin-bottom:10px">The Journey</p>
@@ -1195,7 +1176,7 @@ tr:nth-child(even) td{background:var(--ivory)}
         <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">👗</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Bridal Lehengas</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">One-of-a-kind pieces for your most important day</p></div>
         <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">✨</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Indo-Western Fusion</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">Traditional silhouettes in contemporary cuts</p></div>
         <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">🪢</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Zari & Mirror Work</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">Festive embellishment crafted with care</p></div>
-        <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">🎨</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Custom Colour</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">Choose your exact palette — nothing off the shelf</p></div>
+        <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">🎨</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Custom Color</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">Choose your exact palette — nothing off the shelf</p></div>
       </div>
     </div>
   </div>
@@ -1203,17 +1184,17 @@ tr:nth-child(even) td{background:var(--ivory)}
   <div style="max-width:720px;margin:0 auto;padding:96px 32px 120px">
     <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--stone);margin-bottom:10px">Get Started</p>
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;color:var(--charcoal);margin-bottom:12px">Tell Us Your Vision</h2>
-    <p style="font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);margin-bottom:48px;line-height:1.8">Fill in the form below and Manju will personally reach out within 1–2 business days. Prefer to chat first? <a href="https://wa.me/919999999999" target="_blank" style="color:var(--charcoal);font-weight:500">WhatsApp us directly ↗</a></p>
+    <p style="font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);margin-bottom:48px;line-height:1.8">Fill in the form below and Manju will personally reach out within 1–2 business days. Prefer to chat first? <a href="mailto:hello@keepitstylish.in" target="_blank" style="color:var(--charcoal);font-weight:500">Email us directly ↗</a></p>
     <div id="custom-form-wrap">
       <div class="form-grid-2" style="margin-bottom:24px">
-        <div><label class="field-label">Your Name *</label><input class="field-input" id="cf-name" placeholder="Full name"/></div>
-        <div><label class="field-label">Email Address *</label><input class="field-input" id="cf-email" type="email" placeholder="your@email.com"/></div>
+        <div><label class="field-label">Your Name *</label><input class="field-input" id="custom-name" placeholder="Full name"/></div>
+        <div><label class="field-label">Email Address *</label><input class="field-input" id="custom-email" type="email" placeholder="your@email.com"/></div>
       </div>
       <div class="form-grid-2" style="margin-bottom:24px">
-        <div><label class="field-label">Mobile Number *</label><input class="field-input" id="cf-phone" type="tel" placeholder="10-digit Indian mobile"/></div>
+        <div><label class="field-label">Mobile Number *</label><input class="field-input" id="cf-phone" type="tel" placeholder="U.S. phone number"/></div>
         <div><label class="field-label">Approximate Budget</label>
           <select class="field-input" id="cf-budget" style="appearance:none">
-            <option value="">Select a range</option><option>Under ₹5,000</option><option>₹5,000 – ₹10,000</option><option>₹10,000 – ₹20,000</option><option>₹20,000 – ₹40,000</option><option>Above ₹40,000</option>
+            <option value="">Select a range</option><option>Under $51.89</option><option>$51.89 – $103.77</option><option>$103.77 – $207.55</option><option>$207.55 – $415.10</option><option>Above $415.10</option>
           </select>
         </div>
       </div>
@@ -1229,7 +1210,7 @@ tr:nth-child(even) td{background:var(--ivory)}
           </select>
         </div>
       </div>
-      <div style="margin-bottom:24px"><label class="field-label">Describe Your Vision *</label><textarea class="field-input" id="cf-vision" rows="5" placeholder="Tell us about the look you have in mind — colours, silhouette, embroidery ideas…" style="resize:vertical;padding-top:10px;padding-bottom:10px"></textarea></div>
+      <div style="margin-bottom:24px"><label class="field-label">Describe Your Vision *</label><textarea class="field-input" id="cf-vision" rows="5" placeholder="Tell us about the look you have in mind — colors, silhouette, embroidery ideas…" style="resize:vertical;padding-top:10px;padding-bottom:10px"></textarea></div>
       <button class="btn btn-dark btn-full" onclick="submitCustomForm()" style="padding:20px;margin-top:8px">Submit Custom Order Request</button>
     </div>
     <div id="custom-success" style="display:none;text-align:center;padding:64px 0">
@@ -1427,17 +1408,18 @@ tr:nth-child(even) td{background:var(--ivory)}
 <script>
 // ── DATA ──
 const PRODUCTS = [
-  {id:'1',name:'Anaya Kurta Set',price:3499,orig:4200,cat:'indo-western',sizes:['XS','S','M','L','XL'],colors:[{name:'Ivory',hex:'#F8F5F0'},{name:'Blush Rose',hex:'#D4A89A'},{name:'Sage',hex:'#B5C4B1'}],imgs:['https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=700&q=80','https://images.unsplash.com/photo-1594938298603-c8148c4b4ae4?w=700&q=80'],desc:'A refined fusion of traditional craftsmanship and contemporary silhouette. Hand-embroidered details on breathable cotton-silk blend fabric.',isNew:true},
-  {id:'2',name:'Zara Printed Maxi',price:2899,cat:'indo-western',sizes:['S','M','L','XL'],colors:[{name:'Terracotta',hex:'#C4714A'},{name:'Midnight',hex:'#2C2856'}],imgs:['https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700&q=80','https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?w=700&q=80'],desc:'Bold block prints meet flowing silhouettes. Crafted from lightweight georgette for effortless movement.',isBest:true},
-  {id:'3',name:'Meera Lehenga Choli',price:7999,orig:9500,cat:'indian',sizes:['XS','S','M','L'],colors:[{name:'Royal Blue',hex:'#1A3A6B'},{name:'Crimson',hex:'#8B1A1A'},{name:'Forest Green',hex:'#1A4A2E'}],imgs:['https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=700&q=80','https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=700&q=80'],desc:'Regal lehenga choli adorned with intricate zari embroidery and mirror work.',isBest:true},
-  {id:'4',name:'Priya Palazzo Co-ord',price:2299,cat:'indo-western',sizes:['S','M','L','XL'],colors:[{name:'Sand',hex:'#E8DDD0'},{name:'Charcoal',hex:'#2C2420'}],imgs:['https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=700&q=80','https://images.unsplash.com/photo-1622519407650-3df9883f76a5?w=700&q=80'],desc:'Modern minimalism meets Indian sensibility. Cropped blouse with wide-leg palazzo pants.',isNew:true},
-  {id:'5',name:'Radha Anarkali Suit',price:5499,cat:'indian',sizes:['XS','S','M','L','XL'],colors:[{name:'Peach',hex:'#FFBE9F'},{name:'Lavender',hex:'#C8A2C8'},{name:'Mint',hex:'#98D8C8'}],imgs:['https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=700&q=80'],desc:'Timeless Anarkali silhouette in soft chiffon. Delicate floral prints and floor-length cut.'},
-  {id:'6',name:'Kavya Fusion Dress',price:3199,cat:'indo-western',sizes:['S','M','L'],colors:[{name:'Mustard',hex:'#E3A020'},{name:'Rust',hex:'#B5451B'}],imgs:['https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=700&q=80'],desc:'East meets West. Traditional ikat weave fabric shaped into a modern wrap silhouette.',isBest:true},
+{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":[],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/green-dress-garden.png","assets/products/green-dress-city.png","assets/products/green-dress-conservatory.png","assets/products/green-dress-reference.jpg"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Please contact us to confirm available sizes.","isNew":true,"imageNote":"Lifestyle images are AI-generated styling illustrations based on the supplied product photo. The original reference is included in the gallery."},
+  {id:'1',name:'Anaya Kurta Set',price:36.31,orig:43.59,cat:'indo-western',sizes:['XS','S','M','L','XL'],colors:[{name:'Ivory',hex:'#F8F5F0'},{name:'Blush Rose',hex:'#D4A89A'},{name:'Sage',hex:'#B5C4B1'}],imgs:['https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=700&q=80','https://images.unsplash.com/photo-1594938298603-c8148c4b4ae4?w=700&q=80'],desc:'A refined fusion of traditional craftsmanship and contemporary silhouette. Hand-embroidered details on breathable cotton-silk blend fabric.',isNew:true},
+  {id:'2',name:'Zara Printed Maxi',price:30.08,cat:'indo-western',sizes:['S','M','L','XL'],colors:[{name:'Terracotta',hex:'#C4714A'},{name:'Midnight',hex:'#2C2856'}],imgs:['https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700&q=80','https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?w=700&q=80'],desc:'Bold block prints meet flowing silhouettes. Crafted from lightweight georgette for effortless movement.',isBest:true},
+  {id:'3',name:'Meera Lehenga Choli',price:83.01,orig:98.59,cat:'indian',sizes:['XS','S','M','L'],colors:[{name:'Royal Blue',hex:'#1A3A6B'},{name:'Crimson',hex:'#8B1A1A'},{name:'Forest Green',hex:'#1A4A2E'}],imgs:['https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=700&q=80','https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=700&q=80'],desc:'Regal lehenga choli adorned with intricate zari embroidery and mirror work.',isBest:true},
+  {id:'4',name:'Priya Palazzo Co-ord',price:23.86,cat:'indo-western',sizes:['S','M','L','XL'],colors:[{name:'Sand',hex:'#E8DDD0'},{name:'Charcoal',hex:'#2C2420'}],imgs:['https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=700&q=80','https://images.unsplash.com/photo-1622519407650-3df9883f76a5?w=700&q=80'],desc:'Modern minimalism meets Indian sensibility. Cropped blouse with wide-leg palazzo pants.',isNew:true},
+  {id:'5',name:'Radha Anarkali Suit',price:57.07,cat:'indian',sizes:['XS','S','M','L','XL'],colors:[{name:'Peach',hex:'#FFBE9F'},{name:'Lavender',hex:'#C8A2C8'},{name:'Mint',hex:'#98D8C8'}],imgs:['https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=700&q=80'],desc:'Timeless Anarkali silhouette in soft chiffon. Delicate floral prints and floor-length cut.'},
+  {id:'6',name:'Kavya Fusion Dress',price:33.2,cat:'indo-western',sizes:['S','M','L'],colors:[{name:'Mustard',hex:'#E3A020'},{name:'Rust',hex:'#B5451B'}],imgs:['https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=700&q=80'],desc:'East meets West. Traditional ikat weave fabric shaped into a modern wrap silhouette.',isBest:true},
 ];
 
 const COUPONS = {
   'WELCOME10': {discount:10,type:'percent',label:'10% off with WELCOME10'},
-  'FLAT200':   {discount:200,type:'flat',  label:'₹200 off with FLAT200'},
+  'SAVE2': {discount:2,type:'flat',label:'$2.00 off with SAVE2'},
   'FESTIVE15': {discount:15,type:'percent',label:'15% off with FESTIVE15'},
 };
 
@@ -1463,7 +1445,7 @@ function showPage(name) {
 }
 function filterAndGo(cat) {
   showPage('collections');
-  const tabMap = {'all':'tab-all','indo-western':'tab-indo','indian':'tab-indian'};
+  const tabMap = {'all':'tab-all','indo-western':'tab-indo','indian':'tab-indian','dresses':'tab-dresses'};
   document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
   const tab = document.getElementById(tabMap[cat]);
   if (tab) tab.classList.add('active');
@@ -1471,7 +1453,7 @@ function filterAndGo(cat) {
   filteredProducts = cat === 'all' ? [...PRODUCTS] : PRODUCTS.filter(p => p.cat === cat);
   renderCollections(filteredProducts);
   document.getElementById('coll-label').textContent = cat === 'all' ? 'Explore' : 'Category';
-  document.getElementById('coll-heading').textContent = cat === 'all' ? 'Our Collections' : (cat === 'indo-western' ? 'Indo-Western' : 'Indian');
+  document.getElementById('coll-heading').textContent = cat === 'all' ? 'Our Collections' : categoryLabel(cat);
 }
 
 // ── SEARCH ──
@@ -1512,7 +1494,8 @@ function toggleMobileMenu(open) {
 }
 
 // ── FORMAT ──
-function fmt(n) { return '₹' + n.toLocaleString('en-IN'); }
+function fmt(n) { return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n); }
+function categoryLabel(cat) { return ({dresses:'Dresses','indo-western':'Indo-Western',indian:'Indian'})[cat] || cat; }
 
 // ── PRODUCT CARDS ──
 function cardHTML(p) {
@@ -1527,7 +1510,7 @@ function cardHTML(p) {
       <div style="position:absolute;top:14px;left:14px">${badges}</div>
       <div class="product-overlay">View Details</div>
     </div>
-    <p class="product-cat">${p.cat==='indo-western'?'Indo-Western':'Indian'}</p>
+    <p class="product-cat">${categoryLabel(p.cat)}</p>
     <p class="product-name">${p.name}</p>
     <p class="product-price-main">${fmt(p.price)}${p.orig?`<span class="product-price-orig">${fmt(p.orig)}</span>`:''}</p>
   </div>`;
@@ -1569,7 +1552,10 @@ function openProduct(id) {
   currentProduct = p; selSize = ''; selColor = p.colors[0];
   showPage('product');
   document.getElementById('main-img').src = p.imgs[0];
-  document.getElementById('detail-cat').textContent = p.cat==='indo-western'?'Indo-Western':'Indian';
+  document.getElementById('main-img').alt = p.name;
+  document.getElementById('image-note').textContent = p.imageNote || '';
+ document.getElementById('size-availability').textContent = p.sizes.length ? '' : 'Contact us for available sizes and measurements.';
+  document.getElementById('detail-cat').textContent = categoryLabel(p.cat);
   document.getElementById('detail-name').textContent = p.name;
   document.getElementById('detail-price').textContent = fmt(p.price);
   const origEl = document.getElementById('detail-orig');
@@ -1580,10 +1566,10 @@ function openProduct(id) {
   document.getElementById('sel-color-name').textContent = selColor.name;
   document.getElementById('size-error').style.display = 'none';
   const btn = document.getElementById('atc-btn');
-  btn.classList.remove('added'); btn.textContent = '🛍 Add to Bag';
+  btn.classList.remove('added'); btn.textContent = p.sizes.length ? '🛍 Add to Bag' : 'Ask About Sizes';
 
   document.getElementById('thumbs').innerHTML = p.imgs.map((img,i)=>
-    `<img class="gallery-thumb${i===0?' active':''}" src="${img}" onclick="switchImg(this,'${img}')" loading="lazy"/>`
+    `<img class="gallery-thumb${i===0?' active':''}" alt="${p.name} — view ${i+1}" src="${img}" onclick="switchImg(this,'${img}')" loading="lazy"/>`
   ).join('');
   document.getElementById('color-swatches').innerHTML = p.colors.map(c=>
     `<div class="swatch${c.name===selColor.name?' sel':''}" style="background:${c.hex}" title="${c.name}" onclick="pickColor(this,'${c.name}','${c.hex}')"></div>`
@@ -1608,6 +1594,7 @@ function pickSize(el, size) {
   document.getElementById('size-error').style.display = 'none';
 }
 function addToCart() {
+  if (!currentProduct.sizes.length) { window.location.href = 'mailto:hello@keepitstylish.in?subject=Emerald%20Ruffle%20Tier%20Midi%20Dress%20-%20Size%20Inquiry'; return; }
   if (!selSize) { document.getElementById('size-error').style.display='block'; return; }
   const p = currentProduct;
   const cid = `${p.id}-${selSize}-${selColor.name}`;
@@ -1623,14 +1610,14 @@ function addToCart() {
 
 // ── CART ──
 function cartTotals() {
-  const sub = cart.reduce((s,i)=>s+i.price*i.qty, 0);
-  const ship = sub >= 2000 ? 0 : 149;
+  const sub = cart.reduce((s,i)=>s+Math.round(i.price*100)*i.qty, 0)/100;
+  const ship = null; // U.S. shipping rate awaits merchant confirmation.
   let dis = 0;
   if (activeCoupon) {
     const c = COUPONS[activeCoupon];
-    dis = c.type==='percent' ? Math.round(sub*c.discount/100) : Math.min(c.discount,sub);
+    dis = c.type==='percent' ? Math.round(sub*c.discount)/100 : Math.min(c.discount,sub);
   }
-  return {sub, ship, dis, grand: sub+ship-dis};
+  return {sub, ship, dis, grand: Math.round((sub+(ship ?? 0)-dis)*100)/100};
 }
 function renderCart() {
   const {sub,ship,dis,grand} = cartTotals();
@@ -1638,12 +1625,12 @@ function renderCart() {
   document.getElementById('cart-title').textContent = count+(count===1?' Item':' Items');
   document.getElementById('cart-subtotal').textContent = fmt(sub);
   const shipEl = document.getElementById('cart-shipping');
-  shipEl.textContent = ship===0?'Free':fmt(ship);
+  shipEl.textContent = ship===null?'To be confirmed':ship===0?'Free':fmt(ship);
   shipEl.style.color = ship===0?'green':'var(--charcoal)';
   const disRow = document.getElementById('cart-discount-row');
   if (dis>0) { disRow.style.display='flex'; document.getElementById('cart-discount-label').textContent='Discount ('+activeCoupon+')'; document.getElementById('cart-discount-val').textContent='−'+fmt(dis); }
   else disRow.style.display='none';
-  document.getElementById('free-ship-msg').textContent = sub<2000&&sub>0?'Add '+fmt(2000-sub)+' more for free shipping':'';
+  document.getElementById('free-ship-msg').textContent = 'Shipping and sales tax are not included in this estimate.';
   document.getElementById('cart-total').textContent = fmt(grand);
 
   if (cart.length===0) {
@@ -1713,11 +1700,13 @@ function removeCoupon() {
 function renderCheckout() {
   const {sub,ship,grand} = cartTotals();
   document.getElementById('co-sub').textContent = fmt(sub);
+  document.getElementById('place-order-btn').disabled = true;
+  document.getElementById('co-discount').textContent = '−'+fmt(cartTotals().dis);
   const coShip = document.getElementById('co-ship');
-  coShip.textContent = ship===0?'Free':fmt(ship);
+  coShip.textContent = ship===null?'To be confirmed':ship===0?'Free':fmt(ship);
   coShip.style.color = ship===0?'green':'var(--charcoal)';
   document.getElementById('co-total').textContent = fmt(grand);
-  document.getElementById('place-order-btn').textContent = 'Place Order — '+fmt(grand);
+  document.getElementById('place-order-btn').textContent = 'Online Payments Coming Soon';
   document.getElementById('checkout-items').innerHTML = cart.map(i=>`
     <div style="display:flex;gap:14px;margin-bottom:18px;align-items:center">
       <div style="position:relative;flex-shrink:0">
@@ -1739,11 +1728,11 @@ const VALIDATORS = {
   firstName: v => { if(!v.trim()) return 'First name is required'; if(!/^[A-Za-z\s'-]{2,50}$/.test(v.trim())) return 'Enter a valid first name (letters only, 2–50 chars)'; return ''; },
   lastName:  v => { if(!v.trim()) return 'Last name is required'; if(!/^[A-Za-z\s'-]{2,50}$/.test(v.trim())) return 'Enter a valid last name'; return ''; },
   email:     v => { if(!v.trim()) return 'Email address is required'; if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())) return 'Enter a valid email address'; return ''; },
-  phone:     v => { if(!v.trim()) return 'Phone number is required'; if(!/^[6-9]\d{9}$/.test(v.trim().replace(/\s/g,''))) return 'Enter a valid 10-digit Indian mobile number'; return ''; },
+  phone:     v => { if(!v.trim()) return 'Phone number is required'; if(!/^1?[2-9]\d{2}[2-9]\d{6}$/.test(v.trim().replace(/\D/g,''))) return 'Enter a valid U.S. phone number number'; return ''; },
   address:   v => { if(!v.trim()) return 'Street address is required'; if(v.trim().length<10) return 'Please enter a complete address (at least 10 characters)'; return ''; },
   city:      v => { if(!v.trim()) return 'City is required'; if(v.trim().length<2) return 'Enter a valid city name'; return ''; },
-  state:     v => { if(!v) return 'Please select a state'; return ''; },
-  pin:       v => { if(!v.trim()) return 'PIN code is required'; if(!/^\d{6}$/.test(v.trim())) return 'Enter a valid 6-digit PIN code'; return ''; },
+  state:     v => { if(!["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"].includes(v)) return 'Please select a state'; return ''; },
+  pin:       v => { if(!v.trim()) return 'ZIP code is required'; if(!/^\d{5}(-\d{4})?$/.test(v.trim())) return 'Enter a valid 5-digit ZIP or ZIP+4'; return ''; },
 };
 const FIELD_MAP = {
   firstName:'f-firstName', lastName:'f-lastName', email:'f-email', phone:'f-phone',
@@ -1791,7 +1780,7 @@ function goToPayment() {
   }
   document.getElementById('val-banner').classList.remove('visible');
   const fn = getVal('firstName'), ln = getVal('lastName'), addr = getVal('address'), city = getVal('city'), state = getVal('state'), pin = getVal('pin');
-  document.getElementById('shipping-summary-text').textContent = `${fn} ${ln} — ${addr}, ${city}, ${state} ${pin}`;
+  document.getElementById('shipping-summary-text').textContent = `${fn} ${ln} — ${addr}, ${city}, ${state} ${pin}, United States`;
   document.getElementById('co-step1').style.display='none';
   document.getElementById('co-step2').style.display='block';
   document.getElementById('s2-dot').classList.add('done');
@@ -1808,13 +1797,7 @@ function selectPayMethod(el) {
   document.querySelectorAll('.pay-method').forEach(m=>m.classList.remove('selected'));
   el.classList.add('selected');
 }
-function placeOrder() {
-  const fn = getVal('firstName'), email = getVal('email');
-  cart = []; activeCoupon = null; updateBadge();
-  document.getElementById('confirm-name').textContent = 'Thank you, '+fn+'!';
-  document.getElementById('confirm-email').textContent = email;
-  showPage('confirmation');
-}
+function placeOrder() { showToast('Online payments are not yet available. Please contact us for ordering help.'); }
 
 // ── CONTACT ──
 function submitContact() {
@@ -1876,8 +1859,8 @@ function showToast(msg) {
 // ── CUSTOM ATELIER ──
 function renderCustomSteps(){
   const steps = [
-    {n:'01',t:'Share Your Vision',d:'Fill out our custom order form or WhatsApp us directly. Describe the occasion, silhouette, and any embroidery or embellishment ideas you have in mind.'},
-    {n:'02',t:'Fabric & Design Consultation',d:'Manju personally reviews your request and follows up to discuss fabric choices, colour palette, and design details. No detail is too small.'},
+    {n:'01',t:'Share Your Vision',d:'Fill out our custom order form or Email us directly. Describe the occasion, silhouette, and any embroidery or embellishment ideas you have in mind.'},
+    {n:'02',t:'Fabric & Design Consultation',d:'Manju personally reviews your request and follows up to discuss fabric choices, color palette, and design details. No detail is too small.'},
     {n:'03',t:'Your Measurements',d:'Share your measurements using our simple guide, or visit us in person. Every cut is made specifically for your body — no standard sizing.'},
     {n:'04',t:'We Craft Your Piece',d:'Your garment is handcrafted in our studio. Typical turnaround is 2–4 weeks. We send you progress updates along the way.'},
     {n:'05',t:'Delivery & Finishing',d:"Your piece arrives carefully packaged. If any minor alterations are needed, we'll sort them — your satisfaction is the finish line, not dispatch."},
@@ -1892,15 +1875,15 @@ function renderCustomSteps(){
 }
 
 function submitCustomForm() {
-  const name = document.getElementById('cf-name').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
-  const phone = document.getElementById('cf-phone').value.trim().replace(/\s/g,'');
+  const name = document.getElementById('custom-name').value.trim();
+  const email = document.getElementById('custom-email').value.trim();
+  const phone = document.getElementById('cf-phone').value.trim().replace(/\D/g,'');
   const occasion = document.getElementById('cf-occasion').value;
   const garment = document.getElementById('cf-garment').value;
   const vision = document.getElementById('cf-vision').value.trim();
   if (!name || name.length < 2) { showToast('Please enter your name'); return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { showToast('Please enter a valid email'); return; }
-  if (!/^[6-9]\d{9}$/.test(phone)) { showToast('Please enter a valid 10-digit mobile number'); return; }
+  if (!/^1?[2-9]\d{2}[2-9]\d{6}$/.test(phone)) { showToast('Please enter a valid U.S. phone number'); return; }
   if (!occasion) { showToast('Please select an occasion'); return; }
   if (!garment) { showToast('Please select a garment type'); return; }
   if (!vision || vision.length < 20) { showToast('Please describe your vision in more detail'); return; }
@@ -1930,6 +1913,7 @@ function selectLogo(id) {
 // ── INIT ──
 renderHome();
 renderCollections(PRODUCTS);
+if(location.hash==='#emerald-ruffle-midi') openProduct('emerald-ruffle-midi');
 document.getElementById('tab-all').classList.add('active');
 </script>
 </body>
