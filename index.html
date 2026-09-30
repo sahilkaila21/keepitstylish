@@ -477,8 +477,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   <!-- Desktop: left nav links · Mobile: hidden (hamburger takes its place) -->
   <div class="nav-left">
     <button class="nav-link" onclick="showPage('collections')">Collections</button>
-    <button class="nav-link" onclick="filterAndGo('indo-western')">Indo-Western</button>
-    <button class="nav-link" onclick="filterAndGo('indian')">Indian</button>
+    <button class="nav-link" onclick="filterAndGo('dresses')">Dresses</button>
     <button class="nav-link" onclick="showPage('custom')" style="color:#8B4A5A;border-bottom:1px solid #8B4A5A;padding-bottom:1px">Custom Atelier</button>
   </div>
   <!-- Mobile-only hamburger — sits on the LEFT so logo stays centered -->
@@ -525,8 +524,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   <button class="mobile-menu-close" onclick="toggleMobileMenu(false)">✕</button>
   <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('home')">Home</button>
   <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('collections')">All Collections</button>
-  <button class="mobile-nav-link" onclick="toggleMobileMenu(false);filterAndGo('indo-western')">Indo-Western</button>
-  <button class="mobile-nav-link" onclick="toggleMobileMenu(false);filterAndGo('indian')">Indian</button>
+  <button class="mobile-nav-link" onclick="toggleMobileMenu(false);filterAndGo('dresses')">Dresses</button>
   <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('custom')" style="color:#8B4A5A">Custom Atelier</button>
   <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('about')">About Manju</button>
   <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('account')">My Account</button>
@@ -535,29 +533,14 @@ tr:nth-child(even) td{background:var(--ivory)}
 <!-- ════════════════════════ HOME ════════════════════════ -->
 <div id="page-home" class="page active">
   <div class="hero">
-    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1800&q=85" alt="Hero"/>
+    <img src="assets/products/green-dress-garden.png" alt="Emerald Ruffle Tier Midi Dress"/>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-label">New Collection 2025</p>
-      <h1 class="hero-title">The Art of<br><em>Elegant Fusion</em></h1>
+      <p class="hero-label">The Dress Collection</p>
+      <h1 class="hero-title">Two Dresses.<br><em>Your Style.</em></h1>
       <div class="hero-btns">
         <button class="btn btn-ivory" onclick="showPage('collections')">Shop New Arrivals</button>
         <button class="btn btn-outline-light" onclick="showPage('collections')">Explore All</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" style="margin-top:90px">
-    <div class="cat-grid">
-      <div class="cat-tile" onclick="filterAndGo('indo-western')">
-        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=900&q=80" alt="Indo-Western" loading="lazy"/>
-        <div class="cat-overlay"></div>
-        <div class="cat-info"><p class="cat-sub">Fusion for the modern woman</p><h2 class="cat-name">Indo-Western</h2></div>
-      </div>
-      <div class="cat-tile" onclick="filterAndGo('indian')">
-        <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=900&q=80" alt="Indian" loading="lazy"/>
-        <div class="cat-overlay"></div>
-        <div class="cat-info"><p class="cat-sub">Timeless traditional elegance</p><h2 class="cat-name">Indian</h2></div>
       </div>
     </div>
   </div>
@@ -571,15 +554,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   </div>
 
   <div class="marquee-bar">
-    <div class="marquee-inner">✦ Indo-Western &nbsp; ✦ Indian Ethnic &nbsp; ✦ New Arrivals &nbsp; ✦ U.S. Store · USD &nbsp; ✦ Artisan Crafted &nbsp; ✦ Indo-Western &nbsp; ✦ Indian Ethnic &nbsp; ✦ New Arrivals &nbsp; ✦ U.S. Store · USD &nbsp; ✦ Artisan Crafted &nbsp;</div>
-  </div>
-
-  <div class="section" style="margin-top:90px;margin-bottom:90px">
-    <div style="text-align:center;margin-bottom:52px">
-      <p class="section-label">Most Loved</p>
-      <h2 class="section-title">Best Sellers</h2>
-    </div>
-    <div class="product-grid" id="best-sellers-grid"></div>
+    <div class="marquee-inner">✦ Emerald Ruffle Tier Midi Dress &nbsp; ✦ Coral Floral Ruffle Midi Dress &nbsp; ✦ U.S. Store · USD &nbsp; ✦ Emerald Ruffle Tier Midi Dress &nbsp; ✦ Coral Floral Ruffle Midi Dress &nbsp; ✦ U.S. Store · USD &nbsp;</div>
   </div>
 
   <div class="promise-strip">
@@ -592,7 +567,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   </div>
 
   <div class="editorial">
-    <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=900&q=80" alt="Our Story" loading="lazy"/>
+    <img src="assets/products/coral-floral-dress.png" alt="Coral Floral Ruffle Midi Dress" loading="lazy"/>
     <div>
       <p class="section-label">Our Philosophy</p>
       <h2 class="editorial-title">Where Tradition<br><em>Meets Modernity</em></h2>
@@ -617,9 +592,7 @@ tr:nth-child(even) td{background:var(--ivory)}
       <div>
         <p class="footer-col-title">Shop</p>
         <button class="footer-link" onclick="showPage('collections')">New Arrivals</button>
-        <button class="footer-link" onclick="showPage('collections')">Best Sellers</button>
-        <button class="footer-link" onclick="filterAndGo('indo-western')">Indo-Western</button>
-        <button class="footer-link" onclick="filterAndGo('indian')">Indian Ethnic</button>
+        <button class="footer-link" onclick="filterAndGo('dresses')">Dresses</button>
         <button class="footer-link" onclick="showPage('collections')">All Collections</button>
         <button class="footer-link" onclick="showPage('custom')" style="color:#C9A96E">Custom Atelier</button>
       </div>
@@ -656,12 +629,10 @@ tr:nth-child(even) td{background:var(--ivory)}
     <div class="cat-tabs">
       <button class="cat-tab" id="tab-all" onclick="filterProducts('all',this)">All</button>
       <button class="cat-tab" id="tab-dresses" onclick="filterProducts('dresses',this)">Dresses</button>
-<button class="cat-tab" id="tab-indo" onclick="filterProducts('indo-western',this)">Indo-Western</button>
-      <button class="cat-tab" id="tab-indian" onclick="filterProducts('indian',this)">Indian</button>
     </div>
     <div class="controls-row">
       <button class="filter-btn">⚙ Filters</button>
-      <span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif" id="product-count">6 styles</span>
+      <span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif" id="product-count">2 styles</span>
       <select class="sort-select" onchange="sortProducts(this.value)">
         <option value="newest">Newest</option>
         <option value="asc">Price: Low to High</option>
@@ -1080,33 +1051,18 @@ tr:nth-child(even) td{background:var(--ivory)}
         <div id="tab-profile">
           <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--charcoal);margin-bottom:32px">Profile Details</h2>
           <div class="form-grid-2">
-            <div><label class="field-label">First Name</label><input class="field-input" value="Priya"/></div>
-            <div><label class="field-label">Last Name</label><input class="field-input" value="Sharma"/></div>
+            <div><label class="field-label">First Name</label><input class="field-input" placeholder="First name"/></div>
+            <div><label class="field-label">Last Name</label><input class="field-input" placeholder="Last name"/></div>
           </div>
           <div class="form-grid-2">
-            <div><label class="field-label">Email</label><input class="field-input" value="priya@example.com"/></div>
+            <div><label class="field-label">Email</label><input class="field-input" placeholder="you@example.com"/></div>
             <div><label class="field-label">Phone</label><input class="field-input" placeholder="+1 (212) 555-0123"/></div>
           </div>
           <button class="btn btn-dark" style="margin-top:16px" onclick="showToast('✓ Profile saved')">Save Changes</button>
         </div>
         <div id="tab-orders" style="display:none">
           <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--charcoal);margin-bottom:32px">Order History</h2>
-          <div class="order-card">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
-              <div><p style="font-size:11px;letter-spacing:.12em;color:var(--charcoal);font-weight:500;font-family:'Jost',sans-serif">KIS-2025-001</p><p style="font-size:12px;color:var(--stone);margin-top:3px;font-family:'Jost',sans-serif">12 Jan 2025</p></div>
-              <span class="order-status-badge status-delivered">Delivered</span>
-            </div>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--charcoal);margin-bottom:6px">Anaya Kurta Set</p>
-            <p style="font-size:14px;color:var(--charcoal);font-family:'Jost',sans-serif">$36.31 · Size M · Ivory</p>
-          </div>
-          <div class="order-card">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
-              <div><p style="font-size:11px;letter-spacing:.12em;color:var(--charcoal);font-weight:500;font-family:'Jost',sans-serif">KIS-2025-002</p><p style="font-size:12px;color:var(--stone);margin-top:3px;font-family:'Jost',sans-serif">28 Feb 2025</p></div>
-              <span class="order-status-badge status-shipped">Shipped</span>
-            </div>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--charcoal);margin-bottom:6px">Meera Lehenga Choli</p>
-            <p style="font-size:14px;color:var(--charcoal);font-family:'Jost',sans-serif">$83.01 · Size S · Royal Blue</p>
-          </div>
+          <p style="font-size:14px;color:var(--stone);font-family:'Jost',sans-serif">No orders to show yet.</p>
         </div>
       </div>
     </div>
@@ -1115,7 +1071,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 
 <!-- ABOUT PAGE -->
 <div id="page-about" class="page">
-  <div style="position:relative;padding:140px 40px 120px;text-align:center;overflow:hidden;background:linear-gradient(rgba(44,36,32,0.88),rgba(44,36,32,0.88)),url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1400&q=80') center 30%/cover no-repeat">
+  <div style="position:relative;padding:140px 40px 120px;text-align:center;overflow:hidden;background:linear-gradient(rgba(44,36,32,0.88),rgba(44,36,32,0.88)),url('assets/products/green-dress-garden.png') center 30%/cover no-repeat">
     <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);margin-bottom:20px;position:relative;z-index:1">Our Story</p>
     <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,72px);font-weight:300;color:var(--ivory);line-height:1.1;letter-spacing:.03em;max-width:700px;margin:0 auto 24px;position:relative;z-index:1">The Woman Behind the Thread</h1>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:#D4A89A;letter-spacing:.05em;position:relative;z-index:1">Manju's Story</p>
@@ -1410,14 +1366,8 @@ tr:nth-child(even) td{background:var(--ivory)}
 <script>
 // ── DATA ──
 const PRODUCTS = [
-{"id":"coral-floral-ruffle-midi","name":"Coral Floral Ruffle Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Coral Floral","hex":"#E48877"}],"imgs":["assets/products/coral-floral-dress.png","assets/products/coral-floral-reference.jpg"],"desc":"Coral floral prints on an ivory base, a softly ruffled V-neckline, three-quarter sleeves with flared cuffs, and a flowing midi skirt with a gathered lower tier. Available in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"The standalone model image is AI-generated from the supplied reference. Only Coral Floral is offered; the reference collage also shows other colors."},
-{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/green-dress-garden.png","assets/products/green-dress-city.png","assets/products/green-dress-conservatory-front.png","assets/products/green-dress-reference.jpg"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Available now in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Lifestyle images are AI-generated styling illustrations based on the supplied product photo. The original reference is included in the gallery."},
-  {id:'1',name:'Anaya Kurta Set',price:36.31,orig:43.59,cat:'indo-western',sizes:['XS','S','M','L','XL'],colors:[{name:'Ivory',hex:'#F8F5F0'},{name:'Blush Rose',hex:'#D4A89A'},{name:'Sage',hex:'#B5C4B1'}],imgs:['https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=700&q=80','https://images.unsplash.com/photo-1594938298603-c8148c4b4ae4?w=700&q=80'],desc:'A refined fusion of traditional craftsmanship and contemporary silhouette. Hand-embroidered details on breathable cotton-silk blend fabric.',isNew:true},
-  {id:'2',name:'Zara Printed Maxi',price:30.08,cat:'indo-western',sizes:['S','M','L','XL'],colors:[{name:'Terracotta',hex:'#C4714A'},{name:'Midnight',hex:'#2C2856'}],imgs:['https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700&q=80','https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?w=700&q=80'],desc:'Bold block prints meet flowing silhouettes. Crafted from lightweight georgette for effortless movement.',isBest:true},
-  {id:'3',name:'Meera Lehenga Choli',price:83.01,orig:98.59,cat:'indian',sizes:['XS','S','M','L'],colors:[{name:'Royal Blue',hex:'#1A3A6B'},{name:'Crimson',hex:'#8B1A1A'},{name:'Forest Green',hex:'#1A4A2E'}],imgs:['https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=700&q=80','https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=700&q=80'],desc:'Regal lehenga choli adorned with intricate zari embroidery and mirror work.',isBest:true},
-  {id:'4',name:'Priya Palazzo Co-ord',price:23.86,cat:'indo-western',sizes:['S','M','L','XL'],colors:[{name:'Sand',hex:'#E8DDD0'},{name:'Charcoal',hex:'#2C2420'}],imgs:['https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=700&q=80','https://images.unsplash.com/photo-1622519407650-3df9883f76a5?w=700&q=80'],desc:'Modern minimalism meets Indian sensibility. Cropped blouse with wide-leg palazzo pants.',isNew:true},
-  {id:'5',name:'Radha Anarkali Suit',price:57.07,cat:'indian',sizes:['XS','S','M','L','XL'],colors:[{name:'Peach',hex:'#FFBE9F'},{name:'Lavender',hex:'#C8A2C8'},{name:'Mint',hex:'#98D8C8'}],imgs:['https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=700&q=80'],desc:'Timeless Anarkali silhouette in soft chiffon. Delicate floral prints and floor-length cut.'},
-  {id:'6',name:'Kavya Fusion Dress',price:33.2,cat:'indo-western',sizes:['S','M','L'],colors:[{name:'Mustard',hex:'#E3A020'},{name:'Rust',hex:'#B5451B'}],imgs:['https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=700&q=80'],desc:'East meets West. Traditional ikat weave fabric shaped into a modern wrap silhouette.',isBest:true},
+{"id":"coral-floral-ruffle-midi","name":"Coral Floral Ruffle Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Coral Floral","hex":"#E48877"}],"imgs":["assets/products/coral-floral-dress.png"],"desc":"Coral floral prints on an ivory base, a softly ruffled V-neckline, three-quarter sleeves with flared cuffs, and a flowing midi skirt with a gathered lower tier. Available in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Model image is AI-generated from the supplied coral floral dress reference."},
+{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/green-dress-garden.png","assets/products/green-dress-city.png","assets/products/green-dress-conservatory-front.png"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Available now in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Lifestyle images are AI-generated styling illustrations based on the supplied dress references."},
 ];
 
 const COUPONS = {
@@ -1448,7 +1398,7 @@ function showPage(name) {
 }
 function filterAndGo(cat) {
   showPage('collections');
-  const tabMap = {'all':'tab-all','indo-western':'tab-indo','indian':'tab-indian','dresses':'tab-dresses'};
+  const tabMap = {'all':'tab-all','dresses':'tab-dresses'};
   document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
   const tab = document.getElementById(tabMap[cat]);
   if (tab) tab.classList.add('active');
@@ -1498,13 +1448,12 @@ function toggleMobileMenu(open) {
 
 // ── FORMAT ──
 function fmt(n) { return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n); }
-function categoryLabel(cat) { return ({dresses:'Dresses','indo-western':'Indo-Western',indian:'Indian'})[cat] || cat; }
+function categoryLabel(cat) { return cat === 'dresses' ? 'Dresses' : cat; }
 
 // ── PRODUCT CARDS ──
 function cardHTML(p) {
   const badges = [
     p.isNew ? `<span class="badge badge-new">New</span>` : '',
-    p.isBest ? `<span class="badge badge-best">Best Seller</span>` : '',
     p.orig ? `<span class="badge badge-sale">Sale</span>` : '',
   ].filter(Boolean).join('<br/>');
   return `<div class="product-card" onclick="openProduct('${p.id}')">
@@ -1522,7 +1471,6 @@ function cardHTML(p) {
 // ── HOME ──
 function renderHome() {
   document.getElementById('new-arrivals-grid').innerHTML = PRODUCTS.filter(p=>p.isNew).map(cardHTML).join('');
-  document.getElementById('best-sellers-grid').innerHTML = PRODUCTS.filter(p=>p.isBest).map(cardHTML).join('');
 }
 
 // ── COLLECTIONS ──
