@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Keep It Stylish | U.S. Store</title>
-<meta name="description" content="Shop Keep It Stylish in U.S. dollars. Discover the Emerald Ruffle Tier Midi Dress for $54.99 and curated fashion."/>
+<meta name="description" content="Shop Keep It Stylish in U.S. dollars. Discover emerald and coral floral midi dresses for $54.99 and curated fashion."/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%232C2420'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='21' font-weight='400' fill='%23F8F5F0' letter-spacing='2'>KIS</text></svg>"/>
+<link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -486,7 +486,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   <!-- Centered logo -->
   <div class="nav-logo" onclick="showPage('home')" style="display:flex;align-items:center;gap:16px">
     <div style="border:1.5px solid var(--charcoal);width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.08em;color:var(--charcoal)">KIS</span>
+      <img src="assets/brand/kis-star.svg" alt="KIS with a star above the I" style="width:100%;height:100%;display:block"/>
     </div>
     <div style="text-align:left">
       <div class="nav-logo-main" style="font-size:26px;letter-spacing:.08em">Keep It Stylish</div>
@@ -606,7 +606,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   <footer>
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">Keep It Stylish</div>
+        <div class="footer-brand" style="display:flex;align-items:center;gap:12px"><img src="assets/brand/kis-star-light.svg" alt="KIS with a star above the I" width="56" height="56"/>Keep It Stylish</div>
         <p class="footer-desc">Curated women's fashion blending the richness of Indian heritage with the ease of modern style.</p>
         <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sand);margin-bottom:12px;font-family:'Jost',sans-serif">Join our circle</p>
         <div class="newsletter-row">
@@ -1410,6 +1410,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 <script>
 // ── DATA ──
 const PRODUCTS = [
+{"id":"coral-floral-ruffle-midi","name":"Coral Floral Ruffle Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Coral Floral","hex":"#E48877"}],"imgs":["assets/products/coral-floral-dress.png","assets/products/coral-floral-reference.jpg"],"desc":"Coral floral prints on an ivory base, a softly ruffled V-neckline, three-quarter sleeves with flared cuffs, and a flowing midi skirt with a gathered lower tier. Available in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"The standalone model image is AI-generated from the supplied reference. Only Coral Floral is offered; the reference collage also shows other colors."},
 {"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/green-dress-garden.png","assets/products/green-dress-city.png","assets/products/green-dress-conservatory-front.png","assets/products/green-dress-reference.jpg"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Available now in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Lifestyle images are AI-generated styling illustrations based on the supplied product photo. The original reference is included in the gallery."},
   {id:'1',name:'Anaya Kurta Set',price:36.31,orig:43.59,cat:'indo-western',sizes:['XS','S','M','L','XL'],colors:[{name:'Ivory',hex:'#F8F5F0'},{name:'Blush Rose',hex:'#D4A89A'},{name:'Sage',hex:'#B5C4B1'}],imgs:['https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=700&q=80','https://images.unsplash.com/photo-1594938298603-c8148c4b4ae4?w=700&q=80'],desc:'A refined fusion of traditional craftsmanship and contemporary silhouette. Hand-embroidered details on breathable cotton-silk blend fabric.',isNew:true},
   {id:'2',name:'Zara Printed Maxi',price:30.08,cat:'indo-western',sizes:['S','M','L','XL'],colors:[{name:'Terracotta',hex:'#C4714A'},{name:'Midnight',hex:'#2C2856'}],imgs:['https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700&q=80','https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?w=700&q=80'],desc:'Bold block prints meet flowing silhouettes. Crafted from lightweight georgette for effortless movement.',isBest:true},
@@ -1607,11 +1608,11 @@ function pickSize(el, size) {
   document.getElementById('size-error').style.display='none';
   updateSizeAction();
 }
-function restockMailto(product, size) {
-  return 'mailto:hello@keepitstylish.in?subject='+encodeURIComponent('Availability alert: '+product.name+' — '+size)+'&body='+encodeURIComponent('Please notify me when '+product.name+' in size '+size+' (Emerald Green) is available. Thank you.');
+function restockMailto(product, size, color = product.colors[0].name) {
+  return 'mailto:hello@keepitstylish.in?subject='+encodeURIComponent('Availability alert: '+product.name+' — '+size)+'&body='+encodeURIComponent('Please notify me when '+product.name+' in size '+size+' ('+color+') is available. Thank you.');
 }
 function addToCart() {
-  if ((currentProduct.upcomingSizes || []).includes(selSize)) { window.location.href=restockMailto(currentProduct,selSize); return; }
+  if ((currentProduct.upcomingSizes || []).includes(selSize)) { window.location.href=restockMailto(currentProduct,selSize,selColor.name); return; }
   if (!currentProduct.sizes.includes(selSize)) { document.getElementById('size-error').style.display='block'; return; }
   const p = currentProduct;
   const cid = `${p.id}-${selSize}-${selColor.name}`;
@@ -1930,7 +1931,8 @@ function selectLogo(id) {
 // ── INIT ──
 renderHome();
 renderCollections(PRODUCTS);
-if(location.hash==='#emerald-ruffle-midi') openProduct('emerald-ruffle-midi');
+const linkedProduct = PRODUCTS.find(p => '#'+p.id === location.hash);
+if(linkedProduct) openProduct(linkedProduct.id);
 document.getElementById('tab-all').classList.add('active');
 </script>
 </body>
