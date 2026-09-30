@@ -463,6 +463,8 @@ tr:nth-child(even) td{background:var(--ivory)}
 .gallery-main img{object-fit:contain}.gallery-thumbs{flex-wrap:wrap}button:disabled{opacity:.6;cursor:not-allowed}
 
 @media(min-width:769px) and (max-width:1200px){.nav-left{gap:10px}.nav-link{font-size:9px;letter-spacing:.1em}.nav-logo-main{font-size:26px}}
+
+.size-coming{width:78px;border-style:dashed;color:var(--stone)}.size-coming small{display:block;font-size:9px;line-height:1.4;margin-top:3px}.size-btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
 </head>
 <body>
@@ -1408,7 +1410,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 <script>
 // ── DATA ──
 const PRODUCTS = [
-{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":[],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/green-dress-garden.png","assets/products/green-dress-city.png","assets/products/green-dress-conservatory.png","assets/products/green-dress-reference.jpg"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Please contact us to confirm available sizes.","isNew":true,"imageNote":"Lifestyle images are AI-generated styling illustrations based on the supplied product photo. The original reference is included in the gallery."},
+{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/green-dress-garden.png","assets/products/green-dress-city.png","assets/products/green-dress-conservatory-front.png","assets/products/green-dress-reference.jpg"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Available now in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Lifestyle images are AI-generated styling illustrations based on the supplied product photo. The original reference is included in the gallery."},
   {id:'1',name:'Anaya Kurta Set',price:36.31,orig:43.59,cat:'indo-western',sizes:['XS','S','M','L','XL'],colors:[{name:'Ivory',hex:'#F8F5F0'},{name:'Blush Rose',hex:'#D4A89A'},{name:'Sage',hex:'#B5C4B1'}],imgs:['https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=700&q=80','https://images.unsplash.com/photo-1594938298603-c8148c4b4ae4?w=700&q=80'],desc:'A refined fusion of traditional craftsmanship and contemporary silhouette. Hand-embroidered details on breathable cotton-silk blend fabric.',isNew:true},
   {id:'2',name:'Zara Printed Maxi',price:30.08,cat:'indo-western',sizes:['S','M','L','XL'],colors:[{name:'Terracotta',hex:'#C4714A'},{name:'Midnight',hex:'#2C2856'}],imgs:['https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700&q=80','https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?w=700&q=80'],desc:'Bold block prints meet flowing silhouettes. Crafted from lightweight georgette for effortless movement.',isBest:true},
   {id:'3',name:'Meera Lehenga Choli',price:83.01,orig:98.59,cat:'indian',sizes:['XS','S','M','L'],colors:[{name:'Royal Blue',hex:'#1A3A6B'},{name:'Crimson',hex:'#8B1A1A'},{name:'Forest Green',hex:'#1A4A2E'}],imgs:['https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=700&q=80','https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=700&q=80'],desc:'Regal lehenga choli adorned with intricate zari embroidery and mirror work.',isBest:true},
@@ -1554,7 +1556,7 @@ function openProduct(id) {
   document.getElementById('main-img').src = p.imgs[0];
   document.getElementById('main-img').alt = p.name;
   document.getElementById('image-note').textContent = p.imageNote || '';
- document.getElementById('size-availability').textContent = p.sizes.length ? '' : 'Contact us for available sizes and measurements.';
+ document.getElementById('size-availability').textContent = p.upcomingSizes ? 'S, M, L available · XS and XL coming soon' : '';
   document.getElementById('detail-cat').textContent = categoryLabel(p.cat);
   document.getElementById('detail-name').textContent = p.name;
   document.getElementById('detail-price').textContent = fmt(p.price);
@@ -1574,9 +1576,13 @@ function openProduct(id) {
   document.getElementById('color-swatches').innerHTML = p.colors.map(c=>
     `<div class="swatch${c.name===selColor.name?' sel':''}" style="background:${c.hex}" title="${c.name}" onclick="pickColor(this,'${c.name}','${c.hex}')"></div>`
   ).join('');
-  document.getElementById('size-grid').innerHTML = p.sizes.map(s=>
-    `<button class="size-btn" onclick="pickSize(this,'${s}')">${s}</button>`
-  ).join('');
+  const sizeOrder = ['XS','S','M','L','XL'];
+  const allSizes = [...p.sizes,...(p.upcomingSizes || [])].sort((a,b)=>sizeOrder.indexOf(a)-sizeOrder.indexOf(b));
+  document.getElementById('size-grid').innerHTML = allSizes.map(size => {
+    const coming = (p.upcomingSizes || []).includes(size);
+    return '<button class="size-btn'+(coming?' size-coming':'')+'" aria-pressed="false" aria-label="'+size+(coming?' — coming soon, get notified':' — available')+'" onclick="pickSize(this,\''+size+'\')">'+size+(coming?'<small>Get notified</small>':'')+'</button>';
+  }).join('');
+  updateSizeAction();
 }
 function switchImg(el, src) {
   document.getElementById('main-img').src = src;
@@ -1588,14 +1594,25 @@ function pickColor(el, name, hex) {
   el.classList.add('sel'); selColor={name,hex};
   document.getElementById('sel-color-name').textContent = name;
 }
+function updateSizeAction() {
+  const upcoming = (currentProduct.upcomingSizes || []).includes(selSize);
+  const btn = document.getElementById('atc-btn');
+  btn.classList.remove('added');
+  btn.textContent = upcoming ? 'Get Notified — '+selSize : '🛍 Add to Bag';
+  document.getElementById('size-availability').textContent = upcoming ? selSize+' is coming soon. Get notified opens your email app to request an availability alert.' : currentProduct.upcomingSizes ? 'S, M, L available · XS and XL coming soon' : '';
+}
 function pickSize(el, size) {
-  document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('sel'));
-  el.classList.add('sel'); selSize = size;
-  document.getElementById('size-error').style.display = 'none';
+  document.querySelectorAll('.size-btn').forEach(b=>{b.classList.remove('sel');b.setAttribute('aria-pressed','false');});
+  el.classList.add('sel'); el.setAttribute('aria-pressed','true'); selSize=size;
+  document.getElementById('size-error').style.display='none';
+  updateSizeAction();
+}
+function restockMailto(product, size) {
+  return 'mailto:hello@keepitstylish.in?subject='+encodeURIComponent('Availability alert: '+product.name+' — '+size)+'&body='+encodeURIComponent('Please notify me when '+product.name+' in size '+size+' (Emerald Green) is available. Thank you.');
 }
 function addToCart() {
-  if (!currentProduct.sizes.length) { window.location.href = 'mailto:hello@keepitstylish.in?subject=Emerald%20Ruffle%20Tier%20Midi%20Dress%20-%20Size%20Inquiry'; return; }
-  if (!selSize) { document.getElementById('size-error').style.display='block'; return; }
+  if ((currentProduct.upcomingSizes || []).includes(selSize)) { window.location.href=restockMailto(currentProduct,selSize); return; }
+  if (!currentProduct.sizes.includes(selSize)) { document.getElementById('size-error').style.display='block'; return; }
   const p = currentProduct;
   const cid = `${p.id}-${selSize}-${selColor.name}`;
   const ex = cart.find(i=>i.id===cid);
@@ -1604,7 +1621,7 @@ function addToCart() {
   updateBadge();
   const btn = document.getElementById('atc-btn');
   btn.classList.add('added'); btn.textContent = '✓ Added to Bag';
-  setTimeout(()=>{ btn.classList.remove('added'); btn.textContent='🛍 Add to Bag'; }, 2200);
+  setTimeout(()=>{ updateSizeAction(); }, 2200);
   showToast('✓ '+p.name+' added to bag');
 }
 
