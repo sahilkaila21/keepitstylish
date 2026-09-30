@@ -22,12 +22,13 @@ body{background:var(--warm);color:var(--charcoal);font-family:'Jost',sans-serif;
 .announce{background:var(--charcoal);color:var(--ivory);text-align:center;padding:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-family:'Jost',sans-serif}
 
 /* ── NAVBAR ── */
-nav{position:sticky;top:0;z-index:100;background:rgba(253,250,246,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--sand);height:72px;display:flex;align-items:center;padding:0 40px}
+nav{position:sticky;top:0;z-index:100;background:rgba(253,250,246,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--sand);height:100px;display:flex;align-items:center;padding:0 40px}
 .nav-left{display:flex;gap:18px}
 .nav-logo{position:absolute;left:50%;transform:translateX(-50%);text-align:center;cursor:pointer;text-decoration:none}
 .nav-logo-main{font-family:'Cormorant Garamond',serif;font-size:32px;letter-spacing:.1em;color:var(--charcoal);line-height:1}
 .nav-logo-sub{font-size:9px;letter-spacing:.3em;color:var(--stone);text-transform:uppercase;margin-top:4px;font-family:'Jost',sans-serif}
-.kis-star{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:11px;height:11px;fill:var(--charcoal);pointer-events:none}
+.brand-label-logo{display:block;width:190px;height:95px;background:url('assets/brand/kis-label-no-origin.png') center/155% auto no-repeat}
+.brand-label-footer{width:190px;height:95px}
 .nav-right{margin-left:auto;display:flex;gap:20px;align-items:center}
 .nav-link{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--charcoal);cursor:pointer;font-family:'Jost',sans-serif;background:none;border:none;transition:color .2s;padding:4px}
 .nav-link:hover{color:var(--stone)}
@@ -295,19 +296,14 @@ tr:nth-child(even) td{background:var(--ivory)}
 ══════════════════════════════════════════════ */
 @media(max-width:640px){
   /* ── Nav ── */
-  nav{padding:0 12px;height:60px}
+  nav{padding:0 12px;height:64px}
   nav .nav-left{display:none}
 
   /* Hamburger — visible on left on mobile */
   .hamburger{display:flex!important}
 
   /* Logo — centered, compact on mobile */
-  .nav-logo{gap:10px!important}
-  .nav-logo > div:first-child{width:34px!important;height:34px!important}
-  .kis-star{top:1px;width:8px;height:8px}
-  .nav-logo > div:first-child span{font-size:15px!important}
-  .nav-logo-main{font-size:16px!important;letter-spacing:.05em!important}
-  .nav-logo-sub{font-size:7px!important;letter-spacing:.18em!important;margin-top:2px!important}
+  .nav-logo .brand-label-logo{width:116px;height:58px}
 
   /* Right-side icons — smaller, tight, no clutter */
   .nav-right{gap:0;margin-left:auto}
@@ -485,15 +481,8 @@ tr:nth-child(even) td{background:var(--ivory)}
   <!-- Mobile-only hamburger — sits on the LEFT so logo stays centered -->
   <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Menu">☰</button>
   <!-- Centered logo -->
-  <div class="nav-logo" onclick="showPage('home')" style="display:flex;align-items:center;gap:16px">
-    <div style="border:1.5px solid var(--charcoal);width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative">
-      <svg class="kis-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1C11 7 8 10 2 12C8 14 11 17 12 23C13 17 16 14 22 12C16 10 13 7 12 1Z"/></svg>
-      <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.08em;color:var(--charcoal)">KIS</span>
-    </div>
-    <div style="text-align:left">
-      <div class="nav-logo-main" style="font-size:26px;letter-spacing:.08em">Keep It Stylish</div>
-      <div class="nav-logo-sub" style="margin-top:4px">Manju's Fashion</div>
-    </div>
+  <div class="nav-logo" onclick="showPage('home')" role="link" aria-label="Keep It Stylish — home">
+    <span class="brand-label-logo" role="img" aria-label="KIS Keep It Stylish logo"></span>
   </div>
   <!-- Right: icons -->
   <div class="nav-right">
@@ -584,7 +573,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   <footer>
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">Keep It Stylish</div>
+        <div class="footer-brand"><span class="brand-label-logo brand-label-footer" role="img" aria-label="KIS Keep It Stylish logo"></span></div>
         <p class="footer-desc">Curated women's fashion blending the richness of Indian heritage with the ease of modern style.</p>
         <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sand);margin-bottom:12px;font-family:'Jost',sans-serif">Join our circle</p>
         <div class="newsletter-row">
