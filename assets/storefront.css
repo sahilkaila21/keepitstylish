@@ -1,4 +1,12 @@
 :root{--stone:#74675e}
+html{scroll-padding-top:90px}
+input,select,textarea{font-size:16px!important}
+.search-close,.mobile-menu-close,.cart-btn,.nav-icon-btn{min-width:44px;min-height:44px}
+.hero-label{color:#fff}
+.hero-overlay{background:linear-gradient(to top,rgba(28,23,20,.9),rgba(28,23,20,.52) 55%,rgba(28,23,20,.08))}
+h1[tabindex="-1"]:focus,main[tabindex="-1"]:focus{outline:none}
+.mobile-nav-link{color:var(--charcoal);text-decoration:none}
+footer :focus-visible{outline-color:var(--ivory)!important}
 a.product-card{display:block;color:inherit;text-decoration:none}
 a.nav-link,a.footer-link{text-decoration:none}
 :where(a,button,input,select,textarea):focus-visible{outline:2px solid var(--rose)!important;outline-offset:4px}
@@ -18,6 +26,19 @@ a.nav-link,a.footer-link{text-decoration:none}
 .product-card:focus-visible .product-overlay{transform:translateY(0)}
 footer{margin-top:40px}
 footer{--stone:#b9aba0}
+.gallery-main{display:block;width:100%;padding:0;border:0;cursor:zoom-in}
+.zoom-hint{position:absolute;right:12px;bottom:12px;background:var(--charcoal);color:white;padding:10px 14px;font:13px 'Jost',sans-serif}
+.gallery-controls{display:flex;align-items:center;justify-content:space-between;margin:12px 0;font-size:14px}
+.gallery-controls button,.zoom-toolbar button{min-width:44px;min-height:44px;padding:10px 14px;border:1px solid var(--sand);background:var(--warm);color:var(--charcoal);cursor:pointer}
+.fit-note{padding:16px;border-left:2px solid var(--rose);background:var(--ivory)}
+#image-zoom{width:min(1100px,96vw);max-width:96vw;max-height:94vh;padding:16px;border:0;background:var(--warm);color:var(--charcoal);margin:auto}
+#image-zoom::backdrop{background:rgba(0,0,0,.75)}
+.zoom-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.zoom-toolbar h2{font-size:24px;font-weight:400;flex:1}
+.zoom-canvas{height:65vh;overflow:auto;margin:16px 0;text-align:center}
+.zoom-canvas img{height:100%;max-width:100%;object-fit:contain}
+.zoom-canvas img.magnified{height:130vh;max-width:none}
+[hidden]{display:none!important}
 .preview-banner{background:var(--charcoal);color:var(--ivory);text-align:center;padding:10px 20px;font-size:12px;letter-spacing:.04em;line-height:1.5}
 .preview-banner a{color:inherit;text-underline-offset:3px}
 @media(max-width:1100px){.nav-right>.nav-link:not(.nav-icon-btn){display:none}}

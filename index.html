@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Keep It Stylish | U.S. Store</title>
 <meta name="description" content="Shop Keep It Stylish in U.S. dollars. Discover emerald and coral floral midi dresses for $54.99 and curated fashion."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 <link rel="icon" href="assets/brand/favicon.ico" sizes="any"/>
 <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg?v=original-2"/>
@@ -482,7 +484,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-2"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-4"/>
 </head>
 <body><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -491,8 +493,8 @@ tr:nth-child(even) td{background:var(--ivory)}
 <nav>
   <!-- Desktop: left nav links · Mobile: hidden (hamburger takes its place) -->
   <div class="nav-left">
-    <button class="nav-link" onclick="showPage('collections')">Collections</button>
-    <button class="nav-link" onclick="filterAndGo('dresses')">Dresses</button>
+    <button class="nav-link" onclick="showPage('collections')">Shop Dresses</button>
+
     <button class="nav-link" onclick="showPage('custom')" style="color:#8B4A5A;border-bottom:1px solid #8B4A5A;padding-bottom:1px">Custom Atelier</button>
   </div>
   <!-- Mobile-only hamburger — sits on the LEFT so logo stays centered -->
@@ -521,19 +523,19 @@ tr:nth-child(even) td{background:var(--ivory)}
 <div id="search-overlay" class="search-overlay" style="display:none">
   <div class="search-inner">
     <form onsubmit="doSearch(event)">
-      <input class="search-input-el" id="search-input" placeholder="Search styles…" autocomplete="off"/>
+      <input class="search-input-el" id="search-input" aria-label="Search dresses" placeholder="Search styles…" autocomplete="off"/>
     </form>
     <p style="font-size:11px;color:var(--stone);margin-top:16px;letter-spacing:.1em;font-family:'Jost',sans-serif">Press Enter to search · Esc to close</p>
   </div>
-  <button class="search-close" onclick="closeSearch()">✕</button>
+  <button class="search-close" aria-label="Close search" onclick="closeSearch()">✕</button>
 </div>
 
 <!-- MOBILE MENU -->
 <div id="mobile-menu" class="mobile-menu" style="display:none">
-  <button class="mobile-menu-close" onclick="toggleMobileMenu(false)">✕</button>
+  <button class="mobile-menu-close" aria-label="Close menu" onclick="toggleMobileMenu(false)">✕</button>
   <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('home')">Home</button>
-  <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('collections')">All Collections</button>
-  <button class="mobile-nav-link" onclick="toggleMobileMenu(false);filterAndGo('dresses')">Dresses</button>
+  <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('collections')">Shop Dresses</button>
+
   <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('custom')" style="color:#8B4A5A">Custom Atelier</button>
   <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('about')">About Manju</button>
   <button class="mobile-nav-link" onclick="toggleMobileMenu(false);showPage('account')">My Account</button>
@@ -544,7 +546,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 <main id="main-content" tabindex="-1">
 <div id="page-home" class="page active">
   <div class="hero">
-    <img src="assets/products/green-dress-garden-1280.webp" alt="Emerald Ruffle Tier Midi Dress"/>
+    <img src="assets/products/green-dress-garden-1280.webp" srcset="assets/products/green-dress-garden-640.webp 640w, assets/products/green-dress-garden-1280.webp 1280w" sizes="100vw" fetchpriority="high" alt="Emerald Ruffle Tier Midi Dress"/>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">The Dress Collection</p>
@@ -571,9 +573,9 @@ tr:nth-child(even) td{background:var(--ivory)}
   <div class="promise-strip">
     <div class="promise-grid">
       <div><div class="promise-icon">✦</div><p class="promise-title">Curated Selection</p><p class="promise-text">Handpicked styles for the modern woman</p></div>
-      <div><div class="promise-icon">◈</div><p class="promise-title">Artisan Crafted</p><p class="promise-text">Celebrating India's rich weaving traditions</p></div>
+      <div><div class="promise-icon">◈</div><p class="promise-title">Explore the Details</p><p class="promise-text">View each dress and ask us about fit</p></div>
       <div><div class="promise-icon">◇</div><p class="promise-title">U.S. Store</p><p class="promise-text">Shop in U.S. dollars</p></div>
-      <div><div class="promise-icon">↩</div><p class="promise-title">Easy Returns</p><p class="promise-text">Read our return policy before ordering</p></div>
+      <div><div class="promise-icon">↩</div><p class="promise-title">Return Information</p><p class="promise-text">Read our return policy before ordering</p></div>
     </div>
   </div>
 
@@ -606,7 +608,7 @@ tr:nth-child(even) td{background:var(--ivory)}
     <div class="controls-row">
 
       <span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif" id="product-count">2 styles</span>
-      <select class="sort-select" onchange="sortProducts(this.value)">
+      <select class="sort-select" aria-label="Sort dresses" onchange="sortProducts(this.value)">
         <option value="newest">Newest</option>
         <option value="asc">Price: Low to High</option>
         <option value="desc">Price: High to Low</option>
@@ -623,7 +625,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   </div>
   <div class="product-detail-grid">
     <div>
-      <div class="gallery-main"><img id="main-img" src="" alt="Product"/></div>
+      <button type="button" class="gallery-main" id="zoom-open" onclick="openImageZoom()" aria-label="Enlarge product image"><img id="main-img" alt="Product"/><span class="zoom-hint">View larger ↗</span></button><div class="gallery-controls"><button type="button" data-gallery-direction="-1" aria-label="Previous product image">←</button><span id="gallery-counter" aria-live="polite"></span><button type="button" data-gallery-direction="1" aria-label="Next product image">→</button></div>
       <div class="gallery-thumbs" id="thumbs"></div><p id="image-note" style="font-size:12px;color:var(--stone);line-height:1.6;margin-top:14px"></p>
     </div>
     <div>
@@ -693,11 +695,11 @@ tr:nth-child(even) td{background:var(--ivory)}
         <div id="coupon-section">
           <div id="coupon-applied" class="coupon-success" style="display:none">
             <span id="coupon-success-msg"></span>
-            <button class="coupon-remove" onclick="removeCoupon()">✕</button>
+            <button class="coupon-remove" aria-label="Remove promo code" onclick="removeCoupon()">✕</button>
           </div>
           <div id="coupon-form">
             <div class="coupon-row">
-              <input class="coupon-input" id="coupon-input" type="text" placeholder="Promo code" onkeydown="if(event.key==='Enter')applyCoupon()"/>
+              <input class="coupon-input" id="coupon-input" aria-label="Promo code" type="text" placeholder="Promo code" onkeydown="if(event.key==='Enter')applyCoupon()"/>
               <button class="coupon-apply" onclick="applyCoupon()">Apply</button>
             </div>
             <p id="coupon-error" style="font-size:11px;color:var(--rose);margin-bottom:8px;font-family:'Jost',sans-serif;display:none"></p>
@@ -854,8 +856,8 @@ tr:nth-child(even) td{background:var(--ivory)}
 <div id="page-size-guide" class="page">
   <div class="content-page">
     <p class="section-label">Find Your Fit</p>
-    <h1>Size Guide</h1>
-    <p style="margin-bottom:40px">All measurements are in inches unless noted. When between sizes, we recommend sizing up.</p>
+    <a id="size-guide-return" class="back-link" hidden></a><h1>Size Guide</h1><p class="fit-note">This general guide has not yet been verified against the two dresses. Ask us about fit before ordering.</p>
+    <p style="margin-bottom:40px">All measurements are in inches unless noted. These reference values are not a product-specific fit recommendation.</p>
     <h2 style="margin-top:0">Women's Apparel</h2>
     <div style="overflow-x:auto">
       <table>
@@ -953,6 +955,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 <section id="page-custom" class="page"><div class="content-page"><p class="section-label">Keep It Stylish</p><h1>A piece of your own</h1><p>Have a custom design in mind? Email your ideas to discuss whether we can help. Availability, pricing, measurements, and timing need to be agreed before an order is placed.</p><a class="btn btn-dark" href="mailto:hello@keepitstylish.in?subject=Custom%20design%20inquiry">Discuss your idea ↗</a><p class="support-address">This opens your email app. Your inquiry is sent only when you send the email.</p></div></section>
 
 </main>
+<dialog id="image-zoom" aria-labelledby="zoom-title"><div class="zoom-toolbar"><h2 id="zoom-title"></h2><button type="button" onclick="document.getElementById('image-zoom').close()" aria-label="Close enlarged image" autofocus>Close ✕</button></div><div class="zoom-canvas"><img id="zoom-image" alt=""/></div><div class="zoom-toolbar"><button type="button" data-gallery-direction="-1" aria-label="Previous enlarged image">←</button><span id="zoom-counter" aria-live="polite"></span><button type="button" id="zoom-toggle" aria-pressed="false">Zoom in</button><button type="button" data-gallery-direction="1" aria-label="Next enlarged image">→</button></div></dialog>
   <footer>
     <div class="footer-grid">
       <div>
@@ -963,9 +966,9 @@ tr:nth-child(even) td{background:var(--ivory)}
       </div>
       <div>
         <p class="footer-col-title">Shop</p>
-        <button class="footer-link" onclick="showPage('collections')">New Arrivals</button>
-        <button class="footer-link" onclick="filterAndGo('dresses')">Dresses</button>
-        <button class="footer-link" onclick="showPage('collections')">All Collections</button>
+
+
+        <button class="footer-link" onclick="showPage('collections')">Shop Dresses</button>
         <button class="footer-link" onclick="showPage('custom')" style="color:#C9A96E">Custom Atelier</button>
       </div>
       <div>
@@ -1023,6 +1026,7 @@ function showPage(name) {
   const pg = document.getElementById('page-' + name) || document.getElementById('page-home');
   if (pg) pg.classList.add('active');
   document.body.style.overflow = '';
+  setPageInert(null);
   document.getElementById('mobile-menu').style.display = 'none';
   document.getElementById('hamburger-btn')?.setAttribute('aria-expanded', 'false');
   const route = name === 'product' && currentProduct ? currentProduct.id : name;
@@ -1168,9 +1172,10 @@ function openProduct(id) {
   const allSizes = [...p.sizes,...(p.upcomingSizes || [])].sort((a,b)=>sizeOrder.indexOf(a)-sizeOrder.indexOf(b));
   document.getElementById('size-grid').innerHTML = allSizes.map(size => {
     const coming = (p.upcomingSizes || []).includes(size);
-    return '<button class="size-btn'+(coming?' size-coming':'')+'" aria-pressed="false" aria-label="'+size+(coming?' — coming soon, email for updates':' — available')+'" onclick="pickSize(this,\''+size+'\')">'+size+(coming?'<small>Email for updates</small>':'')+'</button>';
+    return '<button class="size-btn'+(coming?' size-coming':'')+'" data-size="'+size+'" aria-pressed="false" aria-label="'+size+(coming?' — coming soon, email for updates':' — available')+'" onclick="pickSize(this,\''+size+'\')">'+size+(coming?'<small>Email for updates</small>':'')+'</button>';
   }).join('');
   updateSizeAction();
+  restoreProductSelection(p);
 }
 function switchImg(el, src) {
   document.getElementById('main-img').src = src;
@@ -1186,7 +1191,7 @@ function updateSizeAction() {
   const upcoming = (currentProduct.upcomingSizes || []).includes(selSize);
   const btn = document.getElementById('atc-btn');
   btn.classList.remove('added');
-  btn.textContent = upcoming ? 'Get Notified — '+selSize : '🛍 Add to Bag';
+  btn.textContent = upcoming ? 'Email About Size '+selSize : '🛍 Add to Bag';
   document.getElementById('size-availability').textContent = upcoming ? selSize+' is coming soon. Email for updates opens your email app to request an availability alert.' : currentProduct.upcomingSizes ? 'S, M, L available · XS and XL coming soon' : '';
 }
 function pickSize(el, size) {
@@ -1204,6 +1209,7 @@ function addToCart() {
   const p = currentProduct;
   const cid = `${p.id}-${selSize}-${selColor.name}`;
   const ex = cart.find(i=>i.id===cid);
+  if (ex && ex.qty >= 99) { showToast('The preview bag limit is 99 per size.'); return; }
   if (ex) ex.qty++;
   else cart.push({id:cid,name:p.name,price:p.price,size:selSize,color:selColor.name,img:p.imgs[0],qty:1});
   updateBadge();
@@ -1252,14 +1258,14 @@ function renderCart() {
           <p style="font-size:12px;color:var(--stone);margin-bottom:4px;font-family:'Jost',sans-serif">Size: ${item.size} · Color: ${item.color}</p>
           <p style="font-size:13px;color:var(--charcoal);margin-bottom:18px;font-family:'Jost',sans-serif">${fmt(item.price)}</p>
           <div class="qty-control">
-            <button class="qty-btn" onclick="chgQty('${item.id}',-1)">−</button>
+            <button class="qty-btn" aria-label="Decrease ${item.name}, ${item.size} quantity" onclick="chgQty('${item.id}',-1)">−</button>
             <span class="qty-num">${item.qty}</span>
-            <button class="qty-btn" onclick="chgQty('${item.id}',1)">+</button>
+            <button class="qty-btn" aria-label="Increase ${item.name}, ${item.size} quantity" onclick="chgQty('${item.id}',1)">+</button>
           </div>
         </div>
         <div style="text-align:right">
           <p style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal);margin-bottom:12px">${fmt(item.price*item.qty)}</p>
-          <button class="remove-btn" onclick="rmItem('${item.id}')">🗑</button>
+          <button class="remove-btn" aria-label="Remove ${item.name}, ${item.size} from bag" onclick="rmItem('${item.id}')">🗑</button>
         </div>
       </div>`).join('');
   }
@@ -1267,11 +1273,12 @@ function renderCart() {
 function chgQty(id,d) {
   const i = cart.find(x=>x.id===id);
   if (!i) return;
-  i.qty += d;
+  const label = document.activeElement?.getAttribute('aria-label');
+  i.qty = Math.min(99, i.qty + d);
   if (i.qty<=0) cart = cart.filter(x=>x.id!==id);
-  updateBadge(); renderCart();
+  refreshCartWithFocus(label);
 }
-function rmItem(id) { cart=cart.filter(x=>x.id!==id); updateBadge(); renderCart(); }
+function rmItem(id) { cart=cart.filter(x=>x.id!==id); refreshCartWithFocus(null); showToast('Item removed from bag'); }
 
 // ── COUPON ──
 function applyCoupon() {
@@ -1315,7 +1322,7 @@ function renderCheckout() {
   document.getElementById('checkout-items').innerHTML = cart.map(i=>`
     <div style="display:flex;gap:14px;margin-bottom:18px;align-items:center">
       <div style="position:relative;flex-shrink:0">
-        <img src="${i.img}" style="width:60px;height:76px;object-fit:cover;background:var(--sand)" loading="lazy"/>
+        <img src="${i.img}" alt="${i.name}" style="width:60px;height:76px;object-fit:cover;background:var(--sand)" loading="lazy"/>
         <span style="position:absolute;top:-7px;right:-7px;background:var(--charcoal);color:#fff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:'Jost',sans-serif">${i.qty}</span>
       </div>
       <div style="flex:1">
@@ -1417,32 +1424,16 @@ function showToast(msg) {
   setTimeout(()=>t.classList.remove('show'), 2800);
 }
 
-// ── CUSTOM ATELIER ──
-function renderCustomSteps(){
-  const steps = [
-    {n:'01',t:'Share Your Vision',d:'Fill out our custom order form or Email us directly. Describe the occasion, silhouette, and any embroidery or embellishment ideas you have in mind.'},
-    {n:'02',t:'Fabric & Design Consultation',d:'Manju personally reviews your request and follows up to discuss fabric choices, color palette, and design details. No detail is too small.'},
-    {n:'03',t:'Your Measurements',d:'Share your measurements using our simple guide, or visit us in person. Every cut is made specifically for your body — no standard sizing.'},
-    {n:'04',t:'We Craft Your Piece',d:'Your garment is handcrafted in our studio. Typical turnaround is 2–4 weeks. We send you progress updates along the way.'},
-    {n:'05',t:'Delivery & Finishing',d:"Your piece arrives carefully packaged. If any minor alterations are needed, we'll sort them — your satisfaction is the finish line, not dispatch."},
-  ];
-  const el = document.getElementById('custom-steps');
-  if (!el) return;
-  el.innerHTML = steps.map((s,i)=>`
-    <div style="display:grid;grid-template-columns:72px 1fr;gap:0 32px;padding-bottom:${i<steps.length-1?'48px':'0'};border-bottom:${i<steps.length-1?'1px solid var(--sand)':'none'};margin-bottom:${i<steps.length-1?'48px':'0'}">
-      <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--sand);line-height:1">${s.n}</div></div>
-      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--charcoal);margin-bottom:10px">${s.t}</h3><p style="font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);line-height:1.85">${s.d}</p></div>
-    </div>`).join('');
-}
-
 </script>
-<script src="assets/storefront.js?v=launch-2"></script>
+<script src="assets/storefront.js?v=launch-4"></script>
+<script src="assets/browsing.js?v=launch-4"></script>
 <script>
 // ── INIT ──
 renderHome();
 renderCollections(PRODUCTS);
-restoreCart();
+const discardedSelections = restoreCart();
 restoreRoute();
+if (discardedSelections) showToast('Unavailable selections were removed from your saved bag.');
 document.getElementById('tab-all').classList.add('active');
 </script>
 </body>

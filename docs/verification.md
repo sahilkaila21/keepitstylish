@@ -1,0 +1,43 @@
+# Preview verification — October 2, 2026
+
+Scope: static storefront on the launch-readiness branch, served locally at 127.0.0.1:4174. Changes require PR review/merge before affecting the public site. Payments remain disabled.
+
+## Automated checks
+
+`node --test tests/storefront.test.cjs`: 14 passing checks. Includes hostile/stale cart records, canonical prices, quantity bounds, blocked storage, data minimization, validation, local assets, parse checks for all storefront scripts, duplicate static IDs, labels, hash/navigation targets and image size budgets.
+
+These checks do not exercise a real payment provider, backend, external email delivery or every browser interaction. Static reference checks cover literal links; they are not a general external link crawler.
+
+## Browser checks completed
+
+- Emerald: select M, open size guide, follow return link: M remains selected.
+- Enlarge gallery, next image, zoom in, Escape: dialog closes and focus returns to image trigger.
+- Cart: add item, increment quantity in a second tab: first tab displays two items/$109.98. Remove in second tab: first tab shows empty bag.
+- Quantity update retains focus on its button; removal focuses the bag heading.
+- Empty checkout submission: eight invalid fields marked; first-name field receives focus.
+- Mobile menu: Shift+Tab wraps to last link, Tab wraps to close button, Escape returns focus to Menu.
+- No horizontal overflow in these observed CSS viewport/view pairs: 320px home/product/cart/checkout; 390px home; 768px product; 1024px product/home. Actual innerWidth was checked, not inferred from requested viewport.
+- Visible product images loaded in the inspected home/product views.
+
+During development, a cached older JS file caused quantity buttons to reference a missing new helper. Asset query versions were advanced; the two-tab quantity/removal flow then passed. Historical console entries from that failed iteration are not evidence of a current failure.
+
+## Performance work and limits
+
+- Hero now requests an appropriate 640/1280 source and high fetch priority.
+- Google font connections are hinted; existing font display=swap remains.
+- Product cards retain responsive sources and lazy loading; hero/gallery containers reserve their layout area.
+- 1280px WebP files: 192,658 / 119,270 / 153,698 / 138,890 bytes, totaling 604,516 bytes (about 93% smaller than the four original 9,004,835-byte images).
+- 640px files: 100,182 / 61,194 / 83,436 / 67,038 bytes. CI budgets are below 110 KB per small image and 210 KB per large image.
+
+These are file-size measurements, not mobile speed or Core Web Vitals scores. The browser inspection surface did not expose Performance entries. Production LCP, INP, CLS, cold-cache mobile loading, font shifts and throttled network performance remain **Needs verification** after hosting is selected. Do not label this preview Lighthouse-tested.
+
+## Still needs verification
+
+- iOS Safari and Android Chrome on physical devices; 200% browser zoom and screen-reader review.
+- Contrast across every image crop and UI state; no WCAG certification is claimed.
+- Full route-by-viewport matrix, back/forward behavior across all pages and all production external links.
+- Real garment photos, measurements, stock and product claims; current imagery is illustrative.
+- Production server routes, indexing, redirects, headers, security, monitoring and email delivery.
+- Backend stock reservation, simultaneous cart edits, final tax/shipping totals, payment failures, order idempotency and refund flows.
+
+Business/platform-dependent acceptance remains in issues #1–#17 and #20–#23. Frontend changes and draft documents are ready for review; they do not satisfy those launch gates by themselves.

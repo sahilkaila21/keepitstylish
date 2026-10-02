@@ -59,3 +59,41 @@ test('displayed asset references exist',()=>{
   for(const match of html.matchAll(/assets\/[a-zA-Z0-9_./-]+\.(?:webp|svg|png|ico|css|js)/g))
     assert.ok(fs.existsSync(path.join(root,match[0])),match[0]);
 });
+
+test('restoring an empty bag clears existing selections without writing back',()=>{
+  const app=setup(null);
+  app.run('cart=[{id:"stale",qty:1}]; updateBadge=function(){saveCart()}; restoreCart()');
+  assert.equal(app.run('cart.length'),0);
+  assert.equal(app.stored(),null);
+  assert.equal(app.run('restoringCart'),false);
+});
+test('restoration reports invalid selections and does not extend saved expiry',()=>{
+  const original=saved([valid,{...valid,size:'invalid'}]);
+  const app=setup(original);
+  app.run('updateBadge=function(){saveCart()}');
+  assert.equal(app.run('restoreCart()'),1);
+  assert.equal(app.stored(),original);
+});
+test('all inline and external storefront scripts parse',()=>{
+  for(const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) new vm.Script(match[1]);
+  for(const file of ['storefront.js','browsing.js']) new vm.Script(fs.readFileSync(path.join(root,'assets',file),'utf8'));
+});
+test('static IDs are unique and labels reference actual controls',()=>{
+  const markup=html.replace(/<script[\s\S]*?<\/script>/g,'');
+  const ids=[...markup.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+  assert.equal(new Set(ids).size,ids.length,'Duplicate element IDs');
+  for(const match of markup.matchAll(/\bfor="([^"]+)"/g)) assert.ok(ids.includes(match[1]),match[1]);
+});
+test('static hash links and navigation targets resolve',()=>{
+  const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));
+  const app=setup(null);
+  const products=JSON.parse(app.run('JSON.stringify(PRODUCTS.map(p=>p.id))'));
+  for(const match of html.matchAll(/href="#([a-z-]+)"/g)) assert.ok(ids.has(match[1])||ids.has('page-'+match[1])||products.includes(match[1]),match[1]);
+  for(const match of html.matchAll(/showPage\('([a-z-]+)'\)/g)) assert.ok(ids.has('page-'+match[1]),match[1]);
+});
+test('responsive product images meet local transfer budgets',()=>{
+  const dir=path.join(root,'assets/products');
+  for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.webp'))){
+    assert.ok(fs.statSync(path.join(dir,file)).size < (file.includes('-640')?110000:210000),file);
+  }
+});

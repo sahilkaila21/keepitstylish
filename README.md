@@ -35,3 +35,16 @@ The tests cover untrusted/stale cart storage, catalog-derived restored prices, i
 Actual garment facts, stock counts, business identity, support mailbox ownership, taxes, delivery rates, legal policies and payment-provider setup require verification. No claim of legal compliance or full accessibility certification is made by this change. Real-device testing and measured performance budgets remain open.
 
 See [launch inputs](docs/launch-inputs.md) for decisions required next.
+
+## Preparation completed before the platform decision
+
+- Enlarged product gallery supports image navigation, zoom and Escape; size selection survives visits to the size guide during the session.
+- Quantity changes preserve keyboard focus. Cart changes synchronize across tabs; unavailable saved selections are reported. This browser preview does not reserve stock or resolve simultaneous edits transactionally.
+- Tests now check script syntax, navigation targets, duplicate static IDs, label references and image size budgets as well as cart behavior.
+- [Operations playbook](docs/operations-playbook.md): receiving, packing, dispatch, support, returns, refunds and incident rehearsal.
+- [Product workbook](docs/product-workbook.md): six proposed SKUs, stock, measurement and photography inputs.
+- [Pricing workbook](docs/pricing-workbook.md): cost inputs, contribution formulas and discount scenarios.
+- [Marketing drafts](docs/marketing-drafts.md): product, SEO, social and email copy with publication gates.
+- [Verification record](docs/verification.md): completed checks and remaining production/device checks.
+
+The worksheets are Markdown documents that can be reviewed in GitHub. They contain no invented business or supplier records.
