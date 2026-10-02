@@ -131,3 +131,38 @@ test('empty bag cannot advance to payment validation',()=>{
   app.run(`var destination=''; showPage=page=>{destination=page}; validateAll=()=>{throw Error('Must not validate empty checkout')}; goToPayment();`);
   assert.equal(app.run('destination'),'cart');
 });
+
+test('phone is optional and ZIP+4 remains valid for US shipping',()=>{
+  const app=setup(null);
+  assert.equal(app.run("VALIDATORS.phone('')"),'');
+  assert.equal(app.run("VALIDATORS.phone('+1 (202) 555-0100')"),'');
+  assert.notEqual(app.run("VALIDATORS.phone('123')"),'');
+  assert.equal(app.run("VALIDATORS.pin('10001-1234')"),'');
+  assert.notEqual(app.run("VALIDATORS.pin('1000')"),'');
+});
+test('same-as-shipping skips hidden billing fields but separate billing requires them',()=>{
+  const app=setup(null);
+  app.run(`
+    var same=true, errors={};
+    var values={firstName:'É',lastName:'李',email:'preview@example.com',phone:'',address:'1 Test St',city:'A',state:'New York',pin:'10001'};
+    document.getElementById=()=>({checked:same});
+    getVal=field=>values[field]||'';
+    showFieldErr=(field,message)=>{errors[field]=message};
+  `);
+  assert.equal(app.run('validateAll()'),true);
+  assert.equal(app.run("Object.keys(errors).some(key=>key.startsWith('billing'))"),false);
+  app.run('same=false');
+  assert.equal(app.run('validateAll()'),false);
+  assert.equal(app.run('errors.billingAddress'),'Billing street address is required');
+});
+test('US billing checks state and ZIP while other billing countries allow flexible region formats',()=>{
+  const app=setup(null);
+  app.run("getVal=()=> 'United States'");
+  assert.equal(app.run("VALIDATORS.billingState('NY')"),'');
+  assert.equal(app.run("VALIDATORS.billingState('New York')"),'');
+  assert.notEqual(app.run("VALIDATORS.billingState('ZZ')"),'');
+  assert.notEqual(app.run("VALIDATORS.billingPostal('')"),'');
+  app.run("getVal=()=> 'Ireland'");
+  assert.equal(app.run("VALIDATORS.billingState('')"),'');
+  assert.equal(app.run("VALIDATORS.billingPostal('D02 X285')"),'');
+});

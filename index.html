@@ -484,7 +484,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-6"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-7"/>
 </head>
 <body><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -685,15 +685,17 @@ tr:nth-child(even) td{background:var(--ivory)}
         <p style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--charcoal);margin-bottom:28px">Order Summary</p>
         <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Subtotal</span><span style="font-size:13px;color:var(--charcoal);font-family:'Jost',sans-serif" id="cart-subtotal">$0.00</span></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Shipping</span><span style="font-size:13px;font-family:'Jost',sans-serif" id="cart-shipping">To be confirmed</span></div>
+        <div class="cost-row"><span>Estimated sales tax</span><span>Calculated before payment</span></div>
         <div id="cart-discount-row" style="display:flex;justify-content:space-between;margin-bottom:14px;display:none"><span style="font-size:13px;color:green;font-family:'Jost',sans-serif" id="cart-discount-label">Discount</span><span style="font-size:13px;color:green;font-family:'Jost',sans-serif" id="cart-discount-val"></span></div>
         <p id="free-ship-msg" style="font-size:12px;color:var(--rose);margin-bottom:12px;font-family:'Jost',sans-serif"></p>
         <div class="divider"></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:28px">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)">Estimated Total</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)">Merchandise estimate</span>
           <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)" id="cart-total">$0.00</span>
         </div>
         <!-- Coupon -->
         <div id="coupon-section">
+          <p class="checkout-help">Promo codes are for this preview. Launch offers are being finalized.</p>
           <div id="coupon-applied" class="coupon-success" style="display:none">
             <span id="coupon-success-msg"></span>
             <button class="coupon-remove" aria-label="Remove promo code" onclick="removeCoupon()">✕</button>
@@ -731,7 +733,8 @@ tr:nth-child(even) td{background:var(--ivory)}
     <div class="checkout-layout">
       <!-- STEP 1 -->
       <div id="co-step1"><div class="launch-notice" role="note"><strong>Online ordering is not open yet.</strong> You can preview checkout, but payment is disabled. Please do not enter personal details.</div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--charcoal);margin-bottom:30px">Shipping Information</h2>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--charcoal);margin-bottom:12px">Contact &amp; shipping</h2>
+        <p class="checkout-help">Guest checkout · Required fields are marked *. All prices are in USD.</p>
 
         <div class="form-grid-2">
           <div>
@@ -752,18 +755,20 @@ tr:nth-child(even) td{background:var(--ivory)}
             <p class="field-error-msg" id="e-email"></p>
           </div>
           <div>
-            <label class="field-label" for="f-phone">Phone Number *</label>
+            <label class="field-label" for="f-phone">Phone Number (optional)</label>
             <input class="field-input" id="f-phone" type="tel" placeholder="U.S. phone number" maxlength="20" oninput="liveValidate('phone')" onblur="touchField('phone')"/>
-            <p class="field-error-msg" id="e-phone"></p>
+            <p class="checkout-help" id="phone-help">For delivery questions. Enter a U.S. number if you choose to provide one.</p><p class="field-error-msg" id="e-phone"></p>
           </div>
         </div>
-        <div class="form-single"><label class="field-label" for="f-country">Country</label><input class="field-input" id="f-country" value="United States" autocomplete="country-name" readonly/></div>
+        <div class="form-single"><label class="field-label" for="f-company">Company (optional)</label><input class="field-input" id="f-company" autocomplete="shipping organization" maxlength="100"/></div>
+        <div class="form-single"><label class="field-label" for="f-country">Country / region</label><input class="field-input" id="f-country" value="United States" autocomplete="shipping country-name" readonly/></div>
 <div class="form-single">
           <label class="field-label" for="f-address">Street Address *</label>
-          <input class="field-input" id="f-address" placeholder="Street address, apartment or suite" oninput="liveValidate('address')" onblur="touchField('address')"/>
+          <input class="field-input" id="f-address" placeholder="Street address or PO Box" maxlength="200" oninput="liveValidate('address')" onblur="touchField('address')"/>
           <p class="field-error-msg" id="e-address"></p>
         </div>
-        <div class="form-grid-3" style="margin-bottom:40px">
+        <div class="form-single"><label class="field-label" for="f-unit">Apartment, suite, unit, building (optional)</label><input class="field-input" id="f-unit" autocomplete="shipping address-line2" maxlength="100" placeholder="Apt 4B"/></div>
+        <div class="form-grid-3" style="margin-bottom:24px">
           <div>
             <label class="field-label" for="f-city">City *</label>
             <input class="field-input" id="f-city" placeholder="New York" oninput="liveValidate('city')" onblur="touchField('city')"/>
@@ -776,12 +781,28 @@ tr:nth-child(even) td{background:var(--ivory)}
           </div>
           <div>
             <label class="field-label" for="f-pin">ZIP Code *</label>
-            <input class="field-input" id="f-pin" placeholder="5-digit ZIP or ZIP+4" maxlength="10" oninput="liveValidate('pin')" onblur="touchField('pin')"/>
+            <input class="field-input" id="f-pin" placeholder="12345 or 12345-6789" maxlength="10" inputmode="text" autocapitalize="off" spellcheck="false" oninput="liveValidate('pin')" onblur="touchField('pin')"/>
             <p class="field-error-msg" id="e-pin"></p>
           </div>
         </div>
 
-        <div class="validation-banner" id="val-banner">Please correct the highlighted errors before continuing.</div>
+        <fieldset class="checkout-section"><legend>Shipping method</legend><p>Rates and delivery estimates are being finalized. Available services and the full shipping charge must be shown before you can pay.</p><p class="checkout-help">PO Boxes, Alaska, Hawaii, U.S. territories and military addresses: service availability needs confirmation.</p></fieldset>
+        <fieldset class="checkout-section"><legend>Billing address</legend><label class="checkbox-line"><input id="billing-same" type="checkbox" checked onchange="toggleBillingAddress()" aria-controls="billing-fields" aria-expanded="false"/> Same as shipping address</label>
+          <div id="billing-fields" hidden>
+            <p class="checkout-help">Required billing fields are marked *. Your payment provider will verify billing details when checkout is connected.</p>
+            <div class="form-single"><label class="field-label" for="f-billingName">Full name *</label><input class="field-input" id="f-billingName" autocomplete="billing name" maxlength="200" onblur="touchField('billingName')" oninput="liveValidate('billingName')"/><p id="e-billingName" class="field-error-msg"></p></div>
+            <div class="form-single"><label class="field-label" for="f-billingCountry">Country / region *</label><input class="field-input" id="f-billingCountry" value="United States" autocomplete="billing country-name" maxlength="100" onblur="touchField('billingCountry')" oninput="updateBillingRequirements(); liveValidate('billingCountry')"/><p id="e-billingCountry" class="field-error-msg"></p></div>
+            <div class="form-single"><label class="field-label" for="f-billingAddress">Street address *</label><input class="field-input" id="f-billingAddress" autocomplete="billing address-line1" maxlength="200" onblur="touchField('billingAddress')" oninput="liveValidate('billingAddress')"/><p id="e-billingAddress" class="field-error-msg"></p></div>
+            <div class="form-single"><label class="field-label" for="f-billingUnit">Apartment, suite, unit (optional)</label><input class="field-input" id="f-billingUnit" autocomplete="billing address-line2" maxlength="100"/></div>
+            <div class="form-grid-3">
+              <div><label class="field-label" for="f-billingCity">City *</label><input class="field-input" id="f-billingCity" autocomplete="billing address-level2" maxlength="100" onblur="touchField('billingCity')" oninput="liveValidate('billingCity')"/><p id="e-billingCity" class="field-error-msg"></p></div>
+              <div><label class="field-label" for="f-billingState">State / province / region (required for U.S.)</label><input class="field-input" id="f-billingState" autocomplete="billing address-level1" maxlength="100" onblur="touchField('billingState')" oninput="liveValidate('billingState')"/><p id="e-billingState" class="field-error-msg"></p></div>
+              <div><label class="field-label" for="f-billingPostal">ZIP / postal code (required for U.S.)</label><input class="field-input" id="f-billingPostal" autocomplete="billing postal-code" maxlength="20" onblur="touchField('billingPostal')" oninput="liveValidate('billingPostal')"/><p id="e-billingPostal" class="field-error-msg"></p></div>
+            </div>
+          </div>
+        </fieldset>
+        <p class="checkout-help">Review <a href="#shipping">shipping</a>, <a href="#returns">returns</a>, <a href="#privacy">privacy</a> and <a href="#terms">terms</a>. Final policies are pending before ordering opens.</p>
+        <div class="validation-banner" id="val-banner" role="alert">Please correct the highlighted errors before continuing.</div>
         <button class="btn btn-dark btn-full" onclick="goToPayment()">Continue to Payment</button>
       </div>
 
@@ -795,6 +816,7 @@ tr:nth-child(even) td{background:var(--ivory)}
           </div>
           <button onclick="backToInfo()" style="background:none;border:none;cursor:pointer;font-size:11px;color:var(--stone);text-decoration:underline;font-family:'Jost',sans-serif;white-space:nowrap;margin-left:16px">Edit</button>
         </div>
+        <div class="shipping-summary"><div><p class="field-label">Billing address</p><p id="billing-summary-text"></p></div></div>
         <div style="background:var(--ivory);border:1px solid var(--sand);padding:22px;margin-bottom:36px;display:flex;align-items:flex-start;gap:14px">
           <span style="font-size:20px;flex-shrink:0">🔒</span>
           <div>
@@ -814,9 +836,10 @@ tr:nth-child(even) td{background:var(--ivory)}
         <div class="divider"></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Subtotal</span><span style="font-size:13px;color:var(--charcoal);font-family:'Jost',sans-serif" id="co-sub"></span></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif">Shipping</span><span style="font-size:13px;font-family:'Jost',sans-serif" id="co-ship"></span></div>
+        <div class="cost-row"><span>Estimated sales tax</span><span>Calculated before payment</span></div>
         <div class="divider"></div>
         <div style="display:flex;justify-content:space-between">
-          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)">Estimated Total</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)">Merchandise estimate</span>
           <span style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--charcoal)" id="co-total"></span>
         </div>
       </div>
@@ -1342,20 +1365,49 @@ const VALIDATORS = {
   firstName: v => { if(!v.trim()) return 'First name is required'; if(v.trim().length > 100) return 'Use at most 100 characters'; return ''; },
   lastName:  v => { if(!v.trim()) return 'Last name is required'; if(v.trim().length > 100) return 'Use at most 100 characters'; return ''; },
   email:     v => { if(!v.trim()) return 'Email address is required'; if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())) return 'Enter a valid email address'; return ''; },
-  phone:     v => { if(!v.trim()) return 'Phone number is required'; if(!/^1?[2-9]\d{2}[2-9]\d{6}$/.test(v.trim().replace(/\D/g,''))) return 'Enter a valid U.S. phone number'; return ''; },
+  phone:     v => { if(!v.trim()) return ''; if(!/^1?[2-9]\d{2}[2-9]\d{6}$/.test(v.trim().replace(/\D/g,''))) return 'Enter a valid U.S. phone number or leave this optional field blank'; return ''; },
   address:   v => { if(!v.trim()) return 'Street address is required';  return ''; },
-  city:      v => { if(!v.trim()) return 'City is required'; if(v.trim().length<2) return 'Enter a valid city name'; return ''; },
+  city:      v => { if(!v.trim()) return 'City is required'; return ''; },
   state:     v => { if(!["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"].includes(v)) return 'Please select a state'; return ''; },
   pin:       v => { if(!v.trim()) return 'ZIP code is required'; if(!/^\d{5}(-\d{4})?$/.test(v.trim())) return 'Enter a valid 5-digit ZIP or ZIP+4'; return ''; },
+  billingName: v => v.trim() ? '' : 'Billing name is required',
+  billingCountry: v => v.trim() ? '' : 'Billing country is required',
+  billingAddress: v => v.trim() ? '' : 'Billing street address is required',
+  billingCity: v => v.trim() ? '' : 'Billing city is required',
+  billingState: v => {
+    if (!isUsBilling()) return '';
+    if (VALIDATORS.state(v.trim()) === '' || 'AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split(' ').includes(v.trim().toUpperCase())) return '';
+    return 'Enter a U.S. state name or two-letter abbreviation';
+  },
+  billingPostal: v => isUsBilling() ? VALIDATORS.pin(v) : '',
 };
 const FIELD_MAP = {
   firstName:'f-firstName', lastName:'f-lastName', email:'f-email', phone:'f-phone',
-  address:'f-address', city:'f-city', state:'f-state', pin:'f-pin'
+  address:'f-address', city:'f-city', state:'f-state', pin:'f-pin',
+  billingName:'f-billingName', billingCountry:'f-billingCountry', billingAddress:'f-billingAddress', billingCity:'f-billingCity', billingState:'f-billingState', billingPostal:'f-billingPostal'
 };
 const ERR_MAP = {
   firstName:'e-firstName', lastName:'e-lastName', email:'e-email', phone:'e-phone',
-  address:'e-address', city:'e-city', state:'e-state', pin:'e-pin'
+  address:'e-address', city:'e-city', state:'e-state', pin:'e-pin',
+  billingName:'e-billingName', billingCountry:'e-billingCountry', billingAddress:'e-billingAddress', billingCity:'e-billingCity', billingState:'e-billingState', billingPostal:'e-billingPostal'
 };
+function isUsBilling() { return ['united states','united states of america','us','usa','u.s.','u.s.a.'].includes(getVal('billingCountry').trim().toLowerCase()); }
+function toggleBillingAddress() {
+  const same = document.getElementById('billing-same').checked;
+  document.getElementById('billing-fields').hidden = same;
+  document.getElementById('billing-same').setAttribute('aria-expanded', String(!same));
+  updateBillingRequirements();
+  for (const field of Object.keys(FIELD_MAP).filter(key=>key.startsWith('billing'))) {
+    showFieldErr(field,'');
+    fieldTouched[field] = false;
+  }
+}
+function updateBillingRequirements() {
+  for (const field of ['billingState','billingPostal']) {
+    document.getElementById(FIELD_MAP[field]).setAttribute('aria-required', String(isUsBilling()));
+    showFieldErr(field,'');
+  }
+}
 function getVal(f) {
   const el = document.getElementById(FIELD_MAP[f]);
   return el ? el.value : '';
@@ -1380,6 +1432,7 @@ function touchField(f) {
 function validateAll() {
   let ok = true;
   Object.keys(VALIDATORS).forEach(f => {
+    if (f.startsWith('billing') && document.getElementById('billing-same').checked) return;
     fieldTouched[f] = true;
     const msg = VALIDATORS[f](getVal(f));
     showFieldErr(f, msg);
@@ -1395,7 +1448,9 @@ function goToPayment() {
   }
   document.getElementById('val-banner').classList.remove('visible');
   const fn = getVal('firstName'), ln = getVal('lastName'), addr = getVal('address'), city = getVal('city'), state = getVal('state'), pin = getVal('pin');
-  document.getElementById('shipping-summary-text').textContent = `${fn} ${ln} — ${addr}, ${city}, ${state} ${pin}, United States`;
+  const unit = document.getElementById('f-unit').value.trim(), company = document.getElementById('f-company').value.trim();
+  document.getElementById('shipping-summary-text').textContent = [`${fn} ${ln}`,company,addr,unit,`${city}, ${state} ${pin}`,'United States'].filter(Boolean).join(' · ');
+  document.getElementById('billing-summary-text').textContent = document.getElementById('billing-same').checked ? 'Same as shipping address' : [getVal('billingName'),getVal('billingAddress'),document.getElementById('f-billingUnit').value.trim(),getVal('billingCity'),getVal('billingState'),getVal('billingPostal'),getVal('billingCountry')].filter(Boolean).join(' · ');
   document.getElementById('co-step1').style.display='none';
   document.getElementById('co-step2').style.display='block';
   document.getElementById('s2-dot').classList.add('done');
@@ -1432,8 +1487,8 @@ function showToast(msg) {
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-6"></script>
-<script src="assets/browsing.js?v=launch-6"></script>
+<script src="assets/storefront.js?v=launch-7"></script>
+<script src="assets/browsing.js?v=launch-7"></script>
 <script>
 // ── INIT ──
 renderHome();

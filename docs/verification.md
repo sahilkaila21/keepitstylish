@@ -4,7 +4,7 @@ Scope: static storefront on the launch-readiness branch, served locally at 127.0
 
 ## Automated checks
 
-`node --test tests/storefront.test.cjs`: 18 passing checks. Includes hostile/stale cart records, canonical prices, quantity bounds, blocked storage, data minimization, validation, local assets, parse checks for all storefront scripts, duplicate static IDs, labels, hash/navigation targets, image size budgets and search-route encoding/normalization.
+`node --test tests/storefront.test.cjs`: 21 passing checks. Includes hostile/stale cart records, canonical prices, quantity bounds, blocked storage, data minimization, validation, local assets, parse checks for all storefront scripts, duplicate static IDs, labels, hash/navigation targets, image size budgets and search-route encoding/normalization.
 
 These checks do not exercise a real payment provider, backend, external email delivery or every browser interaction. Static reference checks cover literal links; they are not a general external link crawler.
 

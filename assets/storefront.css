@@ -1,4 +1,13 @@
 :root{--stone:#74675e}
+.checkout-help{font-size:13px;line-height:1.7;color:var(--stone);margin:12px 0 20px}
+.cost-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;margin-bottom:12px}
+.checkout-help a{color:var(--charcoal);text-underline-offset:3px}
+.checkout-section{min-width:0;border:1px solid var(--sand);padding:20px;margin:24px 0}
+.checkout-section legend{font-size:20px;padding:0 8px}
+.checkout-section p{font-size:14px;line-height:1.7}
+.checkbox-line{display:flex;align-items:center;gap:12px;min-height:44px;font-size:14px;cursor:pointer}
+.checkbox-line input{width:20px;height:20px;accent-color:var(--charcoal)}
+#billing-summary-text{font-size:13px;line-height:1.7;overflow-wrap:anywhere}
 #coll-heading{overflow-wrap:anywhere}
 #page-about>div:first-child>p:first-child{color:var(--ivory)!important}
 html{scroll-padding-top:90px}

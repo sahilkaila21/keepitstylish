@@ -104,8 +104,10 @@ for (const [key, id] of Object.entries(FIELD_MAP)) {
   const input = document.getElementById(id);
   if (!input) continue;
   input.setAttribute('aria-describedby', ERR_MAP[key]);
-  input.setAttribute('aria-required', 'true');
-  input.autocomplete = ({firstName:'given-name',lastName:'family-name',email:'email',phone:'tel',address:'street-address',city:'address-level2',state:'address-level1',pin:'postal-code'})[key];
+  input.setAttribute('aria-required', String(key !== 'phone' && !['billingState','billingPostal'].includes(key)));
+  const autocomplete = ({firstName:'shipping given-name',lastName:'shipping family-name',email:'email',phone:'tel',address:'shipping address-line1',city:'shipping address-level2',state:'shipping address-level1',pin:'shipping postal-code'})[key];
+  if (autocomplete) input.autocomplete = autocomplete;
+  if (key === 'phone') input.setAttribute('aria-describedby', 'phone-help '+ERR_MAP[key]);
   document.getElementById(ERR_MAP[key])?.setAttribute('aria-live', 'polite');
 }
 const originalFieldError = showFieldErr;
@@ -165,3 +167,4 @@ document.getElementById('hamburger-btn')?.setAttribute('aria-expanded', 'false')
 document.getElementById('size-grid').setAttribute('role', 'group');
 document.getElementById('size-grid').setAttribute('aria-label', 'Choose a size');
 document.getElementById('size-grid').setAttribute('aria-describedby', 'size-error size-availability');
+updateBillingRequirements();
