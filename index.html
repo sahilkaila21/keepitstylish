@@ -482,8 +482,9 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-2"/>
 </head>
-<body>
+<body><a class="skip-link" href="#main-content">Skip to content</a>
 
 
 <!-- NAVBAR -->
@@ -539,9 +540,11 @@ tr:nth-child(even) td{background:var(--ivory)}
 </div>
 
 <!-- ════════════════════════ HOME ════════════════════════ -->
+<div class="preview-banner">Preview the collection · Online ordering opens soon. <a href="#contact">Questions? Get in touch</a></div>
+<main id="main-content" tabindex="-1">
 <div id="page-home" class="page active">
   <div class="hero">
-    <img src="assets/products/green-dress-garden.png" alt="Emerald Ruffle Tier Midi Dress"/>
+    <img src="assets/products/green-dress-garden-1280.webp" alt="Emerald Ruffle Tier Midi Dress"/>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">The Dress Collection</p>
@@ -570,12 +573,12 @@ tr:nth-child(even) td{background:var(--ivory)}
       <div><div class="promise-icon">✦</div><p class="promise-title">Curated Selection</p><p class="promise-text">Handpicked styles for the modern woman</p></div>
       <div><div class="promise-icon">◈</div><p class="promise-title">Artisan Crafted</p><p class="promise-text">Celebrating India's rich weaving traditions</p></div>
       <div><div class="promise-icon">◇</div><p class="promise-title">U.S. Store</p><p class="promise-text">Shop in U.S. dollars</p></div>
-      <div><div class="promise-icon">↩</div><p class="promise-title">Easy Returns</p><p class="promise-text">Hassle-free 14-day return policy</p></div>
+      <div><div class="promise-icon">↩</div><p class="promise-title">Easy Returns</p><p class="promise-text">Read our return policy before ordering</p></div>
     </div>
   </div>
 
   <div class="editorial">
-    <img src="assets/products/coral-floral-dress.png" alt="Coral Floral Ruffle Midi Dress" loading="lazy"/>
+    <img src="assets/products/coral-floral-dress-1280.webp" alt="Coral Floral Ruffle Midi Dress" loading="lazy"/>
     <div>
       <p class="section-label">Our Philosophy</p>
       <h2 class="editorial-title">Where Tradition<br><em>Meets Modernity</em></h2>
@@ -586,45 +589,7 @@ tr:nth-child(even) td{background:var(--ivory)}
     </div>
   </div>
 
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <a href="#home" onclick="showPage('home');return false" aria-label="Keep It Stylish home"><img class="footer-logo" src="assets/brand/logo-light.svg?v=original-2" width="384" height="76" alt="Keep It Stylish"/></a>
-        <p class="footer-desc">Curated women's fashion blending the richness of Indian heritage with the ease of modern style.</p>
-        <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sand);margin-bottom:12px;font-family:'Jost',sans-serif">Join our circle</p>
-        <div class="newsletter-row">
-          <input class="newsletter-input" type="email" placeholder="Your email address"/>
-          <button class="newsletter-btn" onclick="showToast('✓ Subscribed! Welcome to the circle.')">Subscribe</button>
-        </div>
-      </div>
-      <div>
-        <p class="footer-col-title">Shop</p>
-        <button class="footer-link" onclick="showPage('collections')">New Arrivals</button>
-        <button class="footer-link" onclick="filterAndGo('dresses')">Dresses</button>
-        <button class="footer-link" onclick="showPage('collections')">All Collections</button>
-        <button class="footer-link" onclick="showPage('custom')" style="color:#C9A96E">Custom Atelier</button>
-      </div>
-      <div>
-        <p class="footer-col-title">Help</p>
-        <button class="footer-link" onclick="showPage('size-guide')">Size Guide</button>
-        <button class="footer-link" onclick="showPage('shipping')">Shipping Info</button>
-        <button class="footer-link" onclick="showPage('returns')">Returns & Exchanges</button>
-        <button class="footer-link" onclick="showPage('track-order')">Track Order</button>
-        <button class="footer-link" onclick="showPage('contact')">Contact Us</button>
-      </div>
-      <div>
-        <p class="footer-col-title">Legal</p>
-        <button class="footer-link" onclick="showPage('about')">About Manju</button>
-        <button class="footer-link" onclick="showPage('terms')">Terms & Conditions</button>
-        <button class="footer-link" onclick="showPage('privacy')">Privacy Policy</button>
-        <button class="footer-link" onclick="showPage('returns')">Refund Policy</button>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 Keep It Stylish. All rights reserved.</span>
-      <span>United States · USD $</span>
-    </div>
-  </footer>
+
 </div>
 
 <!-- ════════════════════════ COLLECTIONS ════════════════════════ -->
@@ -639,7 +604,7 @@ tr:nth-child(even) td{background:var(--ivory)}
       <button class="cat-tab" id="tab-dresses" onclick="filterProducts('dresses',this)">Dresses</button>
     </div>
     <div class="controls-row">
-      <button class="filter-btn">⚙ Filters</button>
+
       <span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif" id="product-count">2 styles</span>
       <select class="sort-select" onchange="sortProducts(this.value)">
         <option value="newest">Newest</option>
@@ -687,7 +652,7 @@ tr:nth-child(even) td{background:var(--ivory)}
       <div class="shipping-note">
         ✦ United States · Prices in USD<br/>
         ✦ Delivery timing confirmed before payment<br/>
-        ✦ Easy 14-day returns
+        ✦ Review shipping & returns below
       </div>
     </div>
   </div>
@@ -736,7 +701,7 @@ tr:nth-child(even) td{background:var(--ivory)}
               <button class="coupon-apply" onclick="applyCoupon()">Apply</button>
             </div>
             <p id="coupon-error" style="font-size:11px;color:var(--rose);margin-bottom:8px;font-family:'Jost',sans-serif;display:none"></p>
-            <p style="font-size:11px;color:var(--stone);font-family:'Jost',sans-serif;margin-bottom:16px">Try: WELCOME10 · SAVE2 · FESTIVE15</p>
+
           </div>
         </div>
         <button class="btn btn-dark btn-full" onclick="showPage('checkout')">Proceed to Checkout →</button>
@@ -762,52 +727,52 @@ tr:nth-child(even) td{background:var(--ivory)}
     </div>
     <div class="checkout-layout">
       <!-- STEP 1 -->
-      <div id="co-step1">
+      <div id="co-step1"><div class="launch-notice" role="note"><strong>Online ordering is not open yet.</strong> You can preview checkout, but payment is disabled. Please do not enter personal details.</div>
         <h2 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--charcoal);margin-bottom:30px">Shipping Information</h2>
 
         <div class="form-grid-2">
           <div>
-            <label class="field-label">First Name *</label>
+            <label class="field-label" for="f-firstName">First Name *</label>
             <input class="field-input" id="f-firstName" placeholder="Jane" oninput="liveValidate('firstName')" onblur="touchField('firstName')"/>
             <p class="field-error-msg" id="e-firstName"></p>
           </div>
           <div>
-            <label class="field-label">Last Name *</label>
+            <label class="field-label" for="f-lastName">Last Name *</label>
             <input class="field-input" id="f-lastName" placeholder="Smith" oninput="liveValidate('lastName')" onblur="touchField('lastName')"/>
             <p class="field-error-msg" id="e-lastName"></p>
           </div>
         </div>
         <div class="form-grid-2">
           <div>
-            <label class="field-label">Email Address *</label>
+            <label class="field-label" for="f-email">Email Address *</label>
             <input class="field-input" id="f-email" type="email" placeholder="you@example.com" oninput="liveValidate('email')" onblur="touchField('email')"/>
             <p class="field-error-msg" id="e-email"></p>
           </div>
           <div>
-            <label class="field-label">Phone Number *</label>
+            <label class="field-label" for="f-phone">Phone Number *</label>
             <input class="field-input" id="f-phone" type="tel" placeholder="U.S. phone number" maxlength="20" oninput="liveValidate('phone')" onblur="touchField('phone')"/>
             <p class="field-error-msg" id="e-phone"></p>
           </div>
         </div>
         <div class="form-single"><label class="field-label" for="f-country">Country</label><input class="field-input" id="f-country" value="United States" autocomplete="country-name" readonly/></div>
 <div class="form-single">
-          <label class="field-label">Street Address *</label>
+          <label class="field-label" for="f-address">Street Address *</label>
           <input class="field-input" id="f-address" placeholder="Street address, apartment or suite" oninput="liveValidate('address')" onblur="touchField('address')"/>
           <p class="field-error-msg" id="e-address"></p>
         </div>
         <div class="form-grid-3" style="margin-bottom:40px">
           <div>
-            <label class="field-label">City *</label>
+            <label class="field-label" for="f-city">City *</label>
             <input class="field-input" id="f-city" placeholder="New York" oninput="liveValidate('city')" onblur="touchField('city')"/>
             <p class="field-error-msg" id="e-city"></p>
           </div>
           <div>
-            <label class="field-label">State *</label>
+            <label class="field-label" for="f-state">State *</label>
             <select class="field-select" id="f-state" onchange="liveValidate('state')" onblur="touchField('state')"><option value="">Select state</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select>
             <p class="field-error-msg" id="e-state"></p>
           </div>
           <div>
-            <label class="field-label">ZIP Code *</label>
+            <label class="field-label" for="f-pin">ZIP Code *</label>
             <input class="field-input" id="f-pin" placeholder="5-digit ZIP or ZIP+4" maxlength="10" oninput="liveValidate('pin')" onblur="touchField('pin')"/>
             <p class="field-error-msg" id="e-pin"></p>
           </div>
@@ -857,75 +822,22 @@ tr:nth-child(even) td{background:var(--ivory)}
 </div>
 
 <!-- ════════════════════════ CONFIRMATION ════════════════════════ -->
-<div id="page-confirmation" class="page">
-  <div style="max-width:560px;margin:80px auto;padding:0 32px 120px;text-align:center">
-    <div style="font-size:64px;margin-bottom:28px;color:var(--rose)">✅</div>
-    <p class="section-label">Order Confirmed</p>
-    <h1 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:400;color:var(--charcoal);margin-bottom:18px" id="confirm-name">Thank you!</h1>
-    <p style="font-size:14px;color:var(--stone);line-height:1.8;margin-bottom:12px;font-family:'Jost',sans-serif">Your order has been placed successfully. A confirmation will be sent to <strong id="confirm-email"></strong>.</p>
-    <p style="font-size:14px;color:var(--stone);line-height:1.8;margin-bottom:48px;font-family:'Jost',sans-serif">We'll notify you when your order ships. Expected delivery: 5–7 business days.</p>
-    <button class="btn btn-dark" onclick="showPage('home')">Continue Shopping</button>
-  </div>
-</div>
-
 <!-- ════════════════════════ CONTACT ════════════════════════ -->
-<div id="page-contact" class="page">
-  <div class="content-page" style="max-width:800px">
-    <p class="section-label">Get in Touch</p>
-    <h1>Contact Us</h1>
-    <p style="margin-bottom:48px">We'd love to hear from you. Our team typically responds within 24–48 hours on business days.</p>
-    <div class="contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px">
-      <div>
-        <div style="margin-bottom:28px"><p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;font-family:'Jost',sans-serif">Email</p><p>hello@keepitstylish.in</p></div>
-
-
-        <div><p style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;font-family:'Jost',sans-serif">Storefront</p><p>United States storefront · USD</p></div>
-      </div>
-      <div id="contact-form-wrap">
-        <div class="form-single">
-          <label class="field-label">Your Name *</label>
-          <input class="field-input" id="cf-name" placeholder="Your Name"/>
-          <p class="field-error-msg" id="ce-name"></p>
-        </div>
-        <div class="form-single">
-          <label class="field-label">Email Address *</label>
-          <input class="field-input" id="cf-email" type="email" placeholder="you@example.com"/>
-          <p class="field-error-msg" id="ce-email"></p>
-        </div>
-        <div class="form-single">
-          <label class="field-label">Subject *</label>
-          <input class="field-input" id="cf-subject" placeholder="How can we help?"/>
-          <p class="field-error-msg" id="ce-subject"></p>
-        </div>
-        <div class="form-single">
-          <label class="field-label">Message *</label>
-          <textarea class="field-input" id="cf-message" placeholder="Your message…" rows="4" style="resize:vertical;min-height:100px"></textarea>
-          <p class="field-error-msg" id="ce-message"></p>
-        </div>
-        <button class="btn btn-dark btn-full" onclick="submitContact()">Send Message</button>
-      </div>
-      <div id="contact-thanks" class="success-box" style="display:none">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--charcoal);margin-bottom:12px">Thank you!</p>
-        <p>Your message has been received. We'll get back to you shortly.</p>
-      </div>
-    </div>
-  </div>
-</div>
+<section id="page-contact" class="page"><div class="content-page"><p class="section-label">Keep It Stylish</p><h1>How can we help?</h1><p>Ask about fit, product details, or availability. Use the link below to open a draft in your email app, then send it to us.</p><a class="btn btn-dark" href="mailto:hello@keepitstylish.in">Open email draft ↗</a><p class="support-address">hello@keepitstylish.in</p></div></section>
 
 <!-- ════════════════════════ SHIPPING INFO ════════════════════════ -->
 <div id="page-shipping" class="page">
   <div class="content-page">
     <p class="section-label">Delivery</p>
     <h1>Shipping Information</h1>
-    <h2>United States Shipping</h2><p>U.S. shipping rates, available services, and delivery estimates will be confirmed before payment. Please contact us with your ZIP code for delivery information.</p><h2>International Shipping</h2><p>This storefront serves U.S. customers. For other destinations, contact us before ordering.</p><h2>Order Tracking</h2>
-    <ul><li>You will receive a shipping confirmation email with a tracking link once your order is dispatched.</li><li>You can also track your order via the <button onclick="showPage('track-order')" style="background:none;border:none;cursor:pointer;color:var(--charcoal);text-decoration:underline;font-family:'Jost',sans-serif;font-size:14px">Track Order</button> page.</li></ul>
+    <h2>United States Shipping</h2><p>U.S. shipping rates, available services, and delivery estimates will be confirmed before payment. Please contact us with your ZIP code for delivery information.</p><h2>International Shipping</h2><p>This storefront serves U.S. customers. For other destinations, contact us before ordering.</p><h2>Order assistance</h2><p>Online ordering and automatic tracking are not available yet. <a href="#contact">Contact us</a> with questions.</p>
   </div>
 </div>
 
 <!-- ════════════════════════ RETURNS ════════════════════════ -->
 <div id="page-returns" class="page">
   <div class="content-page">
-    <p class="section-label">Hassle-Free</p>
+    <p class="section-label">Returns</p>
     <h1>Returns & Exchanges</h1>
     <h2>Return Policy</h2>
     <ul><li>We accept returns within 14 days of delivery.</li><li>Items must be unworn, unwashed, and in original condition with all tags attached.</li><li>Sale items, custom orders, and intimates are not eligible for return.</li><li>To initiate a return, email returns@keepitstylish.in with your order number.</li></ul>
@@ -968,58 +880,19 @@ tr:nth-child(even) td{background:var(--ivory)}
 </div>
 
 <!-- ════════════════════════ TRACK ORDER ════════════════════════ -->
-<div id="page-track-order" class="page">
-  <div class="content-page" style="max-width:600px">
-    <p class="section-label">Delivery Status</p>
-    <h1>Track Your Order</h1>
-    <p style="margin-bottom:48px">Enter your order number and email address to check the status of your delivery.</p>
-    <div id="track-form">
-      <div class="form-single">
-        <label class="field-label">Order Number *</label>
-        <input class="field-input" id="tf-order" placeholder="e.g. KIS-2025-00123"/>
-        <p class="field-error-msg" id="te-order"></p>
-      </div>
-      <div class="form-single" style="margin-bottom:36px">
-        <label class="field-label">Email Address *</label>
-        <input class="field-input" id="tf-email" type="email" placeholder="Email used during checkout"/>
-        <p class="field-error-msg" id="te-email"></p>
-      </div>
-      <button class="btn btn-dark btn-full" onclick="submitTrack()">Track Order</button>
-    </div>
-    <div id="track-result" class="info-box" style="display:none">
-      <p style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--charcoal);margin-bottom:12px" id="track-order-num"></p>
-      <p>A tracking update has been sent to <strong id="track-email-out"></strong>. Please allow a few minutes for the email to arrive. If you haven't received it, check your spam folder or contact us at hello@keepitstylish.in.</p>
-    </div>
-  </div>
-</div>
+<section id="page-track-order" class="page"><div class="content-page"><p class="section-label">Keep It Stylish</p><h1>Order assistance</h1><p>Online order tracking is not available yet. If you have an existing order or inquiry, email us with your order reference. Do not include payment-card details.</p><a class="btn btn-dark" href="mailto:hello@keepitstylish.in?subject=Order%20assistance">Open email draft ↗</a></div></section>
 
 <!-- ════════════════════════ PRIVACY ════════════════════════ -->
-<div id="page-privacy" class="page">
-  <div class="content-page">
-    <p class="section-label">Legal</p>
-    <h1>Privacy Policy</h1>
-    <p style="font-size:12px;color:var(--stone);margin-bottom:40px;font-family:'Jost',sans-serif">Last updated: May 2025</p>
-    <h2 style="margin-top:0">Information We Collect</h2>
-    <p>We collect information you provide directly, such as your name, email address, phone number, shipping address, and payment details when you place an order. We also collect browsing data to improve your experience.</p>
-    <h2>How We Use Your Information</h2>
-    <p>Your information is used to process orders, send order confirmations and shipping updates, provide customer support, and improve our website and services.</p>
-    <h2>Data Sharing</h2>
-    <p>We do not sell, trade, or rent your personal information to third parties. We share information only with trusted service providers (payment gateways, courier partners) under strict confidentiality agreements.</p>
-    <h2>Payment Security</h2>
-    <p>This storefront does not currently collect or process payment card details.</p>
-    <h2>Your Rights</h2>
-    <p>You have the right to access, correct, or delete your personal data. To make a request, email privacy@keepitstylish.in.</p>
-  </div>
-</div>
+<section id="page-privacy" class="page"><div class="content-page"><p class="section-label">Privacy</p><h1>Privacy information</h1><p>This storefront is a pre-launch preview. Online payments, customer accounts, newsletter subscriptions, and automatic order tracking are not connected.</p><h2>Your shopping bag</h2><p>Product selections are stored in your browser so your bag survives a refresh. Stored selections expire after 30 days. Prices and product options are read again from the current catalog. Checkout names, addresses, and card details are not saved in this browser storage.</p><h2>Email inquiries</h2><p>Email links open your email application. A message is sent only when you send it. Do not include payment-card details in email.</p><h2>Website services</h2><p>The website is hosted by GitHub Pages and loads fonts from Google Fonts. Requests to those services can include technical information such as your IP address. Their privacy practices apply to their processing.</p><h2>Before online ordering opens</h2><p>Full privacy details covering the seller, payment and fulfillment providers, retention, and applicable customer rights will be published before online orders are accepted.</p><h2>Contact</h2><p>For questions, email <a href="mailto:hello@keepitstylish.in">hello@keepitstylish.in</a>.</p></div></section>
 
 <!-- ════════════════════════ TERMS ════════════════════════ -->
 <div id="page-terms" class="page">
   <div class="content-page">
     <p class="section-label">Legal</p>
     <h1>Terms & Conditions</h1>
-    <p style="font-size:12px;color:var(--stone);margin-bottom:40px;font-family:'Jost',sans-serif">Last updated: May 2025</p>
+    <p style="font-size:12px;color:var(--stone);margin-bottom:40px;font-family:'Jost',sans-serif">Pre-launch information · Updated October 2026</p>
     <h2 style="margin-top:0">Acceptance of Terms</h2>
-    <p>By accessing and using keepitstylish.in, you agree to be bound by these Terms & Conditions.</p>
+    <p>By accessing and using the Keep It Stylish website, you agree to be bound by these Terms & Conditions.</p>
     <h2>Products & Pricing</h2>
     <p>Prices are listed in U.S. dollars (USD). Shipping and applicable sales tax are confirmed before payment. We reserve the right to modify prices at any time without notice.</p>
     <h2>Orders & Payment</h2>
@@ -1033,53 +906,11 @@ tr:nth-child(even) td{background:var(--ivory)}
 </div>
 
 <!-- ════════════════════════ ACCOUNT ════════════════════════ -->
-<div id="page-account" class="page">
-  <div id="login-view">
-    <div class="login-page">
-      <div style="text-align:center;margin-bottom:48px">
-        <p class="section-label">My Account</p>
-        <h1 class="section-title" style="font-size:48px">Welcome Back</h1>
-      </div>
-      <label class="field-label">Email</label>
-      <input class="field-input" type="email" placeholder="your@email.com" style="margin-bottom:24px"/>
-      <label class="field-label">Password</label>
-      <input class="field-input" type="password" placeholder="••••••••" style="margin-bottom:36px"/>
-      <button class="btn btn-dark btn-full" onclick="showAccountDash()" style="margin-bottom:16px">Sign In</button>
-      <p style="font-size:12px;color:var(--stone);text-align:center;font-family:'Jost',sans-serif">Don't have an account? <span style="cursor:pointer;text-decoration:underline;color:var(--charcoal)" onclick="showAccountDash()">Create one</span></p>
-    </div>
-  </div>
-  <div id="account-dash" style="display:none">
-    <div class="account-layout">
-      <div>
-        <button class="account-nav-btn active" id="btn-profile" onclick="switchTab('profile')">👤 Profile</button>
-        <button class="account-nav-btn" id="btn-orders" onclick="switchTab('orders')">📦 My Orders</button>
-        <button class="account-nav-btn" style="margin-top:24px" onclick="document.getElementById('account-dash').style.display='none';document.getElementById('login-view').style.display='block'">↩ Sign Out</button>
-      </div>
-      <div>
-        <div id="tab-profile">
-          <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--charcoal);margin-bottom:32px">Profile Details</h2>
-          <div class="form-grid-2">
-            <div><label class="field-label">First Name</label><input class="field-input" placeholder="First name"/></div>
-            <div><label class="field-label">Last Name</label><input class="field-input" placeholder="Last name"/></div>
-          </div>
-          <div class="form-grid-2">
-            <div><label class="field-label">Email</label><input class="field-input" placeholder="you@example.com"/></div>
-            <div><label class="field-label">Phone</label><input class="field-input" placeholder="+1 (212) 555-0123"/></div>
-          </div>
-          <button class="btn btn-dark" style="margin-top:16px" onclick="showToast('✓ Profile saved')">Save Changes</button>
-        </div>
-        <div id="tab-orders" style="display:none">
-          <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--charcoal);margin-bottom:32px">Order History</h2>
-          <p style="font-size:14px;color:var(--stone);font-family:'Jost',sans-serif">No orders to show yet.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<section id="page-account" class="page"><div class="content-page"><p class="section-label">Keep It Stylish</p><h1>Your shopping bag</h1><p>You can browse and save items in your bag without an account. Online ordering is not open yet.</p><a class="btn btn-dark" href="#cart">View your bag</a></div></section>
 
 <!-- ABOUT PAGE -->
 <div id="page-about" class="page">
-  <div style="position:relative;padding:140px 40px 120px;text-align:center;overflow:hidden;background:linear-gradient(rgba(44,36,32,0.88),rgba(44,36,32,0.88)),url('assets/products/green-dress-garden.png') center 30%/cover no-repeat">
+  <div style="position:relative;padding:140px 40px 120px;text-align:center;overflow:hidden;background:linear-gradient(rgba(44,36,32,0.88),rgba(44,36,32,0.88)),url('assets/products/green-dress-garden-1280.webp') center 30%/cover no-repeat">
     <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);margin-bottom:20px;position:relative;z-index:1">Our Story</p>
     <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,72px);font-weight:300;color:var(--ivory);line-height:1.1;letter-spacing:.03em;max-width:700px;margin:0 auto 24px;position:relative;z-index:1">The Woman Behind the Thread</h1>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:#D4A89A;letter-spacing:.05em;position:relative;z-index:1">Manju's Story</p>
@@ -1119,263 +950,54 @@ tr:nth-child(even) td{background:var(--ivory)}
 </div>
 
 <!-- CUSTOM ATELIER PAGE -->
-<div id="page-custom" class="page">
-  <div style="background:var(--charcoal);padding:120px 40px 96px;text-align:center">
-    <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);margin-bottom:20px">Custom Atelier</p>
-    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,72px);font-weight:300;color:var(--ivory);line-height:1.1;letter-spacing:.03em;max-width:680px;margin:0 auto 24px">Made For You, By Hand</h1>
-    <p style="font-family:'Jost',sans-serif;font-size:14px;color:rgba(248,245,240,.65);line-height:1.8;max-width:480px;margin:0 auto">Every custom piece is personally overseen by Manju — from the first conversation to the final stitch. No standard sizes. No compromises.</p>
-  </div>
-  <!-- How it works -->
-  <div style="max-width:900px;margin:0 auto;padding:96px 32px 80px">
-    <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--stone);margin-bottom:10px;text-align:center">The Process</p>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;color:var(--charcoal);text-align:center;margin-bottom:64px">How It Works</h2>
-    <div id="custom-steps"></div>
-  </div>
-  <!-- What we make -->
-  <div style="background:var(--ivory);padding:80px 32px">
-    <div style="max-width:900px;margin:0 auto">
-      <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--stone);margin-bottom:10px;text-align:center">Specialities</p>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;color:var(--charcoal);text-align:center;margin-bottom:48px">What We Create</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
-        <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">🪡</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Thread Embroidery</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">Manju's original craft — intricate motifs by hand</p></div>
-        <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">📐</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Made-to-Measure</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">Cut precisely to your body, not a size chart</p></div>
-        <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">👗</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Bridal Lehengas</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">One-of-a-kind pieces for your most important day</p></div>
-        <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">✨</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Indo-Western Fusion</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">Traditional silhouettes in contemporary cuts</p></div>
-        <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">🪢</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Zari & Mirror Work</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">Festive embellishment crafted with care</p></div>
-        <div style="background:var(--warm);border:1px solid var(--sand);padding:28px 24px;text-align:center"><div style="font-size:28px;margin-bottom:12px">🎨</div><p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px">Custom Color</p><p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);line-height:1.7">Choose your exact palette — nothing off the shelf</p></div>
+<section id="page-custom" class="page"><div class="content-page"><p class="section-label">Keep It Stylish</p><h1>A piece of your own</h1><p>Have a custom design in mind? Email your ideas to discuss whether we can help. Availability, pricing, measurements, and timing need to be agreed before an order is placed.</p><a class="btn btn-dark" href="mailto:hello@keepitstylish.in?subject=Custom%20design%20inquiry">Discuss your idea ↗</a><p class="support-address">This opens your email app. Your inquiry is sent only when you send the email.</p></div></section>
+
+</main>
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <a href="#home" onclick="showPage('home');return false" aria-label="Keep It Stylish home"><img class="footer-logo" src="assets/brand/logo-light.svg?v=original-2" width="384" height="76" alt="Keep It Stylish"/></a>
+        <p class="footer-desc">Curated women's fashion blending the richness of Indian heritage with the ease of modern style.</p>
+        <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sand);margin-bottom:12px;font-family:'Jost',sans-serif">Let’s talk style</p>
+        <p class="footer-desc">Questions about a dress or your size?</p><a class="footer-link" href="mailto:hello@keepitstylish.in">Email us ↗</a>
+      </div>
+      <div>
+        <p class="footer-col-title">Shop</p>
+        <button class="footer-link" onclick="showPage('collections')">New Arrivals</button>
+        <button class="footer-link" onclick="filterAndGo('dresses')">Dresses</button>
+        <button class="footer-link" onclick="showPage('collections')">All Collections</button>
+        <button class="footer-link" onclick="showPage('custom')" style="color:#C9A96E">Custom Atelier</button>
+      </div>
+      <div>
+        <p class="footer-col-title">Help</p>
+        <button class="footer-link" onclick="showPage('size-guide')">Size Guide</button>
+        <button class="footer-link" onclick="showPage('shipping')">Shipping Info</button>
+        <button class="footer-link" onclick="showPage('returns')">Returns & Exchanges</button>
+        <button class="footer-link" onclick="showPage('track-order')">Track Order</button>
+        <button class="footer-link" onclick="showPage('contact')">Contact Us</button>
+      </div>
+      <div>
+        <p class="footer-col-title">Legal</p>
+        <button class="footer-link" onclick="showPage('about')">About Manju</button>
+        <button class="footer-link" onclick="showPage('terms')">Terms & Conditions</button>
+        <button class="footer-link" onclick="showPage('privacy')">Privacy Policy</button>
+        <button class="footer-link" onclick="showPage('returns')">Refund Policy</button>
       </div>
     </div>
-  </div>
-  <!-- Form -->
-  <div style="max-width:720px;margin:0 auto;padding:96px 32px 120px">
-    <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--stone);margin-bottom:10px">Get Started</p>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;color:var(--charcoal);margin-bottom:12px">Tell Us Your Vision</h2>
-    <p style="font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);margin-bottom:48px;line-height:1.8">Fill in the form below and Manju will personally reach out within 1–2 business days. Prefer to chat first? <a href="mailto:hello@keepitstylish.in" target="_blank" style="color:var(--charcoal);font-weight:500">Email us directly ↗</a></p>
-    <div id="custom-form-wrap">
-      <div class="form-grid-2" style="margin-bottom:24px">
-        <div><label class="field-label">Your Name *</label><input class="field-input" id="custom-name" placeholder="Full name"/></div>
-        <div><label class="field-label">Email Address *</label><input class="field-input" id="custom-email" type="email" placeholder="your@email.com"/></div>
-      </div>
-      <div class="form-grid-2" style="margin-bottom:24px">
-        <div><label class="field-label">Mobile Number *</label><input class="field-input" id="cf-phone" type="tel" placeholder="U.S. phone number"/></div>
-        <div><label class="field-label">Approximate Budget</label>
-          <select class="field-input" id="cf-budget" style="appearance:none">
-            <option value="">Select a range</option><option>Under $51.89</option><option>$51.89 – $103.77</option><option>$103.77 – $207.55</option><option>$207.55 – $415.10</option><option>Above $415.10</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-grid-2" style="margin-bottom:24px">
-        <div><label class="field-label">Occasion *</label>
-          <select class="field-input" id="cf-occasion" style="appearance:none">
-            <option value="">Select occasion</option><option>Wedding / Bridal</option><option>Sangeet / Mehndi</option><option>Reception</option><option>Festive / Diwali</option><option>Eid Celebration</option><option>Corporate Event</option><option>Casual / Everyday</option><option>Other</option>
-          </select>
-        </div>
-        <div><label class="field-label">Garment Type *</label>
-          <select class="field-input" id="cf-garment" style="appearance:none">
-            <option value="">Select type</option><option>Lehenga Choli</option><option>Anarkali Suit</option><option>Sharara Set</option><option>Kurta Set</option><option>Indo-Western Dress</option><option>Saree Blouse</option><option>Co-ord Set</option><option>Other / Not Sure Yet</option>
-          </select>
-        </div>
-      </div>
-      <div style="margin-bottom:24px"><label class="field-label">Describe Your Vision *</label><textarea class="field-input" id="cf-vision" rows="5" placeholder="Tell us about the look you have in mind — colors, silhouette, embroidery ideas…" style="resize:vertical;padding-top:10px;padding-bottom:10px"></textarea></div>
-      <button class="btn btn-dark btn-full" onclick="submitCustomForm()" style="padding:20px;margin-top:8px">Submit Custom Order Request</button>
+    <div class="footer-bottom">
+      <span>© 2026 Keep It Stylish. All rights reserved.</span>
+      <span>United States · USD $</span>
     </div>
-    <div id="custom-success" style="display:none;text-align:center;padding:64px 0">
-      <div style="font-size:48px;margin-bottom:24px">🌸</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:400;color:var(--charcoal);margin-bottom:16px">We've received your vision</h2>
-      <p style="font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);line-height:1.9;max-width:480px;margin:0 auto 40px">Manju will personally review your request and reach out within 1–2 business days to begin your consultation.</p>
-      <button class="btn btn-dark" onclick="showPage('home')">Back to Home</button>
-    </div>
-  </div>
-</div>
-
-<!-- LOGO PICKER -->
-<div id="page-logo-picker" class="page">
-  <div style="max-width:900px;margin:0 auto;padding:80px 40px 120px">
-    <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--stone);margin-bottom:12px">Brand Identity</p>
-    <h1 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:400;color:var(--charcoal);margin-bottom:8px">Logo Design Options</h1>
-    <p style="font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);margin-bottom:64px">Choose a direction for the Keep It Stylish brand mark. Click a design to select it.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px" id="logo-grid">
-
-      <!-- A: Classic Refined -->
-      <div class="logo-option" id="logo-A" onclick="selectLogo('A')" style="border:1px solid var(--sand);padding:48px 32px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;letter-spacing:.12em;color:var(--charcoal);line-height:1">Keep It Stylish</div>
-        <div style="width:48px;height:1px;background:var(--gold);margin:10px auto 10px"></div>
-        
-        <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);margin-top:28px;letter-spacing:.1em;text-transform:uppercase">A — Classic Refined</p>
-      </div>
-
-      <!-- B: Monogram + Name -->
-      <div class="logo-option" id="logo-B" onclick="selectLogo('B')" style="border:1px solid var(--sand);padding:48px 32px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-        <div style="display:inline-flex;align-items:center;gap:20px">
-          <div style="border:1.5px solid var(--charcoal);width:52px;height:52px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <span style="font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.08em;color:var(--charcoal)">KIS</span>
-          </div>
-          <div style="text-align:left">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;letter-spacing:.08em;color:var(--charcoal);line-height:1">Keep It Stylish</div>
-            
-          </div>
-        </div>
-        <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);margin-top:28px;letter-spacing:.1em;text-transform:uppercase">B — Monogram + Name</p>
-      </div>
-
-      <!-- C: Ornamental -->
-      <div class="logo-option" id="logo-C" onclick="selectLogo('C')" style="border:1px solid var(--sand);padding:48px 32px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-        <svg width="28" height="28" viewBox="0 0 28 28" style="margin-bottom:10px"><polygon points="14,2 26,14 14,26 2,14" fill="none" stroke="#C9A96E" stroke-width="1.2"/><polygon points="14,7 21,14 14,21 7,14" fill="none" stroke="#C9A96E" stroke-width="0.8"/></svg>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;letter-spacing:.14em;color:var(--charcoal);line-height:1">Keep It Stylish</div>
-        
-        <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);margin-top:28px;letter-spacing:.1em;text-transform:uppercase">C — Ornamental Diamond</p>
-      </div>
-
-      <!-- D: Two-Weight Split -->
-      <div class="logo-option" id="logo-D" onclick="selectLogo('D')" style="border:1px solid var(--sand);padding:48px 32px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-        <div style="line-height:1">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;font-style:italic;letter-spacing:.2em;color:var(--stone)">Keep It</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:400;letter-spacing:.06em;color:var(--charcoal);margin-top:2px">Stylish</div>
-        </div>
-        
-        <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);margin-top:28px;letter-spacing:.1em;text-transform:uppercase">D — Two-Weight Split</p>
-      </div>
-
-      <!-- E: Heritage Rule -->
-      <div class="logo-option" id="logo-E" onclick="selectLogo('E')" style="border:1px solid var(--sand);padding:48px 32px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-        <div style="display:flex;align-items:center;gap:16px;justify-content:center">
-          <div style="flex:1;height:1px;background:var(--charcoal)"></div>
-          <div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--charcoal);white-space:nowrap">Keep It Stylish</div>
-          <div style="flex:1;height:1px;background:var(--charcoal)"></div>
-        </div>
-        
-        <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);margin-top:28px;letter-spacing:.1em;text-transform:uppercase">E — Heritage Rule</p>
-      </div>
-
-      <!-- F: Dark Badge -->
-      <div class="logo-option" id="logo-F" onclick="selectLogo('F')" style="border:1px solid var(--sand);padding:48px 32px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-        <div style="display:inline-block;background:var(--charcoal);padding:18px 36px">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;letter-spacing:.14em;color:var(--ivory);line-height:1">Keep It Stylish</div>
-          
-        </div>
-        <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);margin-top:28px;letter-spacing:.1em;text-transform:uppercase">F — Dark Badge</p>
-      </div>
-
-    </div>
-
-    <div id="logo-selection-msg" style="display:none;margin-top:48px;padding:24px 32px;background:var(--ivory);border:1px solid var(--sand)">
-      <p style="font-family:'Jost',sans-serif;font-size:13px;color:var(--charcoal)">
-        You selected: <strong id="logo-selected-name"></strong> — tell me which one you like and I'll implement it in the navbar!
-      </p>
-    </div>
-
-    <!-- NAVICON / FAVICON OPTIONS -->
-    <div style="margin-top:88px">
-      <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--stone);margin-bottom:12px">Browser Tab Icon</p>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;color:var(--charcoal);margin-bottom:8px">Navicon / Favicon Options</h2>
-      <p style="font-family:'Jost',sans-serif;font-size:14px;color:var(--stone);margin-bottom:16px">Shown at full size below. The small preview shows how it actually looks in a browser tab.</p>
-      <p style="font-family:'Jost',sans-serif;font-size:12px;color:var(--stone);margin-bottom:48px;padding:12px 16px;background:var(--ivory);border-left:2px solid var(--gold);display:inline-block">Tip: simpler designs (fewer details) read better at 16×16px in a browser tab.</p>
-
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" id="icon-grid">
-
-        <!-- Icon 1: Georgia Italic, ivory -->
-        <div class="logo-option" id="icon-1" onclick="selectIcon(1)" style="border:1px solid var(--sand);padding:36px 24px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-          <svg width="80" height="80" viewBox="0 0 64 64" style="display:block;margin:0 auto 16px">
-            <rect width="64" height="64" rx="10" fill="#2C2420"/>
-            <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="400" fill="#F8F5F0" letter-spacing="1">KIS</text>
-          </svg>
-          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
-            <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone)">Tab preview:</span>
-            <svg width="16" height="16" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#2C2420"/><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="400" fill="#F8F5F0" letter-spacing="1">KIS</text></svg>
-          </div>
-          <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);letter-spacing:.1em;text-transform:uppercase">1 — Italic Serif, ivory</p>
-        </div>
-
-        <!-- Icon 2: Georgia Italic, gold -->
-        <div class="logo-option" id="icon-2" onclick="selectIcon(2)" style="border:1px solid var(--sand);padding:36px 24px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-          <svg width="80" height="80" viewBox="0 0 64 64" style="display:block;margin:0 auto 16px">
-            <rect width="64" height="64" rx="10" fill="#2C2420"/>
-            <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="400" fill="#C9A96E" letter-spacing="1">KIS</text>
-          </svg>
-          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
-            <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone)">Tab preview:</span>
-            <svg width="16" height="16" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#2C2420"/><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="400" fill="#C9A96E" letter-spacing="1">KIS</text></svg>
-          </div>
-          <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);letter-spacing:.1em;text-transform:uppercase">2 — Italic Serif, gold</p>
-        </div>
-
-        <!-- Icon 3: Palatino italic, ivory — more flowing curves -->
-        <div class="logo-option" id="icon-3" onclick="selectIcon(3)" style="border:1px solid var(--sand);padding:36px 24px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-          <svg width="80" height="80" viewBox="0 0 64 64" style="display:block;margin:0 auto 16px">
-            <rect width="64" height="64" rx="10" fill="#2C2420"/>
-            <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Palatino Linotype,Book Antiqua,Palatino,serif" font-style="italic" font-size="22" font-weight="400" fill="#F8F5F0" letter-spacing="1">KIS</text>
-          </svg>
-          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
-            <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone)">Tab preview:</span>
-            <svg width="16" height="16" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#2C2420"/><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Palatino Linotype,Book Antiqua,Palatino,serif" font-style="italic" font-size="22" font-weight="400" fill="#F8F5F0" letter-spacing="1">KIS</text></svg>
-          </div>
-          <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);letter-spacing:.1em;text-transform:uppercase">3 — Palatino italic (flowing)</p>
-        </div>
-
-        <!-- Icon 4: Italic + extra skew + gold -->
-        <div class="logo-option" id="icon-4" onclick="selectIcon(4)" style="border:1px solid var(--sand);padding:36px 24px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-          <svg width="80" height="80" viewBox="0 0 64 64" style="display:block;margin:0 auto 16px">
-            <rect width="64" height="64" rx="10" fill="#2C2420"/>
-            <g transform="skewX(-8) translate(4,0)">
-              <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="400" fill="#C9A96E" letter-spacing="2">KIS</text>
-            </g>
-          </svg>
-          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
-            <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone)">Tab preview:</span>
-            <svg width="16" height="16" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#2C2420"/><g transform="skewX(-8) translate(4,0)"><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="400" fill="#C9A96E" letter-spacing="2">KIS</text></g></svg>
-          </div>
-          <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);letter-spacing:.1em;text-transform:uppercase">4 — Italic + slant, gold</p>
-        </div>
-
-        <!-- Icon 5: Italic K in circle, ivory -->
-        <div class="logo-option" id="icon-5" onclick="selectIcon(5)" style="border:1px solid var(--sand);padding:36px 24px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-          <svg width="80" height="80" viewBox="0 0 64 64" style="display:block;margin:0 auto 16px">
-            <circle cx="32" cy="32" r="30" fill="#2C2420"/>
-            <circle cx="32" cy="32" r="26" fill="none" stroke="#C9A96E" stroke-width="1"/>
-            <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Palatino Linotype,Book Antiqua,Palatino,serif" font-style="italic" font-size="20" font-weight="400" fill="#F8F5F0" letter-spacing="1">KIS</text>
-          </svg>
-          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
-            <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone)">Tab preview:</span>
-            <svg width="16" height="16" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#2C2420"/><circle cx="32" cy="32" r="26" fill="none" stroke="#C9A96E" stroke-width="1"/><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Palatino Linotype,Book Antiqua,Palatino,serif" font-style="italic" font-size="20" font-weight="400" fill="#F8F5F0" letter-spacing="1">KIS</text></svg>
-          </div>
-          <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);letter-spacing:.1em;text-transform:uppercase">5 — Italic circle seal</p>
-        </div>
-
-        <!-- Icon 6: Italic K large, ivory — clearest at small -->
-        <div class="logo-option" id="icon-6" onclick="selectIcon(6)" style="border:1px solid var(--sand);padding:36px 24px;text-align:center;cursor:pointer;transition:all .3s;background:var(--warm)">
-          <svg width="80" height="80" viewBox="0 0 64 64" style="display:block;margin:0 auto 16px">
-            <rect width="64" height="64" rx="10" fill="#2C2420"/>
-            <text x="52%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="40" font-weight="300" fill="#F8F5F0">K</text>
-          </svg>
-          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
-            <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone)">Tab preview:</span>
-            <svg width="16" height="16" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#2C2420"/><text x="52%" y="57%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="40" font-weight="300" fill="#F8F5F0">K</text></svg>
-          </div>
-          <p style="font-family:'Jost',sans-serif;font-size:11px;color:var(--stone);letter-spacing:.1em;text-transform:uppercase">6 — Italic K only (sharpest in tab)</p>
-        </div>
-
-      </div>
-
-      <div id="icon-selection-msg" style="display:none;margin-top:40px;padding:24px 32px;background:var(--ivory);border:1px solid var(--sand)">
-        <p style="font-family:'Jost',sans-serif;font-size:13px;color:var(--charcoal)">
-          You selected navicon: <strong id="icon-selected-name"></strong> — tell me your choice and I'll apply it!
-        </p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
+  </footer>
 <!-- TOAST -->
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ════════════════════════ JAVASCRIPT ════════════════════════ -->
 <script>
 // ── DATA ──
 const PRODUCTS = [
-{"id":"coral-floral-ruffle-midi","name":"Coral Floral Ruffle Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Coral Floral","hex":"#E48877"}],"imgs":["assets/products/coral-floral-dress.png"],"desc":"Coral floral prints on an ivory base, a softly ruffled V-neckline, three-quarter sleeves with flared cuffs, and a flowing midi skirt with a gathered lower tier. Available in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Model image is AI-generated from the supplied coral floral dress reference."},
-{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/green-dress-garden.png","assets/products/green-dress-city.png","assets/products/green-dress-conservatory-front.png"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Available now in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Lifestyle images are AI-generated styling illustrations based on the supplied dress references."},
+{"id":"coral-floral-ruffle-midi","name":"Coral Floral Ruffle Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Coral Floral","hex":"#E48877"}],"imgs":["assets/products/coral-floral-dress-1280.webp"],"desc":"Coral floral prints on an ivory base, a softly ruffled V-neckline, three-quarter sleeves with flared cuffs, and a flowing midi skirt with a gathered lower tier. Available in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Model image is AI-generated from the supplied coral floral dress reference."},
+{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/green-dress-garden-1280.webp","assets/products/green-dress-city-1280.webp","assets/products/green-dress-conservatory-front-1280.webp"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Available now in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Lifestyle images are AI-generated styling illustrations based on the supplied dress references."},
 ];
 
 const COUPONS = {
@@ -1385,6 +1007,7 @@ const COUPONS = {
 };
 
 // ── STATE ──
+let restoringRoute = false;
 let cart = [];
 let activeCoupon = null;
 let currentProduct = null;
@@ -1397,12 +1020,19 @@ let fieldTouched = {};
 // ── NAVIGATION ──
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const pg = document.getElementById('page-' + name);
+  const pg = document.getElementById('page-' + name) || document.getElementById('page-home');
   if (pg) pg.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.body.style.overflow = '';
+  document.getElementById('mobile-menu').style.display = 'none';
+  document.getElementById('hamburger-btn')?.setAttribute('aria-expanded', 'false');
+  const route = name === 'product' && currentProduct ? currentProduct.id : name;
+  if (!restoringRoute && location.hash !== '#' + route) history.pushState(null, '', '#' + route);
+  document.title = name === 'product' && currentProduct ? currentProduct.name + ' | Keep It Stylish' : name === 'cart' ? 'Your Bag | Keep It Stylish' : name === 'home' ? 'Keep It Stylish | U.S. Store' : 'Keep It Stylish | ' + (pg.querySelector('h1')?.textContent.trim() || 'U.S. Store');
+  window.scrollTo({top:0,behavior:'instant'});
+  const heading = pg.querySelector('h1');
+  if (heading) { heading.tabIndex = -1; heading.focus({preventScroll:true}); }
   if (name === 'cart') renderCart();
   if (name === 'checkout') renderCheckout();
-  if (name === 'custom') { renderCustomSteps(); document.getElementById('custom-form-wrap').style.display='block'; document.getElementById('custom-success').style.display='none'; }
 }
 function filterAndGo(cat) {
   showPage('collections');
@@ -1464,16 +1094,16 @@ function cardHTML(p) {
     p.isNew ? `<span class="badge badge-new">New</span>` : '',
     p.orig ? `<span class="badge badge-sale">Sale</span>` : '',
   ].filter(Boolean).join('<br/>');
-  return `<div class="product-card" onclick="openProduct('${p.id}')">
+  return `<a class="product-card" href="#${p.id}" aria-label="View ${p.name}">
     <div class="product-img-wrap">
-      <img src="${p.imgs[0]}" alt="${p.name}" loading="lazy"/>
+      <img srcset="${p.imgs[0].replace('-1280.webp','-640.webp')} 640w, ${p.imgs[0]} 1280w" sizes="(max-width:640px) 50vw, 33vw" src="${p.imgs[0]}" alt="${p.name}" loading="lazy"/>
       <div style="position:absolute;top:14px;left:14px">${badges}</div>
       <div class="product-overlay">View Details</div>
     </div>
     <p class="product-cat">${categoryLabel(p.cat)}</p>
     <p class="product-name">${p.name}</p>
     <p class="product-price-main">${fmt(p.price)}${p.orig?`<span class="product-price-orig">${fmt(p.orig)}</span>`:''}</p>
-  </div>`;
+  </a>`;
 }
 
 // ── HOME ──
@@ -1516,6 +1146,7 @@ function openProduct(id) {
  document.getElementById('size-availability').textContent = p.upcomingSizes ? 'S, M, L available · XS and XL coming soon' : '';
   document.getElementById('detail-cat').textContent = categoryLabel(p.cat);
   document.getElementById('detail-name').textContent = p.name;
+  document.title = p.name + ' | Keep It Stylish';
   document.getElementById('detail-price').textContent = fmt(p.price);
   const origEl = document.getElementById('detail-orig');
   const saveEl = document.getElementById('detail-save');
@@ -1528,16 +1159,16 @@ function openProduct(id) {
   btn.classList.remove('added'); btn.textContent = p.sizes.length ? '🛍 Add to Bag' : 'Ask About Sizes';
 
   document.getElementById('thumbs').innerHTML = p.imgs.map((img,i)=>
-    `<img class="gallery-thumb${i===0?' active':''}" alt="${p.name} — view ${i+1}" src="${img}" onclick="switchImg(this,'${img}')" loading="lazy"/>`
+    `<button type="button" class="gallery-thumb${i===0?' active':''}" aria-label="Show ${p.name}, image ${i+1}" onclick="switchImg(this,'${img}')"><img alt="${p.name} — view ${i+1}" src="${img}" loading="lazy"/></button>`
   ).join('');
   document.getElementById('color-swatches').innerHTML = p.colors.map(c=>
-    `<div class="swatch${c.name===selColor.name?' sel':''}" style="background:${c.hex}" title="${c.name}" onclick="pickColor(this,'${c.name}','${c.hex}')"></div>`
+    `<button type="button" aria-label="${c.name}" class="swatch${c.name===selColor.name?' sel':''}" style="background:${c.hex}" title="${c.name}" onclick="pickColor(this,'${c.name}','${c.hex}')"></button>`
   ).join('');
   const sizeOrder = ['XS','S','M','L','XL'];
   const allSizes = [...p.sizes,...(p.upcomingSizes || [])].sort((a,b)=>sizeOrder.indexOf(a)-sizeOrder.indexOf(b));
   document.getElementById('size-grid').innerHTML = allSizes.map(size => {
     const coming = (p.upcomingSizes || []).includes(size);
-    return '<button class="size-btn'+(coming?' size-coming':'')+'" aria-pressed="false" aria-label="'+size+(coming?' — coming soon, get notified':' — available')+'" onclick="pickSize(this,\''+size+'\')">'+size+(coming?'<small>Get notified</small>':'')+'</button>';
+    return '<button class="size-btn'+(coming?' size-coming':'')+'" aria-pressed="false" aria-label="'+size+(coming?' — coming soon, email for updates':' — available')+'" onclick="pickSize(this,\''+size+'\')">'+size+(coming?'<small>Email for updates</small>':'')+'</button>';
   }).join('');
   updateSizeAction();
 }
@@ -1556,7 +1187,7 @@ function updateSizeAction() {
   const btn = document.getElementById('atc-btn');
   btn.classList.remove('added');
   btn.textContent = upcoming ? 'Get Notified — '+selSize : '🛍 Add to Bag';
-  document.getElementById('size-availability').textContent = upcoming ? selSize+' is coming soon. Get notified opens your email app to request an availability alert.' : currentProduct.upcomingSizes ? 'S, M, L available · XS and XL coming soon' : '';
+  document.getElementById('size-availability').textContent = upcoming ? selSize+' is coming soon. Email for updates opens your email app to request an availability alert.' : currentProduct.upcomingSizes ? 'S, M, L available · XS and XL coming soon' : '';
 }
 function pickSize(el, size) {
   document.querySelectorAll('.size-btn').forEach(b=>{b.classList.remove('sel');b.setAttribute('aria-pressed','false');});
@@ -1699,11 +1330,11 @@ function renderCheckout() {
 
 // ── CHECKOUT VALIDATION ──
 const VALIDATORS = {
-  firstName: v => { if(!v.trim()) return 'First name is required'; if(!/^[A-Za-z\s'-]{2,50}$/.test(v.trim())) return 'Enter a valid first name (letters only, 2–50 chars)'; return ''; },
-  lastName:  v => { if(!v.trim()) return 'Last name is required'; if(!/^[A-Za-z\s'-]{2,50}$/.test(v.trim())) return 'Enter a valid last name'; return ''; },
+  firstName: v => { if(!v.trim()) return 'First name is required'; if(v.trim().length > 100) return 'Use at most 100 characters'; return ''; },
+  lastName:  v => { if(!v.trim()) return 'Last name is required'; if(v.trim().length > 100) return 'Use at most 100 characters'; return ''; },
   email:     v => { if(!v.trim()) return 'Email address is required'; if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())) return 'Enter a valid email address'; return ''; },
-  phone:     v => { if(!v.trim()) return 'Phone number is required'; if(!/^1?[2-9]\d{2}[2-9]\d{6}$/.test(v.trim().replace(/\D/g,''))) return 'Enter a valid U.S. phone number number'; return ''; },
-  address:   v => { if(!v.trim()) return 'Street address is required'; if(v.trim().length<10) return 'Please enter a complete address (at least 10 characters)'; return ''; },
+  phone:     v => { if(!v.trim()) return 'Phone number is required'; if(!/^1?[2-9]\d{2}[2-9]\d{6}$/.test(v.trim().replace(/\D/g,''))) return 'Enter a valid U.S. phone number'; return ''; },
+  address:   v => { if(!v.trim()) return 'Street address is required';  return ''; },
   city:      v => { if(!v.trim()) return 'City is required'; if(v.trim().length<2) return 'Enter a valid city name'; return ''; },
   state:     v => { if(!["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"].includes(v)) return 'Please select a state'; return ''; },
   pin:       v => { if(!v.trim()) return 'ZIP code is required'; if(!/^\d{5}(-\d{4})?$/.test(v.trim())) return 'Enter a valid 5-digit ZIP or ZIP+4'; return ''; },
@@ -1774,52 +1405,8 @@ function selectPayMethod(el) {
 function placeOrder() { showToast('Online payments are not yet available. Please contact us for ordering help.'); }
 
 // ── CONTACT ──
-function submitContact() {
-  let ok = true;
-  [['cf-name','ce-name','Name is required'],['cf-email','ce-email','Valid email is required'],['cf-subject','ce-subject','Subject is required'],['cf-message','ce-message','Message is required (at least 10 characters)']].forEach(([fid,eid,msg]) => {
-    const el = document.getElementById(fid); const err = document.getElementById(eid);
-    const v = el.value.trim();
-    const invalid = !v || (fid==='cf-email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) || (fid==='cf-message' && v.length<10);
-    if (invalid) { el.classList.add('err'); err.textContent=msg; err.classList.add('visible'); ok=false; }
-    else { el.classList.remove('err'); err.classList.remove('visible'); }
-  });
-  if (ok) {
-    document.getElementById('contact-form-wrap').style.display='none';
-    document.getElementById('contact-thanks').style.display='block';
-  }
-}
-
-// ── TRACK ORDER ──
-function submitTrack() {
-  let ok = true;
-  const ord = document.getElementById('tf-order'), ordErr = document.getElementById('te-order');
-  const em = document.getElementById('tf-email'), emErr = document.getElementById('te-email');
-  if (!ord.value.trim()) { ord.classList.add('err'); ordErr.textContent='Order number is required'; ordErr.classList.add('visible'); ok=false; }
-  else { ord.classList.remove('err'); ordErr.classList.remove('visible'); }
-  if (!em.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value)) { em.classList.add('err'); emErr.textContent='Valid email address is required'; emErr.classList.add('visible'); ok=false; }
-  else { em.classList.remove('err'); emErr.classList.remove('visible'); }
-  if (ok) {
-    document.getElementById('track-order-num').textContent = 'Order #'+ord.value.trim();
-    document.getElementById('track-email-out').textContent = em.value.trim();
-    document.getElementById('track-form').style.display='none';
-    document.getElementById('track-result').style.display='block';
-  }
-}
-
-// ── ACCOUNT ──
-function showAccountDash() {
-  document.getElementById('login-view').style.display='none';
-  document.getElementById('account-dash').style.display='block';
-}
-function switchTab(t) {
-  document.getElementById('tab-profile').style.display = t==='profile'?'block':'none';
-  document.getElementById('tab-orders').style.display = t==='orders'?'block':'none';
-  document.getElementById('btn-profile').classList.toggle('active', t==='profile');
-  document.getElementById('btn-orders').classList.toggle('active', t==='orders');
-}
-
-// ── UTILS ──
 function updateBadge() {
+  saveCart();
   const n = cart.reduce((s,i)=>s+i.qty,0);
   const b = document.getElementById('cart-badge');
   b.textContent=n; b.style.display=n>0?'flex':'none';
@@ -1848,47 +1435,14 @@ function renderCustomSteps(){
     </div>`).join('');
 }
 
-function submitCustomForm() {
-  const name = document.getElementById('custom-name').value.trim();
-  const email = document.getElementById('custom-email').value.trim();
-  const phone = document.getElementById('cf-phone').value.trim().replace(/\D/g,'');
-  const occasion = document.getElementById('cf-occasion').value;
-  const garment = document.getElementById('cf-garment').value;
-  const vision = document.getElementById('cf-vision').value.trim();
-  if (!name || name.length < 2) { showToast('Please enter your name'); return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { showToast('Please enter a valid email'); return; }
-  if (!/^1?[2-9]\d{2}[2-9]\d{6}$/.test(phone)) { showToast('Please enter a valid U.S. phone number'); return; }
-  if (!occasion) { showToast('Please select an occasion'); return; }
-  if (!garment) { showToast('Please select a garment type'); return; }
-  if (!vision || vision.length < 20) { showToast('Please describe your vision in more detail'); return; }
-  document.getElementById('custom-form-wrap').style.display = 'none';
-  document.getElementById('custom-success').style.display = 'block';
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-// ── ICON PICKER ──
-function selectIcon(id) {
-  document.querySelectorAll('[id^="icon-"]').forEach(el => el.classList.remove('selected'));
-  document.getElementById('icon-'+id).classList.add('selected');
-  const names = {1:'1 — Current (KIS ivory)',2:'2 — Gold KIS',3:'3 — Circle Seal',4:'4 — Single K',5:'5 — Diamond K',6:'6 — Inverted (light bg)'};
-  document.getElementById('icon-selected-name').textContent = names[id];
-  document.getElementById('icon-selection-msg').style.display = 'block';
-}
-
-// ── LOGO PICKER ──
-function selectLogo(id) {
-  document.querySelectorAll('.logo-option').forEach(el => el.classList.remove('selected'));
-  document.getElementById('logo-'+id).classList.add('selected');
-  const names = {A:'A — Classic Refined',B:'B — Monogram + Name',C:'C — Ornamental Diamond',D:'D — Two-Weight Split',E:'E — Heritage Rule',F:'F — Dark Badge'};
-  document.getElementById('logo-selected-name').textContent = names[id];
-  document.getElementById('logo-selection-msg').style.display = 'block';
-}
-
+</script>
+<script src="assets/storefront.js?v=launch-2"></script>
+<script>
 // ── INIT ──
 renderHome();
 renderCollections(PRODUCTS);
-const linkedProduct = PRODUCTS.find(p => '#'+p.id === location.hash);
-if(linkedProduct) openProduct(linkedProduct.id);
+restoreCart();
+restoreRoute();
 document.getElementById('tab-all').classList.add('active');
 </script>
 </body>
