@@ -51,4 +51,6 @@ See [launch inputs](docs/launch-inputs.md) for decisions required next.
 
 Collection search/sort state is encoded in the preview hash URL and survives reload and browser history. Clear search returns to the full collection. This does not make hash URLs production SEO routes.
 
+For optional local diagnostics, open `http://127.0.0.1:4173/tests/preview-diagnostics.html` while serving this repository. It displays embedded-preview timing observations and basic accessibility/image checks without transmitting results. See the verification record for limitations; it is not a production performance score.
+
 The worksheets are Markdown documents that can be reviewed in GitHub. They contain no invented business or supplier records.

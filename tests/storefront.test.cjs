@@ -112,3 +112,22 @@ test('route parsing normalizes empty and unsupported input',()=>{
   assert.equal(app.run("collectionRoute('   ')") ,'#collections');
   assert.equal(app.run("parseStoreRoute('#collections?q='+ 'x'.repeat(200)).query.length"),100);
 });
+
+test('missing size focuses a selectable option and leaves bag unchanged',()=>{
+  const app=setup(null);
+  app.run(`
+    currentProduct=PRODUCTS[0]; selColor=currentProduct.colors[0]; selSize='';
+    var sizeError={style:{display:'none'}}, focusedSize=false;
+    document.getElementById=()=>sizeError;
+    document.querySelector=()=>({focus(){focusedSize=true}});
+    addToCart();
+  `);
+  assert.equal(app.run('cart.length'),0);
+  assert.equal(app.run('sizeError.style.display'),'block');
+  assert.equal(app.run('focusedSize'),true);
+});
+test('empty bag cannot advance to payment validation',()=>{
+  const app=setup(null);
+  app.run(`var destination=''; showPage=page=>{destination=page}; validateAll=()=>{throw Error('Must not validate empty checkout')}; goToPayment();`);
+  assert.equal(app.run('destination'),'cart');
+});

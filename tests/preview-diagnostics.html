@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Local storefront diagnostics</title>
+<style>body{font:16px system-ui;margin:24px;color:#222}label,button{margin-right:12px}button,select{font:inherit;padding:8px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eee;padding:16px}iframe{display:block;height:844px;border:1px solid #888;margin-top:20px;max-width:100%}</style>
+<h1>Local storefront diagnostics</h1>
+<p>Local lab observations only. No network throttling, CPU throttling or physical device emulation. Cache state may be warm. Results are not field Core Web Vitals or an accessibility certification. This page does not send results anywhere.</p>
+<label>Viewport width <select id="width"><option>320</option><option selected>390</option><option>768</option><option>1024</option></select></label>
+<button id="load">Reload preview</button><button id="capture">Capture observations</button>
+<pre id="report" aria-live="polite">Loading preview…</pre>
+<iframe id="preview" title="Storefront under test" width="390"></iframe>
+<script src="preview-diagnostics.js"></script>
+</html>

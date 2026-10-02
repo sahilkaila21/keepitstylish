@@ -162,3 +162,6 @@ document.addEventListener('keydown', event => {
 
 document.querySelector('.shipping-note').innerHTML = '<strong>Before you choose</strong><p>Online ordering is not open yet. Shipping rates and delivery estimates are being finalized.</p><div class="product-help"><a href="#size-guide">Size guide</a><a href="#shipping">Shipping</a><a href="#returns">Returns</a><a href="#contact">Ask a question</a></div>';
 document.getElementById('hamburger-btn')?.setAttribute('aria-expanded', 'false');
+document.getElementById('size-grid').setAttribute('role', 'group');
+document.getElementById('size-grid').setAttribute('aria-label', 'Choose a size');
+document.getElementById('size-grid').setAttribute('aria-describedby', 'size-error size-availability');

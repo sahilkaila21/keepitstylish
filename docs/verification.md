@@ -4,7 +4,7 @@ Scope: static storefront on the launch-readiness branch, served locally at 127.0
 
 ## Automated checks
 
-`node --test tests/storefront.test.cjs`: 16 passing checks. Includes hostile/stale cart records, canonical prices, quantity bounds, blocked storage, data minimization, validation, local assets, parse checks for all storefront scripts, duplicate static IDs, labels, hash/navigation targets, image size budgets and search-route encoding/normalization.
+`node --test tests/storefront.test.cjs`: 18 passing checks. Includes hostile/stale cart records, canonical prices, quantity bounds, blocked storage, data minimization, validation, local assets, parse checks for all storefront scripts, duplicate static IDs, labels, hash/navigation targets, image size budgets and search-route encoding/normalization.
 
 These checks do not exercise a real payment provider, backend, external email delivery or every browser interaction. Static reference checks cover literal links; they are not a general external link crawler.
 
@@ -49,3 +49,18 @@ All 16 routes were checked at each of 320, 390, 768 and 1024 CSS pixels: **64 ro
 Search “coral”, choose descending sort, reload: one matching dress and the selected sort persist in the URL/UI. Product navigation then Back restores the search. A no-match query shows an empty result with Clear search; Back/Forward restores it; clearing restores both products. No browser console errors were recorded in this verification run.
 
 Navigation now dismisses open search/gallery dialogs, avoids duplicate hash/popstate restoration, and refocuses the populated product heading. Product main images use responsive sources; thumbnails use smaller variants. The dark About-page eyebrow has a light text override. Physical-device, zoom, full contrast and assistive-technology checks remain open.
+
+## Checkout accessibility follow-up
+
+- Submitting a product without a size announces an alert and focuses the first selectable size; no item is added.
+- Direct empty-bag checkout navigation returns to the empty cart. Payment validation cannot run against an empty bag.
+- Using synthetic local test values, Continue to Payment focuses the Payment heading; the payment button remains disabled. Edit returns focus to the first shipping field. Reload clears test form values; they were not submitted or saved.
+- Two regression tests cover missing-size focus/unchanged bag and the empty-bag payment guard. No browser errors were recorded in this follow-up.
+
+## Local diagnostics harness
+
+Open `/tests/preview-diagnostics.html` on localhost. Choose the width, reload the embedded preview, then capture observations after it settles. This opt-in development page is not loaded by the storefront and does not transmit results. Outside localhost its controls are disabled.
+
+The harness reads browser navigation/paint entries, observes buffered LCP and layout-shift entries, and checks basic visible control names, image alt attributes, broken loaded images and document overflow. These checks are intentionally limited; they do not replace an accessibility audit. Unsupported measurements are null. The frame's actual dimensions are included in the report.
+
+One cached, unthrottled local run at 390×844 recorded DOMContentLoaded 78ms, load 86ms, first contentful paint 112ms, observed LCP 112ms and observed CLS 0.0004. No findings appeared in that run's basic name/image/overflow checks. These are partial embedded-frame observations affected by cache, desktop CPU and frame visibility. They are **not** a standalone mobile page score, final Core Web Vitals values or evidence that the production performance gate passes. INP was not measured. The earlier direct inspection limitation is now partly addressed by this opt-in harness; production/physical-device measurements remain open.

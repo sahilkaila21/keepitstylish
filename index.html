@@ -484,7 +484,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-5"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-6"/>
 </head>
 <body><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -649,7 +649,7 @@ tr:nth-child(even) td{background:var(--ivory)}
         </div>
         <div class="size-grid" id="size-grid"></div><p id="size-availability" style="font-size:12px;color:var(--stone);margin-top:12px"></p>
       </div>
-      <p style="font-size:12px;color:var(--rose);margin-bottom:8px;font-family:'Jost',sans-serif;display:none" id="size-error">Please select a size before adding to bag</p>
+      <p style="font-size:12px;color:var(--rose);margin-bottom:8px;font-family:'Jost',sans-serif;display:none" id="size-error" role="alert">Please select a size before adding to bag</p>
       <button class="add-to-cart-btn" id="atc-btn" onclick="addToCart()">🛍 Add to Bag</button>
       <p style="font-size:14px;line-height:1.8;color:var(--stone);font-family:'Jost',sans-serif" id="detail-desc"></p>
       <div class="shipping-note">
@@ -1023,6 +1023,11 @@ let fieldTouched = {};
 
 // ── NAVIGATION ──
 function showPage(name) {
+  if (name === 'checkout' && cart.length === 0) {
+    name = 'cart';
+    history.replaceState(null, '', '#cart');
+    showToast('Add a dress to your bag before previewing checkout.');
+  }
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const pg = document.getElementById('page-' + name) || document.getElementById('page-home');
   if (pg) pg.classList.add('active');
@@ -1198,7 +1203,11 @@ function restockMailto(product, size, color = product.colors[0].name) {
 }
 function addToCart() {
   if ((currentProduct.upcomingSizes || []).includes(selSize)) { window.location.href=restockMailto(currentProduct,selSize,selColor.name); return; }
-  if (!currentProduct.sizes.includes(selSize)) { document.getElementById('size-error').style.display='block'; return; }
+  if (!currentProduct.sizes.includes(selSize)) {
+    document.getElementById('size-error').style.display='block';
+    document.querySelector('#size-grid .size-btn:not(.size-coming)')?.focus();
+    return;
+  }
   const p = currentProduct;
   const cid = `${p.id}-${selSize}-${selColor.name}`;
   const ex = cart.find(i=>i.id===cid);
@@ -1325,7 +1334,7 @@ function renderCheckout() {
       <p style="font-size:13px;color:var(--charcoal);font-family:'Jost',sans-serif">${fmt(i.price*i.qty)}</p>
     </div>`).join('');
   fieldTouched = {};
-  backToInfo();
+  backToInfo(false);
 }
 
 // ── CHECKOUT VALIDATION ──
@@ -1379,6 +1388,7 @@ function validateAll() {
   return ok;
 }
 function goToPayment() {
+  if (!cart.length) { showPage('cart'); return; }
   if (!validateAll()) {
     document.getElementById('val-banner').classList.add('visible');
     return;
@@ -1390,13 +1400,17 @@ function goToPayment() {
   document.getElementById('co-step2').style.display='block';
   document.getElementById('s2-dot').classList.add('done');
   document.getElementById('s2-txt').classList.add('done');
-  window.scrollTo({top:0,behavior:'smooth'});
+  const paymentHeading = document.querySelector('#co-step2 h2');
+  paymentHeading.tabIndex = -1;
+  paymentHeading.focus({preventScroll:true});
+  window.scrollTo({top:0,behavior:'instant'});
 }
-function backToInfo() {
+function backToInfo(focus = true) {
   document.getElementById('co-step1').style.display='block';
   document.getElementById('co-step2').style.display='none';
   document.getElementById('s2-dot').classList.remove('done');
   document.getElementById('s2-txt').classList.remove('done');
+  if (focus) document.getElementById('f-firstName').focus();
 }
 function selectPayMethod(el) {
   document.querySelectorAll('.pay-method').forEach(m=>m.classList.remove('selected'));
@@ -1418,8 +1432,8 @@ function showToast(msg) {
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-5"></script>
-<script src="assets/browsing.js?v=launch-5"></script>
+<script src="assets/storefront.js?v=launch-6"></script>
+<script src="assets/browsing.js?v=launch-6"></script>
 <script>
 // ── INIT ──
 renderHome();
