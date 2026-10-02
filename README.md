@@ -46,5 +46,9 @@ See [launch inputs](docs/launch-inputs.md) for decisions required next.
 - [Pricing workbook](docs/pricing-workbook.md): cost inputs, contribution formulas and discount scenarios.
 - [Marketing drafts](docs/marketing-drafts.md): product, SEO, social and email copy with publication gates.
 - [Verification record](docs/verification.md): completed checks and remaining production/device checks.
+- [Analytics specification](docs/analytics-spec.md): event contract, privacy gates, deduplication and reconciliation acceptance cases.
+- [SEO release plan](docs/seo-release-plan.md): proposed URL mapping, metadata, indexing and migration checks for the production platform.
+
+Collection search/sort state is encoded in the preview hash URL and survives reload and browser history. Clear search returns to the full collection. This does not make hash URLs production SEO routes.
 
 The worksheets are Markdown documents that can be reviewed in GitHub. They contain no invented business or supplier records.

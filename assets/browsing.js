@@ -8,6 +8,8 @@ function selectGalleryImage(index) {
   galleryIndex = (index + currentProduct.imgs.length) % currentProduct.imgs.length;
   const image = document.getElementById('main-img');
   image.src = currentProduct.imgs[galleryIndex];
+  image.srcset = `${currentProduct.imgs[galleryIndex].replace('-1280.webp','-640.webp')} 640w, ${currentProduct.imgs[galleryIndex]} 1280w`;
+  image.sizes = '(max-width: 900px) 100vw, 55vw';
   image.alt = `${currentProduct.name} — view ${galleryIndex+1}`;
   document.querySelectorAll('.gallery-thumb').forEach((button,i)=>{
     button.classList.toggle('active',i===galleryIndex);
@@ -48,7 +50,10 @@ function openImageZoom(){
   document.getElementById('zoom-toggle').setAttribute('aria-pressed','false');
   zoomDialog.showModal(); document.body.style.overflow='hidden';
 }
-zoomDialog.addEventListener('close',()=>{document.body.style.overflow='';document.getElementById('zoom-open').focus();});
+zoomDialog.addEventListener('close',()=>{
+  document.body.style.overflow='';
+  if(document.getElementById('page-product').classList.contains('active')) document.getElementById('zoom-open').focus();
+});
 zoomDialog.addEventListener('keydown',event=>{
   if(event.key==='ArrowLeft'||event.key==='ArrowRight') {event.preventDefault();selectGalleryImage(galleryIndex+(event.key==='ArrowRight'?1:-1));renderZoom();}
 });

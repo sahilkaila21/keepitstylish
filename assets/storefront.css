@@ -1,4 +1,6 @@
 :root{--stone:#74675e}
+#coll-heading{overflow-wrap:anywhere}
+#page-about>div:first-child>p:first-child{color:var(--ivory)!important}
 html{scroll-padding-top:90px}
 input,select,textarea{font-size:16px!important}
 .search-close,.mobile-menu-close,.cart-btn,.nav-icon-btn{min-width:44px;min-height:44px}

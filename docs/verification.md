@@ -4,7 +4,7 @@ Scope: static storefront on the launch-readiness branch, served locally at 127.0
 
 ## Automated checks
 
-`node --test tests/storefront.test.cjs`: 14 passing checks. Includes hostile/stale cart records, canonical prices, quantity bounds, blocked storage, data minimization, validation, local assets, parse checks for all storefront scripts, duplicate static IDs, labels, hash/navigation targets and image size budgets.
+`node --test tests/storefront.test.cjs`: 16 passing checks. Includes hostile/stale cart records, canonical prices, quantity bounds, blocked storage, data minimization, validation, local assets, parse checks for all storefront scripts, duplicate static IDs, labels, hash/navigation targets, image size budgets and search-route encoding/normalization.
 
 These checks do not exercise a real payment provider, backend, external email delivery or every browser interaction. Static reference checks cover literal links; they are not a general external link crawler.
 
@@ -35,9 +35,17 @@ These are file-size measurements, not mobile speed or Core Web Vitals scores. Th
 
 - iOS Safari and Android Chrome on physical devices; 200% browser zoom and screen-reader review.
 - Contrast across every image crop and UI state; no WCAG certification is claimed.
-- Full route-by-viewport matrix, back/forward behavior across all pages and all production external links.
+- Back/forward behavior across all pages and all production external links.
 - Real garment photos, measurements, stock and product claims; current imagery is illustrative.
 - Production server routes, indexing, redirects, headers, security, monitoring and email delivery.
 - Backend stock reservation, simultaneous cart edits, final tax/shipping totals, payment failures, order idempotency and refund flows.
 
 Business/platform-dependent acceptance remains in issues #1–#17 and #20–#23. Frontend changes and draft documents are ready for review; they do not satisfy those launch gates by themselves.
+
+## Expanded high-priority checks
+
+All 16 routes were checked at each of 320, 390, 768 and 1024 CSS pixels: **64 route/viewport checks, zero document-width overflow findings and zero broken completed visible images**. The actual browser width was captured for every check. Routes: home, collections, both product IDs, cart, checkout, contact, shipping, returns, size-guide, track-order, privacy, terms, account, about and custom. Cart/checkout used a preview item. This checks geometry and loaded images, not every interaction or screen-reader announcement at every width.
+
+Search “coral”, choose descending sort, reload: one matching dress and the selected sort persist in the URL/UI. Product navigation then Back restores the search. A no-match query shows an empty result with Clear search; Back/Forward restores it; clearing restores both products. No browser console errors were recorded in this verification run.
+
+Navigation now dismisses open search/gallery dialogs, avoids duplicate hash/popstate restoration, and refocuses the populated product heading. Product main images use responsive sources; thumbnails use smaller variants. The dark About-page eyebrow has a light text override. Physical-device, zoom, full contrast and assistive-technology checks remain open.

@@ -484,7 +484,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-4"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-5"/>
 </head>
 <body><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -601,13 +601,14 @@ tr:nth-child(even) td{background:var(--ivory)}
       <p class="section-label" id="coll-label">Explore</p>
       <h1 class="section-title" style="font-size:52px" id="coll-heading">Our Collections</h1>
     </div>
-    <div class="cat-tabs">
+    <div class="cat-tabs" hidden>
       <button class="cat-tab" id="tab-all" onclick="filterProducts('all',this)">All</button>
       <button class="cat-tab" id="tab-dresses" onclick="filterProducts('dresses',this)">Dresses</button>
     </div>
     <div class="controls-row">
 
-      <span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif" id="product-count">2 styles</span>
+      <span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif" id="product-count" role="status" aria-live="polite">2 styles</span>
+      <button id="clear-search" class="back-link" type="button" onclick="navigateCollection()" hidden>Clear search</button>
       <select class="sort-select" aria-label="Sort dresses" onchange="sortProducts(this.value)">
         <option value="newest">Newest</option>
         <option value="asc">Price: Low to High</option>
@@ -717,7 +718,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 <div id="page-checkout" class="page">
   <div style="max-width:1400px;margin:0 auto;padding:60px 40px 100px">
     <div style="margin-bottom:44px">
-      <p class="section-label">Secure Checkout</p>
+      <p class="section-label">Checkout Preview</p>
       <h1 class="section-title" style="font-size:48px">Complete Your Order</h1>
     </div>
     <div class="steps-row">
@@ -1027,10 +1028,13 @@ function showPage(name) {
   if (pg) pg.classList.add('active');
   document.body.style.overflow = '';
   setPageInert(null);
+  document.getElementById('search-overlay').style.display = 'none';
+  if (document.getElementById('image-zoom').open) document.getElementById('image-zoom').close();
   document.getElementById('mobile-menu').style.display = 'none';
   document.getElementById('hamburger-btn')?.setAttribute('aria-expanded', 'false');
   const route = name === 'product' && currentProduct ? currentProduct.id : name;
   if (!restoringRoute && location.hash !== '#' + route) history.pushState(null, '', '#' + route);
+  if (name === 'collections') renderCollectionRoute();
   document.title = name === 'product' && currentProduct ? currentProduct.name + ' | Keep It Stylish' : name === 'cart' ? 'Your Bag | Keep It Stylish' : name === 'home' ? 'Keep It Stylish | U.S. Store' : 'Keep It Stylish | ' + (pg.querySelector('h1')?.textContent.trim() || 'U.S. Store');
   window.scrollTo({top:0,behavior:'instant'});
   const heading = pg.querySelector('h1');
@@ -1067,16 +1071,7 @@ function doSearch(e) {
   closeSearch();
   document.getElementById('search-input').value = '';
   if (!q) return;
-  showPage('collections');
-  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('tab-all').classList.add('active');
-  const results = PRODUCTS.filter(p =>
-    p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q)
-  );
-  filteredProducts = results;
-  document.getElementById('coll-label').textContent = 'Search Results';
-  document.getElementById('coll-heading').textContent = '"' + q + '"';
-  renderCollections(results);
+  navigateCollection(q);
 }
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeSearch(); toggleMobileMenu(false); }
@@ -1120,7 +1115,7 @@ function renderCollections(list) {
   document.getElementById('collections-grid').innerHTML = list.length
     ? list.map(cardHTML).join('')
     : `<div style="grid-column:1/-1;text-align:center;padding:80px 0"><p style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--stone)">No results found</p><p style="font-size:13px;color:var(--stone);margin-top:8px;font-family:'Jost',sans-serif">Try a different search or filter</p></div>`;
-  document.getElementById('product-count').textContent = list.length + ' styles';
+  document.getElementById('product-count').textContent = list.length + (list.length === 1 ? ' style' : ' styles');
 }
 function filterProducts(cat, btn) {
   document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
@@ -1132,10 +1127,7 @@ function filterProducts(cat, btn) {
   renderCollections(filteredProducts);
 }
 function sortProducts(val) {
-  const list = [...filteredProducts];
-  if (val==='asc') list.sort((a,b)=>a.price-b.price);
-  else if (val==='desc') list.sort((a,b)=>b.price-a.price);
-  renderCollections(list);
+  navigateCollection(parseStoreRoute(location.hash).query, val);
 }
 
 // ── PRODUCT DETAIL ──
@@ -1163,7 +1155,7 @@ function openProduct(id) {
   btn.classList.remove('added'); btn.textContent = p.sizes.length ? '🛍 Add to Bag' : 'Ask About Sizes';
 
   document.getElementById('thumbs').innerHTML = p.imgs.map((img,i)=>
-    `<button type="button" class="gallery-thumb${i===0?' active':''}" aria-label="Show ${p.name}, image ${i+1}" onclick="switchImg(this,'${img}')"><img alt="${p.name} — view ${i+1}" src="${img}" loading="lazy"/></button>`
+    `<button type="button" class="gallery-thumb${i===0?' active':''}" aria-label="Show ${p.name}, image ${i+1}" onclick="switchImg(this,'${img}')"><img alt="${p.name} — view ${i+1}" src="${img.replace('-1280.webp','-640.webp')}" loading="lazy"/></button>`
   ).join('');
   document.getElementById('color-swatches').innerHTML = p.colors.map(c=>
     `<button type="button" aria-label="${c.name}" class="swatch${c.name===selColor.name?' sel':''}" style="background:${c.hex}" title="${c.name}" onclick="pickColor(this,'${c.name}','${c.hex}')"></button>`
@@ -1176,6 +1168,7 @@ function openProduct(id) {
   }).join('');
   updateSizeAction();
   restoreProductSelection(p);
+  document.getElementById('detail-name').focus({preventScroll:true});
 }
 function switchImg(el, src) {
   document.getElementById('main-img').src = src;
@@ -1425,8 +1418,8 @@ function showToast(msg) {
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-4"></script>
-<script src="assets/browsing.js?v=launch-4"></script>
+<script src="assets/storefront.js?v=launch-5"></script>
+<script src="assets/browsing.js?v=launch-5"></script>
 <script>
 // ── INIT ──
 renderHome();

@@ -30,18 +30,47 @@ function restoreCart() {
   finally { updateBadge(); restoringCart = false; }
   return discarded;
 }
+function parseStoreRoute(hash) {
+  const [page, query = ''] = hash.replace(/^#/, '').split('?');
+  const params = new URLSearchParams(query);
+  return {page: page || 'home', query: (params.get('q') || '').trim().slice(0, 100), sort: ['asc','desc'].includes(params.get('sort')) ? params.get('sort') : 'newest'};
+}
+function collectionRoute(query = '', sort = 'newest') {
+  const params = new URLSearchParams();
+  if (query.trim()) params.set('q', query.trim().slice(0, 100));
+  if (['asc','desc'].includes(sort)) params.set('sort', sort);
+  return '#collections' + (params.size ? '?' + params.toString() : '');
+}
+function navigateCollection(query = '', sort = 'newest') {
+  const route = collectionRoute(query, sort);
+  if (location.hash !== route) history.pushState(null, '', route);
+  restoreRoute();
+}
+function renderCollectionRoute() {
+  const state = parseStoreRoute(location.hash);
+  const query = state.query.toLowerCase();
+  filteredProducts = PRODUCTS.filter(p => !query || [p.name,p.desc,p.cat,...p.colors.map(c=>c.name)].some(value=>value.toLowerCase().includes(query)));
+  const list = [...filteredProducts];
+  if (state.sort === 'asc') list.sort((a,b)=>a.price-b.price);
+  if (state.sort === 'desc') list.sort((a,b)=>b.price-a.price);
+  document.getElementById('coll-label').textContent = query ? 'Search Results' : 'Explore';
+  document.getElementById('coll-heading').textContent = query ? 'Results for “'+state.query+'”' : 'Our Dresses';
+  document.querySelector('.sort-select').value = state.sort;
+  document.getElementById('clear-search').hidden = !query;
+  renderCollections(list);
+  document.title = (query ? 'Search: '+state.query : 'Our Dresses')+' | Keep It Stylish';
+}
 function restoreRoute() {
   if (location.hash === '#main-content') { document.getElementById('main-content').focus(); return; }
   restoringRoute = true;
-  const requested = location.hash.slice(1) || 'home';
+  const requested = parseStoreRoute(location.hash).page;
   const route = requested === 'confirmation' ? 'home' : requested;
   const product = PRODUCTS.find(p => p.id === route);
   if (product) openProduct(product.id);
-  else showPage(document.getElementById('page-' + route) ? route : 'home');
+  else showPage(route !== 'product' && document.getElementById('page-' + route) ? route : 'home');
   restoringRoute = false;
 }
 window.addEventListener('hashchange', restoreRoute);
-window.addEventListener('popstate', restoreRoute);
 window.addEventListener('storage', event => {
   if (event.key !== CART_KEY && event.key !== null) return;
   const discarded = restoreCart();

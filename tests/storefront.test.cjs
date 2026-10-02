@@ -9,7 +9,7 @@ const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
 const persistence = fs.readFileSync(path.join(root,'assets/storefront.js'),'utf8').split('function restoreRoute()')[0];
 function setup(saved, blocked=false) {
   let stored = saved;
-  const ctx = vm.createContext({document:{addEventListener(){}},localStorage:{
+  const ctx = vm.createContext({URLSearchParams,document:{addEventListener(){}},localStorage:{
     getItem(){if(blocked) throw Error('Storage blocked'); return stored;},
     setItem(key,value){if(blocked) throw Error('Storage blocked'); stored=value;}
   }});
@@ -96,4 +96,19 @@ test('responsive product images meet local transfer budgets',()=>{
   for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.webp'))){
     assert.ok(fs.statSync(path.join(dir,file)).size < (file.includes('-640')?110000:210000),file);
   }
+});
+
+test('collection routes safely round-trip searches and preserve sort',()=>{
+  const app=setup(null);
+  const query='coral & green <dress> #1';
+  const route=app.run(`collectionRoute(${JSON.stringify(query)},'desc')`);
+  const state=JSON.parse(app.run(`JSON.stringify(parseStoreRoute(${JSON.stringify(route)}))`));
+  assert.deepEqual(state,{page:'collections',query,sort:'desc'});
+});
+test('route parsing normalizes empty and unsupported input',()=>{
+  const app=setup(null);
+  assert.equal(app.run("parseStoreRoute('').page"),'home');
+  assert.equal(app.run("parseStoreRoute('#collections?sort=untrusted').sort"),'newest');
+  assert.equal(app.run("collectionRoute('   ')") ,'#collections');
+  assert.equal(app.run("parseStoreRoute('#collections?q='+ 'x'.repeat(200)).query.length"),100);
 });
