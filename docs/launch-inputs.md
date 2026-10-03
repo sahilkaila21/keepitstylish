@@ -16,7 +16,7 @@ Fill these from actual business and supplier records. Do not publish invented de
 
 ## Product records — issues #3, #4, #5, #6
 
-Complete separately for Coral Floral Ruffle Midi and Emerald Ruffle Tier Midi:
+Complete separately for Coral Floral Ruffle Midi, Emerald Ruffle Tier Midi and Blue Floral Ruffle Collar Midi:
 
 - Supplier and manufacturing origin
 - Fiber percentages, lining, fabric weight, stretch and opacity

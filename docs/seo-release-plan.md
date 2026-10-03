@@ -8,6 +8,7 @@ Issue #20. Current hash routes are preview navigation; the following are propose
 | #collections | /collections/dresses | Catalog |
 | #emerald-ruffle-midi | /products/emerald-ruffle-midi | Catalog |
 | #coral-floral-ruffle-midi | /products/coral-floral-ruffle-midi | Catalog |
+| #blue-floral-ruffle-collar-midi | /products/blue-floral-ruffle-collar-midi | Catalog |
 | #size-guide | /pages/size-guide | Product measurements |
 | #shipping | /policies/shipping | Operations |
 | #returns | /policies/returns | Operations |
@@ -24,7 +25,7 @@ Issue #20. Current hash routes are preview navigation; the following are propose
 5. Generate Product/Offer data from the same approved catalog used by checkout: name, real image URLs, SKU, USD price, actual availability and canonical product URL. Do not add ratings or reviews that do not exist. Do not publish purchasable offers while ordering is disabled.
 6. Generate sitemap entries only for canonical public pages; verify robots rules do not block launch pages. Robots exclusions alone do not protect private staging content.
 7. Preserve old links with platform redirects where possible. URL fragments are not sent to servers, so existing hash bookmarks need a small client-side migration mapping on the old storefront if that host remains accessible. Do not pretend a server can read a fragment.
-8. Verify domain ownership in Search Console, submit the sitemap, inspect both product URLs and record actual indexing results. Search indexing is not guaranteed by submitting a sitemap.
+8. Verify domain ownership in Search Console, submit the sitemap, inspect all three product URLs and record actual indexing results. Search indexing is not guaranteed by submitting a sitemap.
 
 ## Release checks
 
@@ -35,6 +36,6 @@ Issue #20. Current hash routes are preview navigation; the following are propose
 - [ ] Product data matches visible price, SKU, stock and images; validator results reviewed.
 - [ ] Shared links show the intended dress/title/image.
 - [ ] Search results and checkout do not leak customer data into indexed URLs or analytics.
-- [ ] Both product pages inspected in Search Console after publishing.
+- [ ] All three product pages inspected in Search Console after publishing.
 
 Domain/provider settings and production checks are Needs verification. No robots.txt, sitemap, canonical host or structured offers are fabricated for this static preview.

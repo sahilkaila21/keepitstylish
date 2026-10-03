@@ -81,6 +81,8 @@ Completed 24 route/layout checks: home, collection, product, cart, checkout and 
 
 ## Centered photos and expanded galleries — October 3, 2026
 
+Follow-up: the Blue Floral Ruffle Collar Midi Dress is now the third catalog entry with four AI previews (model front/back, dress alone, neckline/print detail), owner-confirmed $54.99 and S/M/L. The 22 automated checks pass. Gallery traversal, M selection, bag addition and reload restoration passed. Twelve local layout checks passed at 320, 390, 768 and 1440px for home, collections and Blue product, with no width overflow or broken completed images. Desktop shows three product columns; smaller widths show two. No console errors were recorded. Stock, material/care/measurements and physical-device testing remain unverified.
+
 Added three AI previews per dress in PR #24: model front, model angle, and dress alone. Coral now has four gallery images and Emerald has six. Added responsive WebP sizes and descriptive gallery alt text. Photos use centered contain sizing; the homepage now separates its headline from the portrait, and product-card hover no longer zooms/crops the image.
 
 22 automated checks pass, including gallery wraparound, asset references and image transfer budgets. Browser visual verification is pending: the automation tool rejected access to the existing browser error-page tab because its internal URL protocol is disallowed. The localhost server is running again on port 4174.

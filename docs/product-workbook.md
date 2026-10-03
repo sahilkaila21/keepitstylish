@@ -10,8 +10,11 @@ Catalog values below describe the current preview, not verified physical stock. 
 | KIS-COR-S | Coral Floral Ruffle Midi | Coral Floral | S | 54.99 | Needs verification |
 | KIS-COR-M | Coral Floral Ruffle Midi | Coral Floral | M | 54.99 | Needs verification |
 | KIS-COR-L | Coral Floral Ruffle Midi | Coral Floral | L | 54.99 | Needs verification |
+| KIS-BLU-S | Blue Floral Ruffle Collar Midi | Blue Floral | S | 54.99 | Needs verification |
+| KIS-BLU-M | Blue Floral Ruffle Collar Midi | Blue Floral | M | 54.99 | Needs verification |
+| KIS-BLU-L | Blue Floral Ruffle Collar Midi | Blue Floral | L | 54.99 | Needs verification |
 
-XS/XL are shown as upcoming in the preview. Do not create purchasable variants until supplier and inventory records support them.
+XS/XL are shown as upcoming for Emerald and Coral in the preview. Blue uses owner-confirmed S/M/L as preview sizes. Do not create purchasable variants until supplier and inventory records support them.
 
 ## Complete for each dress
 
@@ -49,4 +52,4 @@ Replace the generic website size chart only after measurements are approved. Fit
 - [ ] Check that every image represents the actual color and construction.
 - [ ] Accessible alt text, crop review on mobile, compressed responsive files.
 
-Current lifestyle imagery is disclosed as AI-generated. It cannot establish actual fit, fabric or construction. Coral currently has one image; additional real views are needed.
+Current imagery is disclosed as AI-generated. It cannot establish actual fit, fabric or construction. Coral has four previews, Emerald has six and Blue has four; all three still need real garment photographs. Complete the same evidence and measurement sheets above separately for Blue. Its reference is the owner's blue floral ruffle collar collage; material, care, origin, packed weight, measurements, approved pricing and actual stock remain Needs verification.

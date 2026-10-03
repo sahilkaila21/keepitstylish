@@ -42,7 +42,7 @@ See [launch inputs](docs/launch-inputs.md) for decisions required next.
 - Quantity changes preserve keyboard focus. Cart changes synchronize across tabs; unavailable saved selections are reported. This browser preview does not reserve stock or resolve simultaneous edits transactionally.
 - Tests now check script syntax, navigation targets, duplicate static IDs, label references and image size budgets as well as cart behavior.
 - [Operations playbook](docs/operations-playbook.md): receiving, packing, dispatch, support, returns, refunds and incident rehearsal.
-- [Product workbook](docs/product-workbook.md): six proposed SKUs, stock, measurement and photography inputs.
+- [Product workbook](docs/product-workbook.md): nine proposed SKUs, stock, measurement and photography inputs.
 - [Pricing workbook](docs/pricing-workbook.md): cost inputs, contribution formulas and discount scenarios.
 - [Marketing drafts](docs/marketing-drafts.md): product, SEO, social and email copy with publication gates.
 - [Verification record](docs/verification.md): completed checks and remaining production/device checks.
@@ -55,6 +55,6 @@ For optional local diagnostics, open `http://127.0.0.1:4173/tests/preview-diagno
 
 The [U.S. commerce field specification](docs/us-commerce-fields.md) records guest checkout, optional phone/company/unit, separate billing, tax/shipping display and the fields still required from the production platform.
 
-The boutique design uses a balanced two-dress collection, one main homepage shopping action, readable body text and product titles/prices ahead of mobile galleries. See [brand authenticity inputs](docs/brand-story-inputs.md) for the real founder and garment evidence needed next.
+The boutique design uses a three-dress collection, one main homepage shopping action, readable body text and product titles/prices ahead of mobile galleries. See [brand authenticity inputs](docs/brand-story-inputs.md) for the real founder and garment evidence needed next.
 
 The worksheets are Markdown documents that can be reviewed in GitHub. They contain no invented business or supplier records.
