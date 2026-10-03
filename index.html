@@ -484,7 +484,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-13"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-14"/>
 </head>
 <body><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -933,7 +933,8 @@ tr:nth-child(even) td{background:var(--ivory)}
 <section id="page-account" class="page"><div class="content-page"><p class="section-label">Keep It Stylish</p><h1>Your shopping bag</h1><p>You can browse and save items in your bag without an account. Online ordering is not open yet.</p><a class="btn btn-dark" href="#cart">View your bag</a></div></section>
 
 <!-- ABOUT PAGE -->
-<section id="page-about" class="page"><div class="content-page brand-story"><p class="section-label">About us</p><h1>A small edit.<br><em>A personal choice.</em></h1><p class="brand-lead">Our first collection brings together emerald green and coral florals, in two midi dresses with ruffle details.</p><h2>Get to know the dresses</h2><p>Explore each silhouette, look through the images and ask us about fit before choosing your size. The collection is currently available to preview while we prepare online ordering.</p><h2>Let’s talk style</h2><p>Questions about a dress or a custom idea? Start a conversation with us.</p><a class="btn btn-dark" href="#contact">Get in touch</a></div></section>
+<section id="page-about" class="page"><div class="content-page brand-story"><p class="section-label">About us</p><h1>A small edit.<br><em>A personal choice.</em></h1><p class="brand-lead">Our first collection brings together emerald green and coral florals, in two midi dresses with ruffle details.</p><h2>Get to know the dresses</h2><p>Explore each silhouette, look through the images and ask us about fit before choosing your size. The collection is currently available to preview while we prepare online ordering.</p><div class="designer-story-card"><p class="section-label">Meet Manju</p><h2>The designer behind the story</h2><p>Get to know Manju, the designer behind Keep It Stylish, and the creative journey that shaped the brand.</p><a class="btn btn-light" href="#about-manju">Read Manju’s story →</a></div><h2>Let’s talk style</h2><p>Questions about a dress or a custom idea? Start a conversation with us.</p><a class="btn btn-dark" href="#contact">Get in touch</a></div></section>
+<section id="page-about-manju" class="page"><div class="content-page brand-story"><a class="back-link" href="#about">← Back to About us</a><p class="section-label">Manju’s story</p><h1>The designer<br><em>behind the story.</em></h1><p class="brand-lead">Meet Manju, the designer behind Keep It Stylish.</p><h2>A beginning in needle and thread</h2><p>Long before Keep It Stylish, Manju explored her creativity through embroidery. Working with needle and thread, she brought pictures to life on fabric, developing an eye for color and texture.</p><h2>Building something of her own</h2><p>Her journey grew through custom orders, one piece and one conversation at a time. Keep It Stylish brings that personal approach to a wider audience: a place to explore clothing, ask questions and share ideas.</p><h2>A conversation about style</h2><p>Have a custom idea in mind? Tell us what you’re looking for so we can discuss the design, availability and next steps with you.</p><div class="story-actions"><a class="btn btn-dark" href="#custom">Explore Custom Atelier</a><a class="btn btn-light" href="#collections">Explore the dresses</a></div></div></section>
 <!-- CUSTOM ATELIER PAGE -->
 <section id="page-custom" class="page"><div class="content-page"><p class="section-label">Keep It Stylish</p><h1>A piece of your own</h1><p>Have a custom design in mind? Email your ideas to discuss whether we can help. Availability, pricing, measurements, and timing need to be agreed before an order is placed.</p><a class="btn btn-dark" href="mailto:hello@keepitstylish.in?subject=Custom%20design%20inquiry">Discuss your idea ↗</a><p class="support-address">This opens your email app. Your inquiry is sent only when you send the email.</p></div></section>
 
@@ -1022,7 +1023,7 @@ function showPage(name) {
   const route = name === 'product' && currentProduct ? currentProduct.id : name;
   if (!restoringRoute && location.hash !== '#' + route) history.pushState(null, '', '#' + route);
   if (name === 'collections') renderCollectionRoute();
-  document.title = name === 'product' && currentProduct ? currentProduct.name + ' | Keep It Stylish' : name === 'about' ? 'About us | Keep It Stylish' : name === 'cart' ? 'Your Bag | Keep It Stylish' : name === 'home' ? 'Keep It Stylish | U.S. Store' : 'Keep It Stylish | ' + (pg.querySelector('h1')?.textContent.trim() || 'U.S. Store');
+  document.title = name === 'product' && currentProduct ? currentProduct.name + ' | Keep It Stylish' : name === 'about-manju' ? 'About Manju | Keep It Stylish' : name === 'about' ? 'About us | Keep It Stylish' : name === 'cart' ? 'Your Bag | Keep It Stylish' : name === 'home' ? 'Keep It Stylish | U.S. Store' : 'Keep It Stylish | ' + (pg.querySelector('h1')?.textContent.trim() || 'U.S. Store');
   window.scrollTo({top:0,behavior:'instant'});
   const heading = pg.querySelector('h1');
   if (heading) { heading.tabIndex = -1; heading.focus({preventScroll:true}); }
@@ -1445,8 +1446,8 @@ function showToast(msg) {
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-13"></script>
-<script src="assets/browsing.js?v=launch-13"></script>
+<script src="assets/storefront.js?v=launch-14"></script>
+<script src="assets/browsing.js?v=launch-14"></script>
 <script>
 // ── INIT ──
 renderHome();

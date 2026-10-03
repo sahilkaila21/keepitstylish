@@ -2,7 +2,7 @@
 
 The visual refinement uses the existing ivory/espresso palette, a deliberate two-dress edit, readable typography and factual collection copy. AI image disclosures remain. No new garment or founder imagery was generated.
 
-The previous long founder biography and quote were condensed out of the preview because their factual basis has not been verified in this audit. The original copy remains recoverable in Git history. Before publishing a personal founder story, confirm:
+At the owner's request, About us now links to a separate Manju story page. It uses a shortened version of the earlier embroidery and custom-order narrative, with Manju's designer role supplied by the owner. No quote, founder portrait or claim that the listed dresses are handmade is included. The embroidery history and custom-order origin are retained from the prior site copy; their factual basis still needs owner/Manju verification. The original longer copy remains recoverable in Git history. Confirm:
 
 - Founder name and role, in the founder's own approved wording.
 - A short account of why the business began, with dates/places only when verified.
