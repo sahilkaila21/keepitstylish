@@ -10,7 +10,7 @@ function selectGalleryImage(index) {
   image.src = currentProduct.imgs[galleryIndex];
   image.srcset = `${currentProduct.imgs[galleryIndex].replace('-1280.webp','-640.webp')} 640w, ${currentProduct.imgs[galleryIndex]} 1280w`;
   image.sizes = '(max-width: 900px) 100vw, 55vw';
-  image.alt = `${currentProduct.name} — view ${galleryIndex+1}`;
+  image.alt = currentProduct.imageAlts?.[galleryIndex] || `${currentProduct.name} — view ${galleryIndex+1}`;
   document.querySelectorAll('.gallery-thumb').forEach((button,i)=>{
     button.classList.toggle('active',i===galleryIndex);
     button.setAttribute('aria-pressed',String(i===galleryIndex));
@@ -39,7 +39,7 @@ const zoomDialog=document.getElementById('image-zoom');
 const zoomImage=document.getElementById('zoom-image');
 function renderZoom(){
   zoomImage.src=currentProduct.imgs[galleryIndex];
-  zoomImage.alt=`${currentProduct.name} — view ${galleryIndex+1}`;
+  zoomImage.alt=currentProduct.imageAlts?.[galleryIndex] || `${currentProduct.name} — view ${galleryIndex+1}`;
   document.getElementById('zoom-title').textContent=currentProduct.name;
   document.getElementById('zoom-counter').textContent=`Image ${galleryIndex+1} of ${currentProduct.imgs.length}`;
 }

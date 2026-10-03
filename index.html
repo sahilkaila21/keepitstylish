@@ -484,7 +484,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-12"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-13"/>
 </head>
 <body><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -982,8 +982,8 @@ tr:nth-child(even) td{background:var(--ivory)}
 <script>
 // ── DATA ──
 const PRODUCTS = [
-{"id":"coral-floral-ruffle-midi","name":"Coral Floral Ruffle Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Coral Floral","hex":"#E48877"}],"imgs":["assets/products/coral-floral-dress-1280.webp"],"desc":"Coral floral prints on an ivory base, a softly ruffled V-neckline, three-quarter sleeves with flared cuffs, and a flowing midi skirt with a gathered lower tier. Available in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Model image is AI-generated from the supplied coral floral dress reference."},
-{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/green-dress-garden-1280.webp","assets/products/green-dress-city-1280.webp","assets/products/green-dress-conservatory-front-1280.webp"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Available now in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"Lifestyle images are AI-generated styling illustrations based on the supplied dress references."},
+{"id":"coral-floral-ruffle-midi","name":"Coral Floral Ruffle Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Coral Floral","hex":"#E48877"}],"imgs":["assets/products/coral-studio-model-1280.webp","assets/products/coral-model-side-1280.webp","assets/products/coral-dress-only-1280.webp","assets/products/coral-floral-dress-1280.webp"],"desc":"Coral floral prints on an ivory base, a softly ruffled V-neckline, three-quarter sleeves with flared cuffs, and a flowing midi skirt with a gathered lower tier. Available in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"AI-generated model and dress-only previews based on the supplied references. Actual fit, print placement and construction need verification with real product photographs.","imageAlts":["Coral Floral Ruffle Midi Dress — AI preview, front on model","Coral Floral Ruffle Midi Dress — AI preview, angled view on model","Coral Floral Ruffle Midi Dress — AI preview, dress alone on hanger","Coral Floral Ruffle Midi Dress — AI lifestyle preview 1"]},
+{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/emerald-studio-model-1280.webp","assets/products/emerald-model-side-1280.webp","assets/products/emerald-dress-only-1280.webp","assets/products/green-dress-garden-1280.webp","assets/products/green-dress-city-1280.webp","assets/products/green-dress-conservatory-front-1280.webp"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Available now in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"AI-generated model and dress-only previews based on the supplied references. Actual fit, print placement and construction need verification with real product photographs.","imageAlts":["Emerald Ruffle Tier Midi Dress — AI preview, front on model","Emerald Ruffle Tier Midi Dress — AI preview, angled view on model","Emerald Ruffle Tier Midi Dress — AI preview, dress alone on hanger","Emerald Ruffle Tier Midi Dress — AI lifestyle preview 1","Emerald Ruffle Tier Midi Dress — AI lifestyle preview 2","Emerald Ruffle Tier Midi Dress — AI lifestyle preview 3"]},
 ];
 
 const COUPONS = {
@@ -1141,7 +1141,7 @@ function openProduct(id) {
   btn.classList.remove('added'); btn.textContent = p.sizes.length ? 'Add to bag' : 'Ask about sizes';
 
   document.getElementById('thumbs').innerHTML = p.imgs.map((img,i)=>
-    `<button type="button" class="gallery-thumb${i===0?' active':''}" aria-label="Show ${p.name}, image ${i+1}" onclick="switchImg(this,'${img}')"><img alt="${p.name} — view ${i+1}" src="${img.replace('-1280.webp','-640.webp')}" loading="lazy"/></button>`
+    `<button type="button" class="gallery-thumb${i===0?' active':''}" aria-label="Show ${p.imageAlts?.[i] || p.name}, image ${i+1}" onclick="switchImg(this,'${img}')"><img alt="${p.imageAlts?.[i] || p.name}" src="${img.replace('-1280.webp','-640.webp')}" loading="lazy"/></button>`
   ).join('');
   document.getElementById('color-swatches').innerHTML = p.colors.map(c=>
     `<button type="button" aria-label="${c.name}" class="swatch${c.name===selColor.name?' sel':''}" style="background:${c.hex}" title="${c.name}" onclick="pickColor(this,'${c.name}','${c.hex}')"></button>`
@@ -1305,7 +1305,7 @@ function renderCheckout() {
   document.getElementById('checkout-items').innerHTML = cart.map(i=>`
     <div style="display:flex;gap:14px;margin-bottom:18px;align-items:center">
       <div style="position:relative;flex-shrink:0">
-        <img src="${i.img}" alt="${i.name}" style="width:60px;height:76px;object-fit:cover;background:var(--sand)" loading="lazy"/>
+        <img src="${i.img}" alt="${i.name}" style="width:60px;height:76px;object-fit:contain;object-position:center;background:var(--sand)" loading="lazy"/>
         <span style="position:absolute;top:-7px;right:-7px;background:var(--charcoal);color:#fff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:'Jost',sans-serif">${i.qty}</span>
       </div>
       <div style="flex:1">
@@ -1445,8 +1445,8 @@ function showToast(msg) {
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-12"></script>
-<script src="assets/browsing.js?v=launch-12"></script>
+<script src="assets/storefront.js?v=launch-13"></script>
+<script src="assets/browsing.js?v=launch-13"></script>
 <script>
 // ── INIT ──
 renderHome();

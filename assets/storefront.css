@@ -94,6 +94,18 @@ a.nav-link,a.footer-link{text-decoration:none}
 .support-address{margin-top:24px;overflow-wrap:anywhere}
 .gallery-thumb{padding:0;background:transparent;overflow:hidden}
 .gallery-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.product-img-wrap img,.editorial img,.gallery-main img,.gallery-thumb img,.cart-item-img{object-fit:contain;object-position:center;background:var(--ivory)}
+.product-card:hover .product-img-wrap img{transform:none}
+/* Keep the complete portrait visible and the headline clear of the model. */
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;height:auto;min-height:0;max-height:none;background:var(--charcoal)}
+.hero img{position:static;grid-column:2;grid-row:1;width:100%;height:min(78vh,850px);object-fit:contain;object-position:center;background:var(--ivory)}
+.hero-overlay{display:none}
+.hero-content{grid-column:1;grid-row:1;padding:48px clamp(24px,5vw,80px);max-width:none}
+@media(max-width:640px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero img{grid-column:1;grid-row:1;height:clamp(320px,65vh,520px)}
+  .hero-content{grid-column:1;grid-row:2;padding:32px 24px 40px}
+}
 .product-help{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:16px}
 .product-help a{color:var(--charcoal);text-underline-offset:4px;min-height:32px}
 .shipping-note p{margin-top:8px;line-height:1.7}

@@ -78,3 +78,11 @@ Navigation/footer labels, the About-page label and its browser tab now consisten
 Mobile fixes: larger menu/swatch/size-guide/back/footer tap areas, readable upcoming-size text and header logo spacing at 320px. Selecting the already-active page in the mobile menu now closes the menu. The menu now layers above the sticky header; short-screen padding/gaps and vertical scrolling keep links and Close usable in landscape.
 
 Completed 24 route/layout checks: home, collection, product, cart, checkout and About at 320px, 390px, 768px and 844×390 landscape. No document-width overflow was observed. Additional interaction checks passed for same-page menu dismissal, landscape Close/focus return, gallery image navigation/Escape, cart increment/focus retention/removal, required checkout error focus and separate billing expansion at 390px. At 320px, header control rectangles no longer overlap the logo. No console errors were recorded. These remain desktop-browser viewport checks; physical iOS/Android and assistive-technology verification remain open.
+
+## Centered photos and expanded galleries — October 3, 2026
+
+Added three AI previews per dress in PR #24: model front, model angle, and dress alone. Coral now has four gallery images and Emerald has six. Added responsive WebP sizes and descriptive gallery alt text. Photos use centered contain sizing; the homepage now separates its headline from the portrait, and product-card hover no longer zooms/crops the image.
+
+22 automated checks pass, including gallery wraparound, asset references and image transfer budgets. Browser visual verification is pending: the automation tool rejected access to the existing browser error-page tab because its internal URL protocol is disallowed. The localhost server is running again on port 4174.
+
+These remain clearly labeled AI previews. Actual garment photos, fit, print placement and construction still need verification before accepting orders.

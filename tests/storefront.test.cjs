@@ -20,6 +20,24 @@ function setup(saved, blocked=false) {
 }
 const valid = {productId:'emerald-ruffle-midi',size:'M',color:'Emerald Green',quantity:2};
 const saved = items=>JSON.stringify({savedAt:Date.now(),items});
+
+test('gallery navigation wraps across added views and updates image descriptions',()=>{
+  const app=setup(null);
+  app.run(`
+    var elements={}, thumbs=[];
+    document.getElementById=id=>elements[id]||(elements[id]={});
+    document.querySelectorAll=selector=>selector==='.gallery-thumb'?thumbs:[];
+    currentProduct=PRODUCTS[0];
+  `);
+  app.run(fs.readFileSync(path.join(root,'assets/browsing.js'),'utf8').split('function restoreProductSelection')[0]);
+  app.run('selectGalleryImage(-1)');
+  assert.equal(app.run('galleryIndex'),app.run('currentProduct.imgs.length-1'));
+  assert.equal(app.run('elements["main-img"].alt'),app.run('currentProduct.imageAlts.at(-1)'));
+  app.run('selectGalleryImage(galleryIndex+1)');
+  assert.equal(app.run('galleryIndex'),0);
+  assert.equal(app.run('elements["gallery-counter"].textContent'),app.run('"Image 1 of "+currentProduct.imgs.length'));
+  assert.ok(app.run('elements["main-img"].srcset').includes('-640.webp'));
+});
 test('restored cart uses catalog price and content, never stored HTML or price',()=>{
   const app=setup(saved([{...valid,price:0.01,name:'<img onerror=alert(1)>',img:'evil'}]));
   app.run('restoreCart()');
