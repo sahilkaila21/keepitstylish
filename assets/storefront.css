@@ -74,6 +74,14 @@ body{font-weight:400}
 .story-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
 .story-actions .btn{margin-top:0}
 #page-about-manju .back-link{display:inline-flex;align-items:center;margin-bottom:32px}
+.manju-story-body blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,30px);font-style:italic;line-height:1.5;border-left:2px solid #C9A96E;padding-left:24px;margin:36px 0 48px}
+.manju-story-body blockquote span{display:block;font-family:'Jost',sans-serif;font-size:12px;font-style:normal;letter-spacing:.12em;color:var(--stone);margin-top:16px}
+.manju-story-part{margin:40px 0}
+.manju-story-part>p:first-child{font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.manju-story-part:last-child{background:var(--ivory);border:1px solid var(--sand);padding:24px}
+.manju-story-part:last-child>p:first-child{font-family:'Cormorant Garamond',serif;font-size:28px;letter-spacing:0;text-transform:none}
+.manju-story-part:last-child>div{display:flex;flex-wrap:wrap;gap:16px}
+.manju-story-part .btn{white-space:normal}
 @media(max-width:640px){.designer-story-card{padding:24px}.story-actions .btn{width:100%;white-space:normal;text-align:center}}
 .hamburger{min-width:44px;min-height:44px}
 .mobile-menu{z-index:220;overflow-y:auto}
