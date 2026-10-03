@@ -68,6 +68,13 @@ body{font-weight:400}
 #billing-summary-text{font-size:13px;line-height:1.7;overflow-wrap:anywhere}
 #coll-heading{overflow-wrap:anywhere}
 #page-about .section-label{color:var(--stone)}
+.designer-story-card{margin:40px 0;padding:32px;border:1px solid var(--sand);background:var(--ivory)}
+.designer-story-card h2{margin-top:12px}
+.designer-story-card .btn{white-space:normal}
+.story-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+.story-actions .btn{margin-top:0}
+#page-about-manju .back-link{display:inline-flex;align-items:center;margin-bottom:32px}
+@media(max-width:640px){.designer-story-card{padding:24px}.story-actions .btn{width:100%;white-space:normal;text-align:center}}
 .hamburger{min-width:44px;min-height:44px}
 .mobile-menu{z-index:220;overflow-y:auto}
 @media(max-height:500px){.mobile-menu{justify-content:flex-start;padding:76px 24px 24px;gap:16px}}
