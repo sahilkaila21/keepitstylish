@@ -67,7 +67,15 @@ body{font-weight:400}
 .checkbox-line input{width:20px;height:20px;accent-color:var(--charcoal)}
 #billing-summary-text{font-size:13px;line-height:1.7;overflow-wrap:anywhere}
 #coll-heading{overflow-wrap:anywhere}
-#page-about>div:first-child>p:first-child{color:var(--ivory)!important}
+#page-about .section-label{color:var(--stone)}
+.hamburger{min-width:44px;min-height:44px}
+.mobile-menu{z-index:220;overflow-y:auto}
+@media(max-height:500px){.mobile-menu{justify-content:flex-start;padding:76px 24px 24px;gap:16px}}
+@media(max-width:768px){.brand-logo{width:clamp(126px,calc(100vw - 194px),210px)}}
+.swatch{width:44px;height:44px}
+.back-link,.mobile-nav-link{min-height:44px}
+.product-choice button[onclick="showPage('size-guide')"]{font-size:13px!important;min-height:44px;padding:0 8px}
+.size-coming small{font-size:11px}
 html{scroll-padding-top:90px}
 input,select,textarea{font-size:16px!important}
 .search-close,.mobile-menu-close,.cart-btn,.nav-icon-btn{min-width:44px;min-height:44px}
@@ -90,7 +98,7 @@ a.nav-link,a.footer-link{text-decoration:none}
 .product-help a{color:var(--charcoal);text-underline-offset:4px;min-height:32px}
 .shipping-note p{margin-top:8px;line-height:1.7}
 .content-page .btn{margin-top:24px}
-.footer-link{min-height:32px;line-height:1.6}
+.footer-link{min-height:44px;line-height:1.6;display:flex;align-items:center}
 .qty-btn,.remove-btn{min-width:44px;min-height:44px}
 .product-card:focus-visible .product-overlay{transform:translateY(0)}
 footer{margin-top:40px}
