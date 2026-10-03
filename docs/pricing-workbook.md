@@ -1,6 +1,6 @@
 # Pricing and order economics worksheet
 
-Internal planning only. Current preview price is $54.99 per dress; approval and costs remain Needs verification. Complete separately for both dresses and for one- and two-item parcels.
+Internal planning only. Current preview price is $54.99 per dress; approval and costs remain Needs verification. Complete separately for all three dresses and for one- and two-item parcels.
 
 | Input | Symbol | Value/source |
 |---|---|---|

@@ -14,23 +14,28 @@ Coral florals on an ivory background, a ruffled V-neckline and three-quarter sle
 
 Add verified material, care, lining, closure, model/worn-size details, stock and policy links before launch. Do not imply the existing general size chart is verified.
 
+**Blue Floral Ruffle Collar Midi Dress**
+
+Blue botanical florals with pink accents on ivory, a ruffled V collar, gathered waist and flared sleeve cuffs. Decorative print bands finish the flowing midi skirt. Check approved measurements and actual stock before ordering.
+
 ## SEO copy to prepare for production routes
 
 | Page | Draft title | Draft description |
 |---|---|---|
-| Home | Keep It Stylish — Midi Dresses | Explore emerald and coral floral midi dresses from Keep It Stylish. View dress details, sizing and availability. |
+| Home | Keep It Stylish — Midi Dresses | Explore emerald, coral floral and blue floral midi dresses from Keep It Stylish. View dress details, sizing and availability. |
 | Emerald | Emerald Ruffle Tier Midi Dress — Keep It Stylish | Explore the Emerald Ruffle Tier Midi Dress with a V-neckline, tiered skirt and ruffle cuffs. See verified sizing and product details. |
 | Coral | Coral Floral Ruffle Midi Dress — Keep It Stylish | Discover coral florals, a ruffled neckline and flared cuffs. View sizing and details for the Coral Floral Ruffle Midi Dress. |
+| Blue | Blue Floral Ruffle Collar Midi Dress — Keep It Stylish | Explore blue botanical florals, a ruffled collar and decorative print bands. View details for the Blue Floral Ruffle Collar Midi Dress. |
 
 Publish distinct URLs, canonical tags, social images and truthful product structured data after the platform/domain decision (#20). Only say “verified sizing” after the size chart is completed.
 
 ## Social drafts
 
-Pre-launch: “A first look at Keep It Stylish: emerald tiers and coral florals. Explore our two-dress preview. Online ordering opens after our final launch checks. [preview link]”
+Pre-launch: “A first look at Keep It Stylish: emerald tiers, coral florals and blue botanical prints. Explore our three-dress preview. Online ordering opens after our final launch checks. [preview link]”
 
 Product introduction: “Meet the Emerald Ruffle Tier Midi Dress. Green, tiers and ruffle cuffs, styled your way. [product link]”
 
-Launch-day, gated: “Keep It Stylish is now open for U.S. orders. Explore our first two dresses, check your measurements and review shipping and returns before choosing yours. [store link]”
+Launch-day, gated: “Keep It Stylish is now open for U.S. orders. Explore our first three dresses, check your measurements and review shipping and returns before choosing yours. [store link]”
 
 Use real garment photographs for purchase decisions. If using existing AI lifestyle illustrations, retain a clear disclosure beside the image. No fabricated reviews, scarcity or countdown claims.
 
@@ -48,7 +53,7 @@ CTA: View the collection preview [link]
 
 Subject: Our first dress collection is open
 
-You can now shop Keep It Stylish for delivery to our supported U.S. destinations. Explore the two dresses, review the garment measurements and see shipping costs before payment.
+You can now shop Keep It Stylish for delivery to our supported U.S. destinations. Explore the three dresses, review the garment measurements and see shipping costs before payment.
 
 CTA: Shop the dresses [production collection link]
 
