@@ -55,4 +55,6 @@ For optional local diagnostics, open `http://127.0.0.1:4173/tests/preview-diagno
 
 The [U.S. commerce field specification](docs/us-commerce-fields.md) records guest checkout, optional phone/company/unit, separate billing, tax/shipping display and the fields still required from the production platform.
 
+The boutique design uses a balanced two-dress collection, one main homepage shopping action, readable body text and product titles/prices ahead of mobile galleries. See [brand authenticity inputs](docs/brand-story-inputs.md) for the real founder and garment evidence needed next.
+
 The worksheets are Markdown documents that can be reviewed in GitHub. They contain no invented business or supplier records.
