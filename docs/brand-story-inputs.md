@@ -2,7 +2,7 @@
 
 The visual refinement uses the existing ivory/espresso palette, a deliberate two-dress edit, readable typography and factual collection copy. AI image disclosures remain. No new garment or founder imagery was generated.
 
-At the owner's request, About us now links to a separate Manju story page. It uses a shortened version of the earlier embroidery and custom-order narrative, with Manju's designer role supplied by the owner. No quote, founder portrait or claim that the listed dresses are handmade is included. The embroidery history and custom-order origin are retained from the prior site copy; their factual basis still needs owner/Manju verification. The original longer copy remains recoverable in Git history. Confirm:
+At the owner's explicit request, About us links to a separate Manju story page containing the complete original story from Git revision `f20f5f4^`: the quote and attribution, The Beginning, The Journey, The Craft, all paragraphs and the custom-design invitation. The text was restored rather than rewritten; its biographical and craftsmanship claims were not independently verified. No founder portrait was added. Confirm:
 
 - Founder name and role, in the founder's own approved wording.
 - A short account of why the business began, with dates/places only when verified.
