@@ -4,7 +4,16 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Keep It Stylish | U.S. Store</title>
-<meta name="description" content="Shop Keep It Stylish in U.S. dollars. Discover emerald, coral floral and blue floral midi dresses in our first collection."/>
+<meta name="description" content="Preview emerald, coral floral and blue floral midi dresses from Keep It Stylish. Explore the details and Manju’s story. Online ordering opens soon."/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Keep It Stylish"/>
+<meta property="og:title" content="Keep It Stylish — The First Dress Edit"/>
+<meta property="og:description" content="Explore emerald tiers, coral florals and blue botanical prints. Online ordering opens soon."/>
+<meta property="og:url" content="https://sahilkaila21.github.io/keepitstylish/"/>
+<meta property="og:image" content="https://sahilkaila21.github.io/keepitstylish/assets/products/emerald-studio-model-1280.webp"/>
+<meta property="og:image:alt" content="Emerald dress on a model — AI styling preview"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -484,7 +493,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-16"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-17"/>
 </head>
 <body><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -543,10 +552,11 @@ tr:nth-child(even) td{background:var(--ivory)}
 
 <!-- ════════════════════════ HOME ════════════════════════ -->
 <div class="preview-banner">Preview the collection · Online ordering opens soon. <a href="#contact">Questions? Get in touch</a></div>
+<noscript><div class="launch-notice">Enable JavaScript to browse the dress galleries and preview bag. For product questions, <a href="mailto:hello@keepitstylish.in">email Keep It Stylish</a>.</div></noscript>
 <main id="main-content" tabindex="-1">
 <div id="page-home" class="page active">
   <div class="hero">
-    <img src="assets/products/green-dress-garden-1280.webp" srcset="assets/products/green-dress-garden-640.webp 640w, assets/products/green-dress-garden-1280.webp 1280w" sizes="100vw" fetchpriority="high" alt="Emerald Ruffle Tier Midi Dress"/>
+    <img src="assets/products/green-dress-garden-1280.webp" srcset="assets/products/green-dress-garden-640.webp 640w, assets/products/green-dress-garden-1280.webp 1280w" sizes="(max-width:640px) 100vw, 50vw" width="1280" height="1920" decoding="async" fetchpriority="high" alt="Emerald Ruffle Tier Midi Dress"/>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">The Dress Collection</p>
@@ -576,7 +586,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   </div>
 
   <div class="editorial">
-    <img src="assets/products/coral-floral-dress-1280.webp" alt="Coral Floral Ruffle Midi Dress" loading="lazy"/>
+    <img src="assets/products/coral-floral-dress-1280.webp" srcset="assets/products/coral-floral-dress-640.webp 640w, assets/products/coral-floral-dress-1280.webp 1280w" sizes="(max-width:768px) 100vw, 50vw" width="1280" height="1920" decoding="async" alt="Coral Floral Ruffle Midi Dress" loading="lazy"/>
     <div>
       <p class="section-label">A Closer Look</p>
       <h2 class="editorial-title">Coral florals.<br><em>Your own way.</em></h2>
@@ -603,7 +613,7 @@ tr:nth-child(even) td{background:var(--ivory)}
     </div>
     <div class="controls-row">
 
-      <span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif" id="product-count" role="status" aria-live="polite">2 styles</span>
+      <span style="font-size:13px;color:var(--stone);font-family:'Jost',sans-serif" id="product-count" role="status" aria-live="polite">3 styles</span>
       <button id="clear-search" class="back-link" type="button" onclick="navigateCollection()" hidden>Clear search</button>
       <select class="sort-select" aria-label="Sort dresses" onchange="sortProducts(this.value)">
         <option value="newest">Newest</option>
@@ -631,7 +641,7 @@ tr:nth-child(even) td{background:var(--ivory)}
       </div>
     </div>
     <div class="product-gallery">
-      <button type="button" class="gallery-main" id="zoom-open" onclick="openImageZoom()" aria-label="Enlarge product image"><img id="main-img" alt="Product"/><span class="zoom-hint">View larger ↗</span></button><div class="gallery-controls"><button type="button" data-gallery-direction="-1" aria-label="Previous product image">←</button><span id="gallery-counter" aria-live="polite"></span><button type="button" data-gallery-direction="1" aria-label="Next product image">→</button></div>
+      <button type="button" class="gallery-main" id="zoom-open" onclick="openImageZoom()" aria-label="Enlarge product image"><img width="1280" height="1920" decoding="async" id="main-img" alt="Product"/><span class="zoom-hint">View larger ↗</span></button><div class="gallery-controls"><button type="button" data-gallery-direction="-1" aria-label="Previous product image">←</button><span id="gallery-counter" aria-live="polite"></span><button type="button" data-gallery-direction="1" aria-label="Next product image">→</button></div>
       <div class="gallery-thumbs" id="thumbs"></div><p id="image-note" style="font-size:12px;color:var(--stone);line-height:1.6;margin-top:14px"></p>
     </div>
     <div class="product-choice">
@@ -966,6 +976,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 </div>
 </div>
 </div></div></section>
+<section id="page-not-found" class="page"><div class="content-page"><p class="section-label">Keep It Stylish</p><h1>This page isn’t available</h1><p>The link may be out of date. Explore the current collection or contact us for help.</p><a class="btn btn-dark" href="#collections">Explore the dresses</a><a class="back-link" href="#contact">Contact us</a></div></section>
 <!-- CUSTOM ATELIER PAGE -->
 <section id="page-custom" class="page"><div class="content-page"><p class="section-label">Keep It Stylish</p><h1>A piece of your own</h1><p>Have a custom design in mind? Email your ideas to discuss whether we can help. Availability, pricing, measurements, and timing need to be agreed before an order is placed.</p><a class="btn btn-dark" href="mailto:hello@keepitstylish.in?subject=Custom%20design%20inquiry">Discuss your idea ↗</a><p class="support-address">This opens your email app. Your inquiry is sent only when you send the email.</p></div></section>
 
@@ -1011,14 +1022,9 @@ tr:nth-child(even) td{background:var(--ivory)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ════════════════════════ JAVASCRIPT ════════════════════════ -->
+<script src="assets/catalog.js?v=launch-17"></script>
 <script>
 // ── DATA ──
-const PRODUCTS = [
-{"id":"coral-floral-ruffle-midi","name":"Coral Floral Ruffle Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Coral Floral","hex":"#E48877"}],"imgs":["assets/products/coral-studio-model-1280.webp","assets/products/coral-model-side-1280.webp","assets/products/coral-dress-only-1280.webp","assets/products/coral-floral-dress-1280.webp"],"desc":"Coral floral prints on an ivory base, a softly ruffled V-neckline, three-quarter sleeves with flared cuffs, and a flowing midi skirt with a gathered lower tier. Available in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"AI-generated model and dress-only previews based on the supplied references. Actual fit, print placement and construction need verification with real product photographs.","imageAlts":["Coral Floral Ruffle Midi Dress — AI preview, front on model","Coral Floral Ruffle Midi Dress — AI preview, angled view on model","Coral Floral Ruffle Midi Dress — AI preview, dress alone on hanger","Coral Floral Ruffle Midi Dress — AI lifestyle preview 1"]},
-{"id":"emerald-ruffle-midi","name":"Emerald Ruffle Tier Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"upcomingSizes":["XS","XL"],"colors":[{"name":"Emerald Green","hex":"#0B4935"}],"imgs":["assets/products/emerald-studio-model-1280.webp","assets/products/emerald-model-side-1280.webp","assets/products/emerald-dress-only-1280.webp","assets/products/green-dress-garden-1280.webp","assets/products/green-dress-city-1280.webp","assets/products/green-dress-conservatory-front-1280.webp"],"desc":"Rich emerald green, a V-neckline, flowing midi-length tiers, and cascading ruffle cuffs. An elegant dress for dinners, celebrations, and everyday occasions. Available now in Small, Medium, and Large. XS and XL are coming soon.","isNew":true,"imageNote":"AI-generated model and dress-only previews based on the supplied references. Actual fit, print placement and construction need verification with real product photographs.","imageAlts":["Emerald Ruffle Tier Midi Dress — AI preview, front on model","Emerald Ruffle Tier Midi Dress — AI preview, angled view on model","Emerald Ruffle Tier Midi Dress — AI preview, dress alone on hanger","Emerald Ruffle Tier Midi Dress — AI lifestyle preview 1","Emerald Ruffle Tier Midi Dress — AI lifestyle preview 2","Emerald Ruffle Tier Midi Dress — AI lifestyle preview 3"]},
-{"id":"blue-floral-ruffle-collar-midi","name":"Blue Floral Ruffle Collar Midi Dress","price":54.99,"cat":"dresses","sizes":["S","M","L"],"colors":[{"name":"Blue Floral","hex":"#44689C"}],"imgs":["assets/products/blue-floral-model-front-1280.webp","assets/products/blue-floral-model-back-1280.webp","assets/products/blue-floral-dress-only-1280.webp","assets/products/blue-floral-neckline-detail-1280.webp"],"desc":"Blue floral prints with soft pink accents on an ivory base, a ruffled V collar, three-quarter sleeves with flared cuffs, a gathered waist and a flowing midi skirt finished with decorative print bands. Explore the front, back and detail views before choosing your size.","isNew":true,"availabilityNote":"Preview sizes: S, M, L. Availability to be confirmed.","imageNote":"AI-generated model and dress-only previews based on the supplied blue floral reference. Actual fit, print placement and construction need verification with real product photographs.","imageAlts":["Blue Floral Ruffle Collar Midi Dress — AI preview, front on model","Blue Floral Ruffle Collar Midi Dress — AI preview, back on model","Blue Floral Ruffle Collar Midi Dress — AI preview, dress alone on hanger","Blue Floral Ruffle Collar Midi Dress — AI preview, ruffled collar and print detail"]},
-];
-
 const COUPONS = {
   'WELCOME10': {discount:10,type:'percent',label:'10% off with WELCOME10'},
   'SAVE2': {discount:2,type:'flat',label:'$2.00 off with SAVE2'},
@@ -1055,7 +1061,8 @@ function showPage(name) {
   const route = name === 'product' && currentProduct ? currentProduct.id : name;
   if (!restoringRoute && location.hash !== '#' + route) history.pushState(null, '', '#' + route);
   if (name === 'collections') renderCollectionRoute();
-  document.title = name === 'product' && currentProduct ? currentProduct.name + ' | Keep It Stylish' : name === 'about-manju' ? 'About Manju | Keep It Stylish' : name === 'about' ? 'About us | Keep It Stylish' : name === 'cart' ? 'Your Bag | Keep It Stylish' : name === 'home' ? 'Keep It Stylish | U.S. Store' : 'Keep It Stylish | ' + (pg.querySelector('h1')?.textContent.trim() || 'U.S. Store');
+  if (typeof updatePreviewDescription === 'function') updatePreviewDescription();
+  if (name !== 'collections') document.title = name === 'product' && currentProduct ? currentProduct.name + ' | Keep It Stylish' : name === 'about-manju' ? 'About Manju | Keep It Stylish' : name === 'about' ? 'About us | Keep It Stylish' : name === 'cart' ? 'Your Bag | Keep It Stylish' : name === 'home' ? 'Keep It Stylish | U.S. Store' : 'Keep It Stylish | ' + (pg.querySelector('h1')?.textContent.trim() || 'U.S. Store');
   window.scrollTo({top:0,behavior:'instant'});
   const heading = pg.querySelector('h1');
   if (heading) { heading.tabIndex = -1; heading.focus({preventScroll:true}); }
@@ -1078,7 +1085,7 @@ function filterAndGo(cat) {
 // ── SEARCH ──
 function openSearch() {
   document.getElementById('search-overlay').style.display = 'flex';
-  setTimeout(() => document.getElementById('search-input').focus(), 50);
+  document.getElementById('search-input').focus();
   document.body.style.overflow = 'hidden';
 }
 function closeSearch() {
@@ -1114,7 +1121,7 @@ function cardHTML(p) {
   ].filter(Boolean).join('<br/>');
   return `<a class="product-card" href="#${p.id}" aria-label="View ${p.name}">
     <div class="product-img-wrap">
-      <img srcset="${p.imgs[0].replace('-1280.webp','-640.webp')} 640w, ${p.imgs[0]} 1280w" sizes="(max-width:1200px) 50vw, 560px" src="${p.imgs[0]}" alt="${p.name}" loading="lazy"/>
+      <img width="1280" height="1920" decoding="async" srcset="${p.imgs[0].replace('-1280.webp','-640.webp')} 640w, ${p.imgs[0]} 1280w" sizes="(max-width:900px) 50vw, 400px" src="${p.imgs[0]}" alt="${p.name}" loading="lazy"/>
       <div style="position:absolute;top:14px;left:14px">${badges}</div>
       <div class="product-overlay">View Details</div>
     </div>
@@ -1174,7 +1181,7 @@ function openProduct(id) {
   btn.classList.remove('added'); btn.textContent = p.sizes.length ? 'Add to bag' : 'Ask about sizes';
 
   document.getElementById('thumbs').innerHTML = p.imgs.map((img,i)=>
-    `<button type="button" class="gallery-thumb${i===0?' active':''}" aria-label="Show ${p.imageAlts?.[i] || p.name}, image ${i+1}" onclick="switchImg(this,'${img}')"><img alt="${p.imageAlts?.[i] || p.name}" src="${img.replace('-1280.webp','-640.webp')}" loading="lazy"/></button>`
+    `<button type="button" class="gallery-thumb${i===0?' active':''}" aria-label="Show ${p.imageAlts?.[i] || p.name}, image ${i+1}" onclick="switchImg(this,'${img}')"><img width="640" height="960" decoding="async" alt="${p.imageAlts?.[i] || p.name}" src="${img.replace('-1280.webp','-640.webp')}" loading="lazy"/></button>`
   ).join('');
   document.getElementById('color-swatches').innerHTML = p.colors.map(c=>
     `<button type="button" aria-label="${c.name}" class="swatch${c.name===selColor.name?' sel':''}" style="background:${c.hex}" title="${c.name}" onclick="pickColor(this,'${c.name}','${c.hex}')"></button>`
@@ -1268,7 +1275,7 @@ function renderCart() {
     document.getElementById('cart-layout').style.display='grid';
     document.getElementById('cart-items').innerHTML = cart.map(item=>`
       <div class="cart-item-row">
-        <img class="cart-item-img" src="${item.img}" alt="${item.name}" loading="lazy"/>
+        <img width="100" height="132" decoding="async" class="cart-item-img" src="${item.img}" alt="${item.name}" loading="lazy"/>
         <div>
           <p style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--charcoal);margin-bottom:6px">${item.name}</p>
           <p style="font-size:12px;color:var(--stone);margin-bottom:4px;font-family:'Jost',sans-serif">Size: ${item.size} · Color: ${item.color}</p>
@@ -1408,7 +1415,7 @@ function showFieldErr(f, msg) {
   const err = document.getElementById(ERR_MAP[f]);
   if (!inp||!err) return;
   if (msg) { inp.classList.add('err'); err.textContent=msg; err.classList.add('visible'); }
-  else { inp.classList.remove('err'); err.classList.remove('visible'); }
+  else { inp.classList.remove('err'); err.textContent=''; err.classList.remove('visible'); }
 }
 function liveValidate(f) {
   if (!fieldTouched[f]) return;
@@ -1471,15 +1478,18 @@ function updateBadge() {
   const b = document.getElementById('cart-badge');
   b.textContent=n; b.style.display=n>0?'flex':'none';
 }
+let toastTimer;
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent=msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 2800);
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2800);
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-16"></script>
-<script src="assets/browsing.js?v=launch-16"></script>
+<script src="assets/storefront.js?v=launch-17"></script>
+<script src="assets/browsing.js?v=launch-17"></script>
+<script src="assets/enhancements.js?v=launch-17"></script>
 <script>
 // ── INIT ──
 renderHome();

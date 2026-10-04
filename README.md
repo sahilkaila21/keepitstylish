@@ -58,3 +58,10 @@ The [U.S. commerce field specification](docs/us-commerce-fields.md) records gues
 The boutique design uses a three-dress collection, one main homepage shopping action, readable body text and product titles/prices ahead of mobile galleries. See [brand authenticity inputs](docs/brand-story-inputs.md) for the real founder and garment evidence needed next.
 
 The worksheets are Markdown documents that can be reviewed in GitHub. They contain no invented business or supplier records.
+
+## Catalog and support maintenance
+
+- [Catalog maintenance](docs/catalog-maintenance.md): the shared product source, asset conventions, verification gates and production SEO limitations.
+- [Support email drafts](docs/support-email-templates.md): eight templates with verified-event triggers and activation criteria. They are not connected to a sender.
+
+The October 4 polish passes 25 automated checks and 64 local route/viewport observations. See the verification record for remaining device, accessibility and production checks.

@@ -88,3 +88,11 @@ Added three AI previews per dress in PR #24: model front, model angle, and dress
 22 automated checks pass, including gallery wraparound, asset references and image transfer budgets. Browser visual verification is pending: the automation tool rejected access to the existing browser error-page tab because its internal URL protocol is disallowed. The localhost server is running again on port 4174.
 
 These remain clearly labeled AI previews. Actual garment photos, fit, print placement and construction still need verification before accepting orders.
+
+## Autonomous storefront polish — October 4, 2026
+
+25 automated checks pass, including catalog integrity, unknown-route recovery and photo-failure/recovery behavior with a DOM mock. Catalog data is now shared in assets/catalog.js. Responsive dimensions/loading hints, checkout error clearing, menu/search focus, tap targets, missing-link recovery, preview descriptions and static social metadata were improved.
+
+64 local layout observations covered 16 routes at 320x740, 390x844, 768x1024 and 844x390: no document-width overflow or broken completed images. Routes included all three products, home, collection, bag, checkout, size guide, About us, full Manju story, contact and policies. Keyboard menu wrap/Escape, search focus, first-invalid-field focus, accented one-character input, cleared error descriptions and separate billing visibility were checked. Recovery navigation reached the collection. Test bag data was removed and form values cleared by reload. No browser console errors were recorded.
+
+Photo-failure behavior was tested with a mock; browser caching prevented a real failed-image network test. These checks do not establish physical-device, screen-reader, actual browser-zoom, full contrast or production Core Web Vitals compliance. Hash product routes still need independently crawlable production URLs. Eight support email templates are drafts only; sender authentication, verified inboxes, policies and provider events remain launch gates. Ordering remains disabled.
