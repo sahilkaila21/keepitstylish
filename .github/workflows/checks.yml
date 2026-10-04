@@ -14,4 +14,5 @@ jobs:
       - run: node --check assets/catalog.js
       - run: node --check assets/enhancements.js
       - run: node --check tests/preview-diagnostics.js
-      - run: node --test tests/storefront.test.cjs
+      - run: node tests/release-safety.cjs
+      - run: node --test tests/storefront.test.cjs tests/release-safety.test.cjs

@@ -1,0 +1,15 @@
+# The published checkout must contain no credentials or local build artifacts.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+node_modules/
+.next/
+audit/
+backups/
+*.qa-backup
+*.log
+
