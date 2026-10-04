@@ -65,3 +65,10 @@ The worksheets are Markdown documents that can be reviewed in GitHub. They conta
 - [Support email drafts](docs/support-email-templates.md): eight templates with verified-event triggers and activation criteria. They are not connected to a sender.
 
 The October 4 polish passes 25 automated checks and 64 local route/viewport observations. See the verification record for remaining device, accessibility and production checks.
+
+## Release safety and recovery
+
+- [Release runbook](docs/release-runbook.md): published source, verification steps and preview rollback.
+- [Security review](docs/security-review.md): static-preview scope, separate prototype findings and production requirements.
+
+Run `node tests/release-safety.cjs` and `node --test tests/storefront.test.cjs tests/release-safety.test.cjs` before publishing. The limited pattern scan is not a full security audit or an enforced Pages deployment gate.
