@@ -5,6 +5,7 @@ const vm = require('node:vm');
 const path = require('node:path');
 const root = path.join(__dirname, '..');
 const html = fs.readFileSync(path.join(root,'index.html'),'utf8');
+const catalog = fs.readFileSync(path.join(root,'assets/catalog.js'),'utf8');
 const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
 const persistence = fs.readFileSync(path.join(root,'assets/storefront.js'),'utf8').split('function restoreRoute()')[0];
 function setup(saved, blocked=false) {
@@ -13,6 +14,7 @@ function setup(saved, blocked=false) {
     getItem(){if(blocked) throw Error('Storage blocked'); return stored;},
     setItem(key,value){if(blocked) throw Error('Storage blocked'); stored=value;}
   }});
+  vm.runInContext(catalog, ctx);
   vm.runInContext(script, ctx);
   vm.runInContext('updateBadge = function() {};',ctx);
   vm.runInContext(persistence, ctx);
@@ -20,6 +22,52 @@ function setup(saved, blocked=false) {
 }
 const valid = {productId:'emerald-ruffle-midi',size:'M',color:'Emerald Green',quantity:2};
 const saved = items=>JSON.stringify({savedAt:Date.now(),items});
+
+test('catalog IDs, variants and responsive image descriptions are complete',()=>{
+  const app=setup(null);
+  const products=JSON.parse(app.run('JSON.stringify(PRODUCTS)'));
+  assert.equal(new Set(products.map(p=>p.id)).size,products.length);
+  for(const product of products){
+    assert.match(product.id,/^[a-z0-9-]+$/);
+    assert.ok(Number.isFinite(product.price)&&product.price>0,product.id);
+    assert.equal(new Set(product.sizes).size,product.sizes.length);
+    assert.equal(product.imgs.length,product.imageAlts.length);
+    for(const image of product.imgs){
+      assert.match(image,/^assets\/products\/[a-z0-9-]+-1280\.webp$/);
+      assert.ok(fs.existsSync(path.join(root,image.replace('-1280.webp','-640.webp'))),image);
+    }
+  }
+});
+
+test('unknown routes recover visibly without displaying an order confirmation',()=>{
+  const app=setup(null);
+  const source=fs.readFileSync(path.join(root,'assets/storefront.js'),'utf8');
+  app.run(source.slice(source.indexOf('function restoreRoute()'),source.indexOf("window.addEventListener('hashchange'")));
+  app.run(`var destination=''; location={hash:''}; document.getElementById=id=>id==='page-home'?{}:null; showPage=page=>{destination=page};`);
+  for(const [hash,page] of [['#missing-link','not-found'],['#product','not-found'],['#confirmation','home']]){
+    app.run(`location.hash=${JSON.stringify(hash)};restoreRoute()`);
+    assert.equal(app.run('destination'),page);
+    assert.equal(app.run('restoringRoute'),false);
+  }
+});
+
+test('failed gallery image offers recovery and successful load enables zoom again',()=>{
+  const app=setup(null);
+  app.run(fs.readFileSync(path.join(root,'assets/enhancements.js'),'utf8').split("document.addEventListener('error'")[0]);
+  app.run(`
+    var message=null, failed=false;
+    var container={disabled:false,classList:{toggle(name,value){failed=value},contains(){return false}},querySelector(){return message},append(value){message=value}};
+    document.createElement=()=>({setAttribute(){},remove(){message=null}});
+    var image={id:'main-img',closest(){return container}};
+    setPhotoFailure(image,true);
+  `);
+  assert.equal(app.run('failed'),true);
+  assert.equal(app.run('container.disabled'),true);
+  assert.match(app.run('message.textContent'),/Try another gallery view/);
+  app.run('setPhotoFailure(image,false)');
+  assert.equal(app.run('message'),null);
+  assert.equal(app.run('container.disabled'),false);
+});
 
 test('gallery navigation wraps across added views and updates image descriptions',()=>{
   const app=setup(null);
@@ -74,7 +122,7 @@ test('checkout accepts accented and short names and short valid street addresses
   assert.notEqual(app.run("VALIDATORS.firstName(' ')") ,'');
 });
 test('displayed asset references exist',()=>{
-  for(const match of html.matchAll(/assets\/[a-zA-Z0-9_./-]+\.(?:webp|svg|png|ico|css|js)/g))
+  for(const match of (html+catalog).matchAll(/assets\/[a-zA-Z0-9_./-]+\.(?:webp|svg|png|ico|css|js)/g))
     assert.ok(fs.existsSync(path.join(root,match[0])),match[0]);
 });
 
@@ -94,7 +142,7 @@ test('restoration reports invalid selections and does not extend saved expiry',(
 });
 test('all inline and external storefront scripts parse',()=>{
   for(const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) new vm.Script(match[1]);
-  for(const file of ['storefront.js','browsing.js']) new vm.Script(fs.readFileSync(path.join(root,'assets',file),'utf8'));
+  for(const file of ['catalog.js','storefront.js','browsing.js','enhancements.js']) new vm.Script(fs.readFileSync(path.join(root,'assets',file),'utf8'));
 });
 test('static IDs are unique and labels reference actual controls',()=>{
   const markup=html.replace(/<script[\s\S]*?<\/script>/g,'');

@@ -67,7 +67,7 @@ function restoreRoute() {
   const route = requested === 'confirmation' ? 'home' : requested;
   const product = PRODUCTS.find(p => p.id === route);
   if (product) openProduct(product.id);
-  else showPage(route !== 'product' && document.getElementById('page-' + route) ? route : 'home');
+  else showPage(route !== 'product' && document.getElementById('page-' + route) ? route : 'not-found');
   restoringRoute = false;
 }
 window.addEventListener('hashchange', restoreRoute);

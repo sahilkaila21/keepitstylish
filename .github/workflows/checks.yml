@@ -11,5 +11,7 @@ jobs:
         with:
           node-version: '22'
       - run: node --check assets/storefront.js
+      - run: node --check assets/catalog.js
+      - run: node --check assets/enhancements.js
       - run: node --check tests/preview-diagnostics.js
       - run: node --test tests/storefront.test.cjs
