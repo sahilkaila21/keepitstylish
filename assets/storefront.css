@@ -111,15 +111,23 @@ a.nav-link,a.footer-link{text-decoration:none}
 .gallery-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .product-img-wrap img,.editorial img,.gallery-main img,.gallery-thumb img,.cart-item-img{object-fit:contain;object-position:center;background:var(--ivory)}
 .product-card:hover .product-img-wrap img{transform:none}
-/* Keep the complete portrait visible and the headline clear of the model. */
-.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;height:auto;min-height:0;max-height:none;background:var(--charcoal)}
-.hero img{position:static;grid-column:2;grid-row:1;width:100%;height:min(78vh,850px);object-fit:contain;object-position:center;background:var(--ivory)}
-.hero-overlay{display:none}
-.hero-content{grid-column:1;grid-row:1;padding:48px clamp(24px,5vw,80px);max-width:none}
-@media(max-width:640px){
-  .hero{grid-template-columns:1fr;min-height:0}
-  .hero img{grid-column:1;grid-row:1;height:clamp(320px,65vh,520px)}
-  .hero-content{grid-column:1;grid-row:2;padding:32px 24px 40px}
+/* A single photographic banner, with a complete portrait on small screens. */
+.hero{display:flex;align-items:flex-end;height:clamp(520px,52vw,740px);min-height:0;max-height:none;background:var(--ivory)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-overlay{display:block;background:linear-gradient(90deg,rgba(28,23,20,.88) 0%,rgba(28,23,20,.72) 24%,rgba(28,23,20,.12) 49%,transparent 65%)}
+.hero-content{padding:64px clamp(32px,5vw,80px);max-width:46%;}
+.hero-title{font-size:clamp(40px,4.4vw,64px);line-height:1.08}
+.hero-description{max-width:350px;font-size:15px}
+@media(max-width:760px){
+  .hero{display:flex;flex-direction:column;align-items:stretch;height:auto}
+  .hero img{position:static;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain;object-position:center}
+  .hero-overlay{display:none}
+  .hero-content{padding:36px 24px 40px;max-width:none;text-align:center}
+  .hero-label{color:var(--charcoal)}
+  .hero-title{color:var(--charcoal);font-size:clamp(36px,7vw,48px)}
+  .hero-description{color:var(--charcoal);max-width:380px;margin:0 auto 24px}
+  .hero-btns{justify-content:center}
+  .hero-btns .btn{background:var(--charcoal);color:var(--ivory);border-color:var(--charcoal)}
 }
 .product-help{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:16px}
 .product-help a{color:var(--charcoal);text-underline-offset:4px;min-height:32px}
