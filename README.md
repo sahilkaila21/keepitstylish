@@ -72,3 +72,5 @@ The October 4 polish passes 25 automated checks and 64 local route/viewport obse
 - [Security review](docs/security-review.md): static-preview scope, separate prototype findings and production requirements.
 
 Run `node tests/release-safety.cjs` and `node --test tests/storefront.test.cjs tests/release-safety.test.cjs` before publishing. The limited pattern scan is not a full security audit or an enforced Pages deployment gate.
+
+The [launch acceptance checklist](docs/launch-acceptance-checklist.md) consolidates preview evidence, critical production gates, owner inputs and order/payment/return scenarios. The store remains a preview until those gates pass.
