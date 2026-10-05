@@ -206,6 +206,22 @@ test('phone is optional and ZIP+4 remains valid for US shipping',()=>{
   assert.equal(app.run("VALIDATORS.pin('10001-1234')"),'');
   assert.notEqual(app.run("VALIDATORS.pin('1000')"),'');
 });
+
+test('correcting a checkout field removes its stale error description',()=>{
+  const app=setup(null);
+  app.run(`
+    var inputClasses=new Set(), errorClasses=new Set();
+    var input={classList:{add:v=>inputClasses.add(v),remove:v=>inputClasses.delete(v)}};
+    var error={textContent:'',classList:{add:v=>errorClasses.add(v),remove:v=>errorClasses.delete(v)}};
+    document.getElementById=id=>id==='f-firstName'?input:id==='e-firstName'?error:null;
+    showFieldErr('firstName','First name is required');
+  `);
+  assert.equal(app.run('error.textContent'),'First name is required');
+  assert.equal(app.run("errorClasses.has('visible')"),true);
+  app.run("showFieldErr('firstName','')");
+  assert.equal(app.run('error.textContent'),'');
+  assert.equal(app.run("errorClasses.has('visible') || inputClasses.has('err')"),false);
+});
 test('same-as-shipping skips hidden billing fields but separate billing requires them',()=>{
   const app=setup(null);
   app.run(`

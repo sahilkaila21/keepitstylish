@@ -1,4 +1,5 @@
 :root{--stone:#74675e}
+.storefront-loading footer{display:none}
 body{font-weight:400}
 .btn{font-size:12px;letter-spacing:.1em;text-decoration:none}
 .nav-link,.footer-link{font-size:13px}

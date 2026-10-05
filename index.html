@@ -493,9 +493,9 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-17"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-18"/>
 </head>
-<body><a class="skip-link" href="#main-content">Skip to content</a>
+<body class="storefront-loading"><a class="skip-link" href="#main-content">Skip to content</a>
 
 
 <!-- NAVBAR -->
@@ -553,10 +553,10 @@ tr:nth-child(even) td{background:var(--ivory)}
 <!-- ════════════════════════ HOME ════════════════════════ -->
 <div class="preview-banner">Preview the collection · Online ordering opens soon. <a href="#contact">Questions? Get in touch</a></div>
 <noscript><div class="launch-notice">Enable JavaScript to browse the dress galleries and preview bag. For product questions, <a href="mailto:hello@keepitstylish.in">email Keep It Stylish</a>.</div></noscript>
-<main id="main-content" tabindex="-1">
-<div id="page-home" class="page active">
+<main id="main-content" tabindex="-1" aria-busy="true">
+<div id="page-home" class="page">
   <div class="hero">
-    <img src="assets/products/green-dress-garden-1280.webp" srcset="assets/products/green-dress-garden-640.webp 640w, assets/products/green-dress-garden-1280.webp 1280w" sizes="(max-width:640px) 100vw, 50vw" width="1280" height="1920" decoding="async" fetchpriority="high" alt="Emerald Ruffle Tier Midi Dress"/>
+    <img src="assets/products/green-dress-garden-1280.webp" srcset="assets/products/green-dress-garden-640.webp 640w, assets/products/green-dress-garden-1280.webp 1280w" sizes="(max-width:640px) 100vw, 50vw" width="1280" height="1920" loading="lazy" decoding="async" alt="Emerald Ruffle Tier Midi Dress"/>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-label">The Dress Collection</p>
@@ -985,7 +985,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   <footer>
     <div class="footer-grid">
       <div>
-        <a href="#home" onclick="showPage('home');return false" aria-label="Keep It Stylish home"><img class="footer-logo" src="assets/brand/logo-light.svg?v=original-2" width="384" height="76" alt="Keep It Stylish"/></a>
+        <a href="#home" onclick="showPage('home');return false" aria-label="Keep It Stylish home"><img class="footer-logo" src="assets/brand/logo-light.svg?v=original-2" width="384" height="76" loading="lazy" decoding="async" alt="Keep It Stylish"/></a>
         <p class="footer-desc">Women's dresses in emerald green, coral floral and blue floral. Explore the first edit from Keep It Stylish.</p>
         <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--sand);margin-bottom:12px;font-family:'Jost',sans-serif">Let’s talk style</p>
         <p class="footer-desc">Questions about a dress or your size?</p><a class="footer-link" href="mailto:hello@keepitstylish.in">Email us ↗</a>
@@ -1022,7 +1022,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ════════════════════════ JAVASCRIPT ════════════════════════ -->
-<script src="assets/catalog.js?v=launch-17"></script>
+<script src="assets/catalog.js?v=launch-18"></script>
 <script>
 // ── DATA ──
 const COUPONS = {
@@ -1061,6 +1061,8 @@ function showPage(name) {
   const route = name === 'product' && currentProduct ? currentProduct.id : name;
   if (!restoringRoute && location.hash !== '#' + route) history.pushState(null, '', '#' + route);
   if (name === 'collections') renderCollectionRoute();
+  const heroImage = document.querySelector('.hero img');
+  if (heroImage && name === 'home') { heroImage.fetchPriority = 'high'; heroImage.loading = 'eager'; }
   if (typeof updatePreviewDescription === 'function') updatePreviewDescription();
   if (name !== 'collections') document.title = name === 'product' && currentProduct ? currentProduct.name + ' | Keep It Stylish' : name === 'about-manju' ? 'About Manju | Keep It Stylish' : name === 'about' ? 'About us | Keep It Stylish' : name === 'cart' ? 'Your Bag | Keep It Stylish' : name === 'home' ? 'Keep It Stylish | U.S. Store' : 'Keep It Stylish | ' + (pg.querySelector('h1')?.textContent.trim() || 'U.S. Store');
   window.scrollTo({top:0,behavior:'instant'});
@@ -1487,9 +1489,9 @@ function showToast(msg) {
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-17"></script>
-<script src="assets/browsing.js?v=launch-17"></script>
-<script src="assets/enhancements.js?v=launch-17"></script>
+<script src="assets/storefront.js?v=launch-18"></script>
+<script src="assets/browsing.js?v=launch-18"></script>
+<script src="assets/enhancements.js?v=launch-18"></script>
 <script>
 // ── INIT ──
 renderHome();
@@ -1498,6 +1500,8 @@ const discardedSelections = restoreCart();
 restoreRoute();
 if (discardedSelections) showToast('Unavailable selections were removed from your saved bag.');
 document.getElementById('tab-all').classList.add('active');
+document.body.classList.remove('storefront-loading');
+document.getElementById('main-content').setAttribute('aria-busy', 'false');
 </script>
 </body>
 </html>
