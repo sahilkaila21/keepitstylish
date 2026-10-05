@@ -11,7 +11,7 @@
 <meta property="og:description" content="Explore emerald tiers, coral florals and blue botanical prints. Online ordering opens soon."/>
 <meta property="og:url" content="https://sahilkaila21.github.io/keepitstylish/"/>
 <meta property="og:image" content="https://sahilkaila21.github.io/keepitstylish/assets/products/emerald-studio-model-1280.webp"/>
-<meta property="og:image:alt" content="Emerald dress on a model — AI styling preview"/>
+<meta property="og:image:alt" content="Emerald Ruffle Tier Midi Dress on a model"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -493,7 +493,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-18"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-19"/>
 </head>
 <body class="storefront-loading"><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -642,7 +642,7 @@ tr:nth-child(even) td{background:var(--ivory)}
     </div>
     <div class="product-gallery">
       <button type="button" class="gallery-main" id="zoom-open" onclick="openImageZoom()" aria-label="Enlarge product image"><img width="1280" height="1920" decoding="async" id="main-img" alt="Product"/><span class="zoom-hint">View larger ↗</span></button><div class="gallery-controls"><button type="button" data-gallery-direction="-1" aria-label="Previous product image">←</button><span id="gallery-counter" aria-live="polite"></span><button type="button" data-gallery-direction="1" aria-label="Next product image">→</button></div>
-      <div class="gallery-thumbs" id="thumbs"></div><p id="image-note" style="font-size:12px;color:var(--stone);line-height:1.6;margin-top:14px"></p>
+      <div class="gallery-thumbs" id="thumbs"></div>
     </div>
     <div class="product-choice">
       <div class="divider" style="margin:0 0 28px"></div>
@@ -1022,7 +1022,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ════════════════════════ JAVASCRIPT ════════════════════════ -->
-<script src="assets/catalog.js?v=launch-18"></script>
+<script src="assets/catalog.js?v=launch-19"></script>
 <script>
 // ── DATA ──
 const COUPONS = {
@@ -1166,7 +1166,6 @@ function openProduct(id) {
   showPage('product');
   document.getElementById('main-img').src = p.imgs[0];
   document.getElementById('main-img').alt = p.name;
-  document.getElementById('image-note').textContent = p.imageNote || '';
  document.getElementById('size-availability').textContent = p.availabilityNote || (p.upcomingSizes ? 'S, M, L available · XS and XL coming soon' : '');
   document.getElementById('detail-cat').textContent = categoryLabel(p.cat);
   document.getElementById('detail-name').textContent = p.name;
@@ -1489,9 +1488,9 @@ function showToast(msg) {
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-18"></script>
-<script src="assets/browsing.js?v=launch-18"></script>
-<script src="assets/enhancements.js?v=launch-18"></script>
+<script src="assets/storefront.js?v=launch-19"></script>
+<script src="assets/browsing.js?v=launch-19"></script>
+<script src="assets/enhancements.js?v=launch-19"></script>
 <script>
 // ── INIT ──
 renderHome();
