@@ -127,7 +127,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(253,250,246,.97);backdrop-
 
 /* ── EDITORIAL ── */
 .editorial{max-width:1400px;margin:100px auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.editorial img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.editorial img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain}
 .editorial-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;color:var(--charcoal);line-height:1.15;margin-bottom:28px}
 .editorial-text{font-size:14px;line-height:1.9;color:var(--stone);margin-bottom:14px;font-family:'Jost',sans-serif}
 
@@ -414,7 +414,6 @@ tr:nth-child(even) td{background:var(--ivory)}
 
   /* ── Editorial ── */
   .editorial{margin:48px auto;padding:0 16px;gap:28px}
-  .editorial img{aspect-ratio:4/3}
   .editorial-title{font-size:clamp(26px,6vw,40px);margin-bottom:20px}
 
   /* ── Marquee ── */
@@ -493,7 +492,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-21"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-22"/>
 </head>
 <body class="storefront-loading"><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -1022,7 +1021,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ════════════════════════ JAVASCRIPT ════════════════════════ -->
-<script src="assets/catalog.js?v=launch-21"></script>
+<script src="assets/catalog.js?v=launch-22"></script>
 <script>
 // ── DATA ──
 const COUPONS = {
@@ -1488,9 +1487,9 @@ function showToast(msg) {
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-21"></script>
-<script src="assets/browsing.js?v=launch-21"></script>
-<script src="assets/enhancements.js?v=launch-21"></script>
+<script src="assets/storefront.js?v=launch-22"></script>
+<script src="assets/browsing.js?v=launch-22"></script>
+<script src="assets/enhancements.js?v=launch-22"></script>
 <script>
 // ── INIT ──
 renderHome();
