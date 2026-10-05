@@ -493,7 +493,7 @@ tr:nth-child(even) td{background:var(--ivory)}
   .nav-right > button[onclick*="account"]{display:none}
 }
 </style>
-<link rel="stylesheet" href="assets/storefront.css?v=launch-19"/>
+<link rel="stylesheet" href="assets/storefront.css?v=launch-20"/>
 </head>
 <body class="storefront-loading"><a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -551,7 +551,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 </div>
 
 <!-- ════════════════════════ HOME ════════════════════════ -->
-<div class="preview-banner">Preview the collection · Online ordering opens soon. <a href="#contact">Questions? Get in touch</a></div>
+<div class="preview-banner"><span>Online ordering opens soon.</span> <a href="#contact">Questions? Get in touch</a></div>
 <noscript><div class="launch-notice">Enable JavaScript to browse the dress galleries and preview bag. For product questions, <a href="mailto:hello@keepitstylish.in">email Keep It Stylish</a>.</div></noscript>
 <main id="main-content" tabindex="-1" aria-busy="true">
 <div id="page-home" class="page">
@@ -627,7 +627,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 
 <!-- ════════════════════════ PRODUCT DETAIL ════════════════════════ -->
 <div id="page-product" class="page">
-  <div style="max-width:1400px;margin:0 auto;padding:40px 40px 20px">
+  <div class="product-breadcrumb">
     <button class="back-link" onclick="showPage('collections')">← Back to Collections</button>
   </div>
   <div class="product-detail-grid">
@@ -646,20 +646,20 @@ tr:nth-child(even) td{background:var(--ivory)}
     </div>
     <div class="product-choice">
       <div class="divider" style="margin:0 0 28px"></div>
-      <div style="margin-bottom:26px">
-        <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);margin-bottom:14px;font-family:'Jost',sans-serif">Color — <span id="sel-color-name" style="color:var(--stone);text-transform:none"></span></p>
+      <div class="product-option">
+        <p class="product-option-label">Color <span id="sel-color-name"></span></p>
         <div style="display:flex;gap:10px" id="color-swatches"></div>
       </div>
-      <div style="margin-bottom:12px">
-        <div style="display:flex;justify-content:space-between;margin-bottom:14px">
-          <p style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);font-family:'Jost',sans-serif">Size</p>
+      <div class="product-option">
+        <div class="product-size-heading">
+          <p class="product-option-label">Size</p>
           <button style="font-size:11px;color:var(--stone);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:'Jost',sans-serif" onclick="showPage('size-guide')">Size Guide</button>
         </div>
         <div class="size-grid" id="size-grid"></div><p id="size-availability" style="font-size:12px;color:var(--stone);margin-top:12px"></p>
       </div>
       <p style="font-size:12px;color:var(--rose);margin-bottom:8px;font-family:'Jost',sans-serif;display:none" id="size-error" role="alert">Please select a size before adding to bag</p>
       <button class="add-to-cart-btn" id="atc-btn" onclick="addToCart()">Add to bag</button>
-      <p style="font-size:14px;line-height:1.8;color:var(--stone);font-family:'Jost',sans-serif" id="detail-desc"></p>
+      <div class="product-description"><h2>Details</h2><p id="detail-desc"></p></div>
       <div class="shipping-note">
         ✦ United States · Prices in USD<br/>
         ✦ Delivery timing confirmed before payment<br/>
@@ -1022,7 +1022,7 @@ tr:nth-child(even) td{background:var(--ivory)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ════════════════════════ JAVASCRIPT ════════════════════════ -->
-<script src="assets/catalog.js?v=launch-19"></script>
+<script src="assets/catalog.js?v=launch-20"></script>
 <script>
 // ── DATA ──
 const COUPONS = {
@@ -1488,9 +1488,9 @@ function showToast(msg) {
 }
 
 </script>
-<script src="assets/storefront.js?v=launch-19"></script>
-<script src="assets/browsing.js?v=launch-19"></script>
-<script src="assets/enhancements.js?v=launch-19"></script>
+<script src="assets/storefront.js?v=launch-20"></script>
+<script src="assets/browsing.js?v=launch-20"></script>
+<script src="assets/enhancements.js?v=launch-20"></script>
 <script>
 // ── INIT ──
 renderHome();
